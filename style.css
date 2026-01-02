@@ -287,3 +287,22 @@ h1 {
     font-size: 15px;
   }
 }
+
+/* Slow Typewriter Effect */
+#typewriter {
+  border-right: 3px solid #38bdf8;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* Blink cursor */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+#typewriter {
+  animation: blink 0.75s step-end infinite;
+}

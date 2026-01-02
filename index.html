@@ -5,14 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Card Showcase</title>
-<!-- Favicon for the website -->
-<!-- This icon will appear in the browser tab -->
-<link rel="icon" type="image/png" href="Hall of Fame (1).png">
-
-<!-- Link to the external CSS stylesheet -->
-<!-- Contains all the styling rules for the website -->
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -36,8 +29,9 @@
 <!-- NAVBAR END -->
 
     <!-- Main heading of the website -->
-    <h1>🚀 Community Hall of Fame</h1>
-    <p class="subtitle">An Open Source Project built by the Community, for the Community.</p>
+<h1><span id="typewriter"></span></h1>
+<p class="subtitle">An Open Source Project built by the Community, for the Community.</p>
+
     
 <!-- 🔍 SEARCH INPUT (ADDED) -->
 <input 
@@ -191,23 +185,6 @@
         </div>
       
       
-        <div class="card">
-            <img src="images/satyam-pandey.png" alt="Satyam Pandey's Photo" class="card-img">
-            <h2>Satyam Pandey</h2>
-            <span class="role">Contributor</span>
-            <p>"Hello world! This is my first PR."</p>
-            <a href="https://github.com/satyam-pandey" class="card-btn" target="_blank">GitHub</a>
-        </div>
-
-        <div class="card">
-            <img src="images/rohitshinde-tech.jpg" alt="Rohit Shinde's Photo" class="card-img">
-            <h2>Rohit Shinde</h2>
-            <span class="role">Contributor</span>
-            <p>"Exploring open source and learning GitHub through my first contribution."</p>
-            <a href="https://github.com/rohitshinde-tech" class="card-btn" target="_blank">GitHub</a>
-        </div>
-
-        
         <!-- ADD YOUR NEW CARD ABOVE THIS COMMENT -->
 
     </div> <!-- End of card-container -->
@@ -221,43 +198,92 @@
         </p>
     </footer>
 <!-- FOOTER END -->
-<script>
-    // Selecting the hamburger menu button using its ID "hamburger"
-    // This button is typically used in responsive designs to toggle the navigation menu on smaller screens
-    const hamburger = document.getElementById("hamburger");
 
-    // Selecting the navigation links container using its ID "navLinks"
-    // This contains all the navigational links that will be shown or hidden when the hamburger is clicked
-    const navLinks = document.getElementById("navLinks");
-
-    // Adding a click event listener to the hamburger button
-    // When the button is clicked, it toggles the "active" class on the navLinks element
-    // This "active" class is usually styled in CSS to show or hide the menu in a smooth animation
-    hamburger.addEventListener("click", () => {
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+    
+        hamburger.addEventListener("click", () => {
         navLinks.classList.toggle("active");
     });
-</script>
+    </script>
 
 <!-- 🔍 SEARCH FILTER SCRIPT (ADDED) -->
 <script>
-    // Function to filter developer cards based on the search input value
-    // This allows users to quickly find a specific developer card by typing their name
-    function filterCards() {
-        // Getting the value of the search input field and converting it to lowercase for case-insensitive matching
-        const input = document.getElementById("searchInput").value.toLowerCase();
+function filterCards() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
 
-        // Selecting all elements with the class "card" representing each developer or project card
-        const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+        const name = card.querySelector("h2").innerText.toLowerCase();
+        card.style.display = name.includes(input) ? "block" : "none";
+    });
+}
 
-        // Iterating through each card to check if the card's name includes the search input
-        // If the card name includes the input, it will be displayed; otherwise, it will be hidden
-        // This dynamic filtering allows for real-time search functionality on the page
-        cards.forEach(card => {
-            const name = card.querySelector("h2").innerText.toLowerCase();
-            card.style.display = name.includes(input) ? "block" : "none";
-        });
-    }
+
 </script>
+
+<script>
+// ----- TYPEWRITER LOOP -----
+const typewriter = document.getElementById('typewriter');
+
+const phrases = [
+  "🚀 Community Hall of Fame",
+  "Built by the Community",
+  "Open Source for Everyone",
+  "Contribute, Learn, Grow"
+];
+
+let currentPhrase = 0;
+let currentChar = 0;
+let isDeleting = false;
+let speed = 100; // typing speed (ms per character)
+
+function type() {
+  const fullText = phrases[currentPhrase];
+  
+  if (isDeleting) {
+    currentChar--;
+    typewriter.textContent = fullText.substring(0, currentChar);
+  } else {
+    currentChar++;
+    typewriter.textContent = fullText.substring(0, currentChar);
+  }
+  
+  // Adjust speed for deleting vs typing
+  let typingSpeed = isDeleting ? speed / 2 : speed;
+  
+  // When phrase is complete
+  if (!isDeleting && currentChar === fullText.length) {
+    typingSpeed = 1500; // wait before deleting
+    isDeleting = true;
+  } 
+  // When deletion is complete
+  else if (isDeleting && currentChar === 0) {
+    isDeleting = false;
+    currentPhrase = (currentPhrase + 1) % phrases.length;
+    typingSpeed = 500; // wait before typing next phrase
+  }
+  
+  setTimeout(type, typingSpeed);
+}
+
+// Start typewriter
+type();
+
+
+// ----- PARALLAX EFFECT -----
+const heroHeading = document.querySelector('h1');
+const heroSubtitle = document.querySelector('.subtitle');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  
+  heroHeading.style.transform = `translateY(${scrollY * 0.2}px)`;  // slower
+  heroSubtitle.style.transform = `translateY(${scrollY * 0.15}px)`; // slightly slower
+});
+</script>
+
 
 </body>
 </html>
