@@ -1003,3 +1003,95 @@ body.light-mode {
     margin-top: 4px;
     color: var(--secondary-text);
 }
+
+/* =========================================
+   FILTER & SORT CONTROLS
+   ========================================= */
+
+.controls {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 25px auto 35px;
+    padding: 14px 18px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    max-width: 900px;
+}
+
+/* Shared styles for inputs, selects & button */
+.controls input,
+.controls select,
+.controls button {
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+
+    background: var(--card-bg);
+    color: var(--text-color);
+
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+/* Search input width control */
+.controls input {
+    width: 220px;
+}
+
+/* Select dropdowns */
+.controls select {
+    cursor: pointer;
+}
+
+/* Hover & focus states */
+.controls input:focus,
+.controls select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
+}
+
+/* Reset button */
+#resetFilters {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#resetFilters:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(56, 189, 248, 0.35);
+}
+
+/* Light mode tweaks */
+body.light-mode .controls {
+    background: rgba(255, 255, 255, 0.65);
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .controls input,
+    .controls select,
+    .controls button {
+        width: 100%;
+    }
+}
