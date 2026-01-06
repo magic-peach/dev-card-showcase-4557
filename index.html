@@ -156,6 +156,35 @@
                 </a>
             </div>
         </div>
+        <!-- Image Preview Uploader Component -->
+<div class="uploader-container">
+    <label class="uploader-label">Upload Profile Picture</label>
+    
+    <div class="drop-zone" id="dropZone">
+        <div class="drop-zone-content" id="dropZoneContent">
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <p>Drag & drop image here or <span>Browse</span></p>
+            <p class="file-info">Supports: JPG, PNG, WEBP (Max: 2MB)</p>
+        </div>
+        
+        <div class="preview-container" id="previewContainer">
+            <img src="" alt="Preview" id="imagePreview">
+            <div class="preview-overlay">
+                <button type="button" class="replace-btn" id="replaceBtn">
+                    <i class="fas fa-sync"></i> Replace
+                </button>
+            </div>
+        </div>
+        <input type="file" id="fileInput" accept="image/jpeg, image/png, image/webp" hidden>
+    </div>
+
+    <div class="uploader-footer">
+        <button type="button" id="removeBtn" class="remove-btn" disabled>
+            <i class="fas fa-trash"></i> Remove Image
+        </button>
+        <div id="errorMsg" class="error-msg"></div>
+    </div>
+</div>
 
         <!-- 👇 CONTRIBUTORS: START COPYING FROM HERE 👇 -->
         <!-- This is the TEMPLATE card - copy this entire block and paste it below -->
