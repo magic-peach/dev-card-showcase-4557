@@ -14,8 +14,549 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/png" href="Hall of Fame (1).png" />
+  
+  <style>
+    /* Premium FAQ Styles */
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Enhanced Header */
+    .faq-header {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      background: linear-gradient(135deg, 
+        rgba(var(--accent-color-rgb, 99, 102, 241), 0.9) 0%, 
+        rgba(var(--secondary-color-rgb, 139, 92, 246), 0.9) 100%);
+      margin-bottom: 3rem;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .faq-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+    
+    .faq-header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(to right, #fff 0%, #f0f9ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .faq-header p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+    
+    .faq-header .header-decoration {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #fff, transparent);
+      border-radius: 2px;
+    }
+    
+    /* Search Bar */
+    .faq-search-container {
+      max-width: 800px;
+      margin: -2rem auto 3rem;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 10;
+    }
+    
+    .faq-search-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    
+    .faq-search {
+      width: 100%;
+      padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+      border-radius: 15px;
+      border: none;
+      background: var(--card-bg);
+      color: var(--text-color);
+      font-size: 1.1rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      backdrop-filter: blur(10px);
+    }
+    
+    .faq-search:focus {
+      outline: none;
+      box-shadow: 0 12px 40px rgba(var(--accent-color-rgb, 99, 102, 241), 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .faq-search::placeholder {
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-color);
+      font-size: 1.2rem;
+      z-index: 2;
+    }
+    
+    /* Categories */
+    .faq-categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding: 0 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .faq-category-btn {
+      padding: 0.8rem 1.8rem;
+      background: var(--card-bg);
+      border: none;
+      border-radius: 12px;
+      color: var(--text-color);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      font-size: 0.95rem;
+    }
+    
+    .faq-category-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .faq-category-btn.active {
+      background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      box-shadow: 0 8px 25px rgba(var(--accent-color-rgb, 99, 102, 241), 0.3);
+    }
+    
+    /* FAQ Container */
+    .faq-container {
+      max-width: 1300px;
+      margin: 0 auto 6rem;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 2rem;
+    }
+    
+    /* FAQ Cards - Premium Design */
+    .faq-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 2.2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(var(--accent-color-rgb, 99, 102, 241), 0.1);
+    }
+    
+    .faq-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .faq-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+    
+    .faq-card:hover::before {
+      opacity: 1;
+    }
+    
+    .faq-card.expanded {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .faq-icon-wrapper {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, 
+        rgba(var(--accent-color-rgb, 99, 102, 241), 0.1) 0%, 
+        rgba(var(--secondary-color-rgb, 139, 92, 246), 0.1) 100%);
+      color: var(--accent-color);
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-card:hover .faq-icon-wrapper {
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, 
+        rgba(var(--accent-color-rgb, 99, 102, 241), 0.15) 0%, 
+        rgba(var(--secondary-color-rgb, 139, 92, 246), 0.15) 100%);
+    }
+    
+    .faq-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: var(--heading-color);
+      line-height: 1.4;
+    }
+    
+    .faq-content {
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .faq-card p {
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+      color: var(--text-color);
+      font-weight: 400;
+    }
+    
+    .faq-card ul {
+      padding-left: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .faq-card li {
+      margin-bottom: 0.7rem;
+      line-height: 1.6;
+      color: var(--text-color);
+      position: relative;
+      padding-left: 0.5rem;
+    }
+    
+    .faq-card li::before {
+      content: '•';
+      color: var(--accent-color);
+      font-weight: bold;
+      position: absolute;
+      left: -1rem;
+    }
+    
+    .faq-card code {
+      background: rgba(var(--accent-color-rgb, 99, 102, 241), 0.08);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: var(--accent-color);
+      border: 1px solid rgba(var(--accent-color-rgb, 99, 102, 241), 0.2);
+    }
+    
+    .faq-card strong {
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
+    
+    .faq-card a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .faq-card a:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+    
+    .expand-btn {
+      margin-top: auto;
+      padding: 0.8rem 1.5rem;
+      background: rgba(var(--accent-color-rgb, 99, 102, 241), 0.08);
+      border: none;
+      border-radius: 10px;
+      color: var(--accent-color);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .expand-btn:hover {
+      background: rgba(var(--accent-color-rgb, 99, 102, 241), 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .expand-btn i {
+      transition: transform 0.3s ease;
+    }
+    
+    .expand-btn.expanded i {
+      transform: rotate(180deg);
+    }
+    
+    /* Light mode adjustments */
+    .light-mode .faq-header {
+      background: linear-gradient(135deg, 
+        rgba(var(--accent-color-rgb, 99, 102, 241), 0.85) 0%, 
+        rgba(var(--secondary-color-rgb, 139, 92, 246), 0.85) 100%);
+    }
+    
+    .light-mode .faq-card {
+      background: white;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    }
+    
+    .light-mode .faq-card:hover {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .light-mode .faq-search {
+      background: white;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    }
+    
+    .light-mode .faq-category-btn {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* No results message */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+    }
+    
+    .no-results i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+      opacity: 0.5;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .faq-container {
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .faq-header {
+        padding: 4rem 1.5rem 3rem;
+        border-radius: 0 0 30px 30px;
+      }
+      
+      .faq-header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .faq-header p {
+        font-size: 1.1rem;
+      }
+      
+      .faq-search-container {
+        margin: -1.5rem auto 2.5rem;
+        padding: 0 1.5rem;
+      }
+      
+      .faq-search {
+        padding: 1rem 1.5rem 1rem 3rem;
+      }
+      
+      .faq-categories {
+        padding: 0 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+      
+      .faq-category-btn {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+      }
+      
+      .faq-container {
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem;
+        margin-bottom: 4rem;
+        gap: 1.8rem;
+      }
+      
+      .faq-card {
+        padding: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .faq-header {
+        padding: 3rem 1rem 2.5rem;
+      }
+      
+      .faq-header h1 {
+        font-size: 2rem;
+      }
+      
+      .faq-header p {
+        font-size: 1rem;
+      }
+      
+      .faq-search-container {
+        padding: 0 1rem;
+      }
+      
+      .faq-categories {
+        padding: 0 1rem;
+        gap: 0.7rem;
+      }
+      
+      .faq-category-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+      }
+      
+      .faq-container {
+        padding: 0 1rem;
+        gap: 1.5rem;
+      }
+      
+      .faq-card {
+        padding: 1.5rem;
+      }
+      
+      .faq-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+      }
+      
+      .faq-card h3 {
+        font-size: 1.2rem;
+      }
+    }
+    
+    /* Animation for card appearance */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .faq-card {
+      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
+    
+    .faq-card:nth-child(1) { animation-delay: 0.1s; }
+    .faq-card:nth-child(2) { animation-delay: 0.2s; }
+    .faq-card:nth-child(3) { animation-delay: 0.3s; }
+    .faq-card:nth-child(4) { animation-delay: 0.4s; }
+    .faq-card:nth-child(5) { animation-delay: 0.5s; }
+    .faq-card:nth-child(6) { animation-delay: 0.6s; }
+    .faq-card:nth-child(7) { animation-delay: 0.7s; }
+    .faq-card:nth-child(8) { animation-delay: 0.8s; }
+    
+    /* Stats counter */
+    .faq-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      padding: 0 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 1rem 2rem;
+      background: rgba(var(--accent-color-rgb, 99, 102, 241), 0.05);
+      border-radius: 15px;
+      min-width: 140px;
+    }
+    
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
 </head>
 
 <body>
@@ -115,73 +656,223 @@
   <!-- FAQ HEADER -->
   <header class="faq-header">
     <h1>Frequently Asked Questions</h1>
-    <p>Everything you need to know before making your first contribution ✨</p>
+    <p>Find answers to common questions and learn how to make your first contribution seamlessly ✨</p>
+    <div class="header-decoration"></div>
   </header>
+
+  <!-- FAQ STATS -->
+  <div class="faq-stats">
+    <div class="stat-item">
+      <div class="stat-number" id="total-questions">8</div>
+      <div class="stat-label">Questions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" id="answered-questions">8</div>
+      <div class="stat-label">Answered</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">24-48h</div>
+      <div class="stat-label">Response Time</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Helpful</div>
+    </div>
+  </div>
+
+  <!-- FAQ SEARCH & FILTER -->
+  <div class="faq-search-container">
+    <div class="faq-search-wrapper">
+      <div class="search-icon">
+        <i class="fas fa-search"></i>
+      </div>
+      <input type="text" class="faq-search" placeholder="Search questions, keywords, or topics...">
+    </div>
+  </div>
+  
+  <div class="faq-categories">
+    <button class="faq-category-btn active" data-category="all">
+      <i class="fas fa-layer-group"></i> All Questions
+    </button>
+    <button class="faq-category-btn" data-category="general">
+      <i class="fas fa-question-circle"></i> General
+    </button>
+    <button class="faq-category-btn" data-category="technical">
+      <i class="fas fa-cogs"></i> Technical
+    </button>
+    <button class="faq-category-btn" data-category="contribution">
+      <i class="fas fa-code-branch"></i> Contribution
+    </button>
+    <button class="faq-category-btn" data-category="help">
+      <i class="fas fa-hands-helping"></i> Get Help
+    </button>
+  </div>
 
   <!-- FAQ SECTION -->
   <section class="faq-container">
 
-    <div class="faq-card">
-      <h3>❓ What is this project?</h3>
-      <p>
-        Community Card Showcase is a beginner-friendly Open Source project
-        where contributors add their own profile cards to showcase their
-        participation in Open Source.
-      </p>
+    <div class="faq-card" data-category="general">
+      <div class="faq-icon-wrapper">❓</div>
+      <div class="faq-content">
+        <h3>What is this project about?</h3>
+        <p>
+          Community Card Showcase is a beginner-friendly Open Source project where contributors add their own profile cards to showcase their participation in the open source community.
+        </p>
+        <p>It's designed to help newcomers make their first contribution in a supportive environment with clear guidelines and helpful community members.</p>
+      </div>
+      <button class="expand-btn">
+        <span>Read More</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
     </div>
 
-    <div class="faq-card">
-      <h3>🖼️ Why is my image not showing?</h3>
-      <ul>
-        <li>Ensure the image is <strong>square (1:1)</strong></li>
-        <li>Only <strong>.jpg or .png</strong> formats are allowed</li>
-        <li>Image name must match your username exactly</li>
-        <li>File should be inside the <code>images/</code> folder</li>
-      </ul>
+    <div class="faq-card" data-category="technical">
+      <div class="faq-icon-wrapper">🖼️</div>
+      <div class="faq-content">
+        <h3>Why is my profile image not showing up?</h3>
+        <p>Common image issues and their solutions:</p>
+        <ul>
+          <li>Ensure the image is <strong>square (1:1 aspect ratio)</strong> for proper display</li>
+          <li>Only <strong>.jpg or .png</strong> formats are supported (no .gif, .webp, etc.)</li>
+          <li>Image name must match your GitHub username exactly (case-sensitive)</li>
+          <li>File should be placed inside the <code>images/</code> folder</li>
+          <li>Maximum file size is 2MB - compress if necessary</li>
+          <li>Check file permissions and ensure it's not corrupted</li>
+        </ul>
+      </div>
+      <button class="expand-btn">
+        <span>Read More</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
     </div>
 
-    <div class="faq-card">
-      <h3>📦 Why is my card not visible?</h3>
-      <ul>
-        <li>Card must be pasted inside the CONTRIBUTORS section</li>
-        <li>Check for missing closing tags</li>
-        <li>Make sure the image path is correct</li>
-        <li>Reload the page without cache</li>
-      </ul>
+    <div class="faq-card" data-category="technical">
+      <div class="faq-icon-wrapper">📦</div>
+      <div class="faq-content">
+        <h3>Why is my contribution card not visible?</h3>
+        <p>If your card isn't appearing after submission, check these common issues:</p>
+        <ul>
+          <li>Card must be pasted inside the CONTRIBUTORS section in index.html</li>
+          <li>Check for missing or mismatched HTML tags (div, class, etc.)</li>
+          <li>Make sure the image path is correct (should be <code>images/username.png</code>)</li>
+          <li>Reload the page without cache (Ctrl+F5 or Cmd+Shift+R)</li>
+          <li>Wait a few minutes after merging - GitHub Pages takes time to update</li>
+          <li>Verify your PR has been successfully merged, not just submitted</li>
+        </ul>
+      </div>
+      <button class="expand-btn">
+        <span>Read More</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
     </div>
 
-    <div class="faq-card">
-      <h3>👤 What role should I choose?</h3>
-      <p>
-        Choose a role that best fits you:
-      </p>
-      <ul>
-        <li><strong>Developer</strong> – if you write code</li>
-        <li><strong>Contributor</strong> – if you’re new to Open Source</li>
-        <li><strong>Maintainer</strong> – project admins only</li>
-      </ul>
+    <div class="faq-card" data-category="contribution">
+      <div class="faq-icon-wrapper">👤</div>
+      <div class="faq-content">
+        <h3>What role should I select for my profile?</h3>
+        <p>
+          Choose a role that best fits your current involvement in open source:
+        </p>
+        <ul>
+          <li><strong>Developer</strong> – If you write code regularly or work on software projects</li>
+          <li><strong>Contributor</strong> – If you're new to Open Source or contribute occasionally</li>
+          <li><strong>Maintainer</strong> – Project admins and core team members only</li>
+          <li><strong>Designer</strong> – If you contribute primarily through design work</li>
+          <li><strong>Documenter</strong> – If you focus on documentation and guides</li>
+        </ul>
+        <p>Your role can be updated later as your involvement evolves.</p>
+      </div>
+      <button class="expand-btn">
+        <span>Read More</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
     </div>
 
-    <div class="faq-card">
-      <h3>🚫 Common PR mistakes</h3>
-      <ul>
-        <li>Editing other contributors’ cards</li>
-        <li>Uploading large or non-square images</li>
-        <li>Multiple unrelated changes in one PR</li>
-        <li>Wrong branch selection</li>
-      </ul>
+    <div class="faq-card" data-category="contribution">
+      <div class="faq-icon-wrapper">🚫</div>
+      <div class="faq-content">
+        <h3>Common PR mistakes to avoid</h3>
+        <p>These mistakes can delay or prevent your PR from being merged:</p>
+        <ul>
+          <li>Editing other contributors' cards or code without permission</li>
+          <li>Uploading large, non-square, or inappropriate images</li>
+          <li>Making multiple unrelated changes in one PR</li>
+          <li>Creating PR from the <code>main</code> branch instead of a feature branch</li>
+          <li>Not following the template structure exactly</li>
+          <li>Forgetting to test your changes locally first</li>
+          <li>Ignoring the contribution guidelines</li>
+        </ul>
+      </div>
+      <button class="expand-btn">
+        <span>Read More</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
     </div>
 
-    <div class="faq-card">
-      <h3>🆘 Where can I get help?</h3>
-      <p>
-        If you’re stuck:
-      </p>
-      <ul>
-        <li>Re-check the <strong>Contribute</strong> page</li>
-        <li>Open a GitHub issue with screenshots</li>
-        <li>Ask politely in the issue comments</li>
-      </ul>
+    <div class="faq-card" data-category="help">
+      <div class="faq-icon-wrapper">🆘</div>
+      <div class="faq-content">
+        <h3>Where can I get help with my contribution?</h3>
+        <p>
+          If you're stuck or confused, here's how to get assistance:
+        </p>
+        <ul>
+          <li>Re-check the <strong><a href="contribute.html">Contribute</a></strong> page for detailed instructions</li>
+          <li>Review the <strong><a href="guidelines.html">Guidelines</a></strong> page for community standards</li>
+          <li>Open a GitHub issue with clear screenshots and description</li>
+          <li>Ask politely in the issue comments - our community is friendly!</li>
+          <li>Check if someone else has already asked a similar question</li>
+          <li>Look for existing PRs to understand the expected format</li>
+        </ul>
+        <p>Our maintainers typically respond within 24-48 hours.</p>
+      </div>
+      <button class="expand-btn">
+        <span>Read More</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    
+    <div class="faq-card" data-category="general">
+      <div class="faq-icon-wrapper">⏱️</div>
+      <div class="faq-content">
+        <h3>How long does PR review usually take?</h3>
+        <p>
+          Our maintainers are volunteers who review PRs in their free time. 
+          Typical review times are:
+        </p>
+        <ul>
+          <li><strong>1-3 days</strong> for simple card additions</li>
+          <li><strong>3-7 days</strong> for code changes or complex contributions</li>
+          <li><strong>Longer during holidays</strong> or busy periods</li>
+        </ul>
+        <p>Please be patient and don't tag maintainers unless it's been over a week without response.</p>
+      </div>
+      <button class="expand-btn">
+        <span>Read More</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    
+    <div class="faq-card" data-category="technical">
+      <div class="faq-icon-wrapper">🔧</div>
+      <div class="faq-content">
+        <h3>Can I customize my profile card?</h3>
+        <p>
+          Yes, within reasonable limits! You can:
+        </p>
+        <ul>
+          <li>Choose your role badge color (from predefined options)</li>
+          <li>Add up to 3 technology icons to showcase your skills</li>
+          <li>Include a short bio (max 150 characters)</li>
+          <li>Link to your portfolio, blog, or other relevant sites</li>
+          <li>Select a theme color that matches your personal brand</li>
+        </ul>
+        <p>Please don't modify the card structure or add custom CSS/JavaScript to your individual card.</p>
+      </div>
+      <button class="expand-btn">
+        <span>Read More</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
     </div>
 
   </section>
@@ -233,6 +924,112 @@
         "theme",
         body.classList.contains("light-mode") ? "light" : "dark"
       );
+    });
+  </script>
+  
+  <!-- FAQ INTERACTIVITY -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Category filtering
+      const categoryButtons = document.querySelectorAll('.faq-category-btn');
+      const faqCards = document.querySelectorAll('.faq-card');
+      const searchInput = document.querySelector('.faq-search');
+      const noResultsHtml = `<div class="no-results">
+        <i class="fas fa-search"></i>
+        <h3>No matching questions found</h3>
+        <p>Try searching with different keywords or browse all categories</p>
+      </div>`;
+      
+      // Expand/collapse functionality
+      faqCards.forEach(card => {
+        const expandBtn = card.querySelector('.expand-btn');
+        const content = card.querySelector('.faq-content');
+        const originalHeight = content.scrollHeight;
+        
+        // Set initial height
+        content.style.maxHeight = '150px';
+        content.style.overflow = 'hidden';
+        content.style.transition = 'max-height 0.3s ease';
+        
+        expandBtn.addEventListener('click', function() {
+          const isExpanded = content.style.maxHeight !== '150px';
+          
+          if (isExpanded) {
+            content.style.maxHeight = '150px';
+            this.classList.remove('expanded');
+            this.innerHTML = '<span>Read More</span><i class="fas fa-chevron-down"></i>';
+            card.classList.remove('expanded');
+          } else {
+            content.style.maxHeight = originalHeight + 'px';
+            this.classList.add('expanded');
+            this.innerHTML = '<span>Show Less</span><i class="fas fa-chevron-up"></i>';
+            card.classList.add('expanded');
+          }
+        });
+      });
+      
+      // Category filtering
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          categoryButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          const category = this.getAttribute('data-category');
+          filterAndSearch(category, searchInput.value);
+        });
+      });
+      
+      // Search functionality
+      searchInput.addEventListener('input', function() {
+        const activeCategory = document.querySelector('.faq-category-btn.active');
+        const category = activeCategory ? activeCategory.getAttribute('data-category') : 'all';
+        filterAndSearch(category, this.value);
+      });
+      
+      function filterAndSearch(category, searchTerm) {
+        let visibleCount = 0;
+        searchTerm = searchTerm.toLowerCase().trim();
+        
+        faqCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          const cardText = card.textContent.toLowerCase();
+          const matchesCategory = category === 'all' || cardCategory === category;
+          const matchesSearch = searchTerm === '' || cardText.includes(searchTerm);
+          
+          if (matchesCategory && matchesSearch) {
+            card.style.display = 'flex';
+            card.style.animation = 'fadeInUp 0.5s ease forwards';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        // Show/hide no results message
+        let noResults = document.querySelector('.no-results');
+        if (visibleCount === 0) {
+          if (!noResults) {
+            document.querySelector('.faq-container').insertAdjacentHTML('beforeend', noResultsHtml);
+          }
+        } else if (noResults) {
+          noResults.remove();
+        }
+        
+        // Update stats
+        document.getElementById('answered-questions').textContent = visibleCount;
+      }
+      
+      // Initialize with all cards visible
+      filterAndSearch('all', '');
+      
+      // Add hover effect with slight delay for smoother experience
+      faqCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        });
+      });
     });
   </script>
 
