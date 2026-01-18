@@ -1721,5 +1721,25 @@
     "name": "PavanKarthik",
     "github": "https://github.com/pavanakarthik12"
   }
+},
+{
+  "title": "Emoji Emotion Guess Game 😄🤔",
+  "description": "A visual game where users guess emotions or situations from emoji combinations.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Game",
+    "Emotional Awareness",
+    "Interactive Learning"
+  ],
+  "links": {
+    "live": "./projects/emoji-emotion-guess-game/index.html"
+  },
+  "author": {
+    "name": "Sneha Amballa",
+    "github": "https://github.com/Sneha-Amballa"
+  }
 }
+
 ]
