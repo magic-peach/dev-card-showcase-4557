@@ -1536,7 +1536,26 @@
     "name": "Sneha Amballa",
     "github": "https://github.com/your-github-username"
   }
+},
+
+{
+  "title": "LearnXO",
+  "description": "LearnXO is an interactive educational web project designed to help users learn concepts through structured lessons, quizzes, and simple visual explanations using pure HTML, CSS, and JavaScript.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Education"
+  ],
+  "links": {
+    "live": "./projects/LearnXO/index.html"
+  },
+  "author": {
+    "name": "PavanKarthik",
+    "github": "https://github.com/pavanakarthik12"
+  }
 }
+
 
 
 ]
