@@ -16,6 +16,22 @@
                        "github":  "https://github.com/Sneha-Amballa"
                    }
     },
+     {
+        "title":  "Sliding Image Puzzle",
+        "description":  "A classic sliding puzzle game where players rearrange scrambled image tiles to form the complete picture. Features multiple difficulty levels, timer, and move counter for an engaging experience.",
+        "tags":  [
+                     "HTML",
+                     "CSS",
+                     "JavaScript"
+                 ],
+        "links":  {
+                      "live":  "./projects/sliding-image/index.html"
+                  },
+        "author":  {
+                       "name":  "Omkar",
+                       "github":  "https://github.com/omkarhole"
+                   }
+    },
     {
         "title":  "Word Memory Game",
         "description":  "Word Memory Game is an engaging web application that challenges players to memorize and recall words within a time limit. It enhances vocabulary and memory skills through multiple levels of difficulty and interactive gameplay.",
@@ -1662,6 +1678,25 @@
   ],
   "links": {
     "live": "./projects/interactive-history-timeline/index.html"
+  },
+  "author": {
+    "name": "Sneha Amballa",
+    "github": "https://github.com/your-github-username"
+  }
+},
+{
+  "title": "Virtual Museum of Common Mistakes 🏛️",
+  "description": "An interactive museum showcasing common mistakes and how to avoid them.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Education",
+    "Reflection",
+    "UI/UX"
+  ],
+  "links": {
+    "live": "./projects/virtual-mistakes-museum/index.html"
   },
   "author": {
     "name": "Sneha Amballa",
