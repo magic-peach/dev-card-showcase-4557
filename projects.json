@@ -3815,6 +3815,26 @@
     "name": "Sneha Amballa",
     "github": "https://github.com/Sneha-Amballa"
   }
+},
+{
+    "title": "Two-Player Neon Pong",
+    "description": "A classic two-player Pong game with neon retro visuals, keyboard-controlled paddles, ball physics, collision detection, and score tracking built using HTML Canvas.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Canvas",
+        "Game",
+        "Retro",
+        "Multiplayer"
+    ],
+    "links": {
+        "live": "#"
+    },
+    "author": {
+        "name": "Amballa Sneha",
+        "github": "https://github.com/Sneha-Amballa"
+    }
 }
 
 ]
