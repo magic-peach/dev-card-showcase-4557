@@ -185,6 +185,22 @@
         "github": "https://github.com/neeru24"
     }
 },
+ {
+        "title": "Retro snake game",
+        "description": "A classic snake game with retro graphics and smooth controls. Players navigate the snake to eat food, grow longer, and avoid collisions.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/snake-game/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Word Memory Game",
         "description": "Word Memory Game is an engaging web application that challenges players to memorize and recall words within a time limit. It enhances vocabulary and memory skills through multiple levels of difficulty and interactive gameplay.",
