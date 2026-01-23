@@ -1334,6 +1334,23 @@
         }
     },
     {
+        "title": "Memory Flip Plus",
+        "description": "An enhanced memory card matching game with timed flips, combo bonuses, and increasing difficulty. Match pairs quickly to build streaks and earn time bonuses. Levels get harder with more cards and less time.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Game"
+        ],
+        "links": {
+            "live": "./projects/memory-flip-plus/index.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Gradent Pattern",
         "description": "A web application that generates random gradient patterns for backgrounds, allowing users to copy the CSS code for use in their own projects.",
         "tags": [
