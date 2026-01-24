@@ -5109,5 +5109,23 @@
         "name": "Sneha Amballa",
         "github": "https://github.com/Sneha-Amballa"
     }
+},
+{
+    "title": "One-Line Art Challenge",
+    "description": "A creative drawing challenge where users must create artwork on a canvas without lifting the mouse at any point. Features timer, scoring system, and animated replay of the drawing path.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Canvas",
+        "Game"
+    ],
+    "links": {
+        "live": "./projects/One-Line-Art-Challenge/index.html"
+    },
+    "author": {
+        "name": "Sneha Amballa",
+        "github": "https://github.com/Sneha-Amballa"
+    }
 }
 ]
