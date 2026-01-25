@@ -1,7 +1,7 @@
 [
     {
-        "title": "Pong - Neon Edition",
-        "description": "A two-player Pong game with neon retro visuals. Features keyboard controls, ball physics, collision detection, score tracking, and retro sound effects. Inspired by the classic arcade game with modern neon aesthetics.",
+        "title": "Brick Breaker",
+        "description": "A classic Brick Breaker (Breakout) game with paddle controls, ball physics, brick grid destruction, power-ups, and level progression. Features score tracking, lives system, and arcade-style gameplay.",
         "tags": [
             "HTML",
             "CSS",
@@ -10,7 +10,7 @@
             "Canvas"
         ],
         "links": {
-            "live": "./pong.html"
+            "live": "./brickbreaker.html"
         },
         "author": {
             "name": "Sneha Amballa",
