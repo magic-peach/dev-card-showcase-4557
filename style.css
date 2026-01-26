@@ -6,7 +6,7 @@
     --bg-primary: #0f172a;
     --bg-secondary: #1e293b;
     --bg-card: #1e293b;
-    --bg-navbar: rgba(30, 41, 59, 0.9);
+    --bg-navbar: rgba(232, 235, 240, 0.9);
     --bg-footer: rgba(30, 41, 59, 0.8);
     --bg-stats: rgba(58, 86, 130, 0.8);
 
@@ -808,6 +808,41 @@ h1::after {
     background: var(--primary-color);
     color: var(--bg-primary);
     border-color: var(--primary-color);
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center;
+    padding: 40px 20px;
+    margin: 30px auto;
+    max-width: 600px;
+    background: var(--bg-card);
+    border: 2px dashed var(--border-primary);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.no-results.show {
+    display: block;
+}
+
+.no-results p {
+    margin: 0;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sort-select {
@@ -1955,65 +1990,167 @@ body.light-mode .share-btn:hover {
 /* =========================================
    FOOTER
    ========================================= */
-.footer {
-    margin-top: 80px;
-    padding: 40px 20px;
-    text-align: center;
-    background: var(--bg-footer);
-    border-top: 1px solid var(--border-primary);
-    border-radius: 20px 20px 0 0;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    transition: border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.footer:hover {
-    border-color: var(--primary-color);
-}
-
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-primary);
-}
-
-.footer p {
-    margin: 15px 0;
-    color: var(--text-secondary);
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.footer a {
-    color: var(--primary-color);
-    text-decoration: none;
+   .footer {
+    background: linear-gradient(180deg, #0f172a, #020617);
+    color: #e5e7eb;
+    padding: 60px 80px 20px;
+    font-family: "Inter", sans-serif;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 50px;
+  }
+  
+  .footer-brand h3 {
+    font-size: 22px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+  }
+  
+  .footer-brand p {
+    margin: 12px 0 20px;
+    color: #9ca3af;
+    font-size: 14px;
+  }
+  
+  .footer-social-icons {
+    display: flex;
+    gap: 14px;
+  }
+  
+  .footer-social-icons a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #020617;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e5e7eb;
     transition: all 0.3s ease;
-    padding: 2px 5px;
-    border-radius: 4px;
-}
-
-.footer a:hover {
-    color: white;
-    background: var(--primary-color);
-    transform: translateY(-2px);
+  }
+  
+  .footer-social-icons a:hover {
+    background: #2563eb;
+    color: #ffffff;
+  }
+  
+  .footer-links h4 {
+    font-size: 16px;
+    margin-bottom: 14px;
+    position: relative;
+    color: #ffffff;
+  }
+  
+  .footer-links h4::after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: #2563eb;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul li a {
     text-decoration: none;
-}
+    color: #9ca3af;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #ffffff;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #1e293b;
+    margin-top: 50px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #9ca3af;
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    .footer-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .footer {
+      padding: 50px 30px;
+    }
+  
+    .footer-container {
+      grid-template-columns: 1fr;
+    }
+  }
 
-.footer a:focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-    border-radius: 2px;
-}
+  /* =========================
+   LIGHT MODE FOOTER STYLES
+   ========================= */
+
+body[data-theme="light"] .footer {
+    background: linear-gradient(180deg, #f8fafc, #e5e7eb);
+    color: #1f2933;
+  }
+  
+  body[data-theme="light"] .footer-brand h3 {
+    color: #111827;
+  }
+  
+  body[data-theme="light"] .footer-brand p {
+    color: #4b5563;
+  }
+  
+  body[data-theme="light"] .footer-social-icons a {
+    background: #e5e7eb;
+    color: #1f2933;
+  }
+  
+  body[data-theme="light"] .footer-social-icons a:hover {
+    background: #2563eb;
+    color: #ffffff;
+  }
+  
+  body[data-theme="light"] .footer-links h4 {
+    color: #111827;
+  }
+  
+  body[data-theme="light"] .footer-links h4::after {
+    background: #2563eb;
+  }
+  
+  body[data-theme="light"] .footer-links ul li a {
+    color: #4b5563;
+  }
+  
+  body[data-theme="light"] .footer-links ul li a:hover {
+    color: #111827;
+  }
+  
+  body[data-theme="light"] .footer-bottom {
+    border-top: 1px solid #d1d5db;
+    color: #4b5563;
+  }
 
 /* =========================================
    CIRCLE CURSOR EFFECT
@@ -2515,722 +2652,7 @@ html {
     font-size: 0.85rem;
 }
 
-/* =========================================
-   CONTRIBUTE PAGE STYLES
-   ========================================= */
 
-.contribute-section {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px 80px;
-}
-
-.contribute-header {
-    text-align: center;
-    margin-bottom: 80px;
-    position: relative;
-}
-
-.header-decoration {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.decoration-circle {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--gradient-primary);
-    opacity: 0.5;
-    animation: pulse 2s infinite;
-}
-
-.decoration-circle:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.decoration-circle:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-/* Steps Grid */
-.contribute-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 80px;
-}
-
-.step-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-primary);
-    border-radius: 20px;
-    padding: 40px 30px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-}
-
-.step-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-color);
-}
-
-.step-number {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    font-size: 8rem;
-    font-weight: 900;
-    color: var(--primary-color);
-    opacity: 0.05;
-    z-index: 0;
-}
-
-.step-icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(56, 189, 248, 0.1);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 25px;
-    z-index: 1;
-}
-
-.step-card h3 {
-    font-size: 1.5rem;
-    margin: 0 0 15px 0;
-    color: var(--text-primary);
-    z-index: 1;
-}
-
-.step-content {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 20px;
-    z-index: 1;
-    flex-grow: 1;
-}
-
-.step-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.step-content li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.step-content li i {
-    color: var(--primary-color);
-    font-size: 0.9rem;
-}
-
-.step-tip {
-    background: rgba(255, 193, 7, 0.1);
-    border: 1px solid rgba(255, 193, 7, 0.2);
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    color: #ffd700;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 1;
-}
-
-.step-tip i {
-    font-size: 1.1rem;
-}
-
-/* Default (Dark Theme) */
-.code-block {
-    background: #0f172a;
-    padding: 15px;
-    border-radius: 8px;
-    position: relative;
-    margin: 15px 0;
-    border: 1px solid var(--border-secondary);
-}
-
-.code-block code {
-    font-family: 'Fira Code', monospace;
-    color: #e5e7eb;
-    font-size: 0.85rem;
-    display: block;
-    overflow-x: auto;
-}
-
-/* Light Theme Fix */
-.light-theme .code-block {
-    background: #f8fafc;
-    /* light background */
-    border: 1px solid #e2e8f0;
-}
-
-.light-theme .code-block code {
-    color: #0f172a;
-    /* dark readable text */
-}
-
-
-.copy-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: var(--text-secondary);
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.copy-btn:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-/* Resources Section */
-.resources-section {
-    margin-bottom: 80px;
-}
-
-.resources-section h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    color: var(--text-primary);
-}
-
-.resources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.resource-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-primary);
-    padding: 30px;
-    border-radius: 16px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.resource-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    background: rgba(56, 189, 248, 0.05);
-}
-
-.resource-card i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.resource-card h4 {
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    margin: 0 0 10px 0;
-}
-
-.resource-card p {
-    color: var(--text-secondary);
-    margin: 0;
-    font-size: 0.95rem;
-}
-
-/* CTA Section */
-.cta-section {
-    background: var(--gradient-card);
-    border-radius: 24px;
-    padding: 60px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--border-primary);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.cta-content {
-    z-index: 1;
-    max-width: 600px;
-}
-
-.cta-content h2 {
-    font-size: 2.5rem;
-    margin: 0 0 15px 0;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.cta-content p {
-    color: var(--text-secondary);
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.cta-btn {
-    padding: 14px 32px;
-    border-radius: 50px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.cta-btn.primary {
-    background: var(--gradient-button);
-    color: white;
-    box-shadow: var(--shadow-glow);
-}
-
-.cta-btn.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
-}
-
-.cta-btn.secondary {
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-.cta-btn.secondary:hover {
-    background: rgba(56, 189, 248, 0.1);
-    transform: translateY(-2px);
-}
-
-.cta-decoration {
-    font-size: 10rem;
-    color: var(--primary-color);
-    opacity: 0.05;
-    position: absolute;
-    right: -20px;
-    bottom: -20px;
-    transform: rotate(-15deg);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .cta-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-    }
-
-    .cta-content h2 {
-        font-size: 2rem;
-    }
-
-    .cta-buttons {
-        justify-content: center;
-    }
-}
-
-/* ===============================
-   ENHANCED TABULAR LIST VIEW (2 cards per row)
-   =============================== */
-
-/* Grid view (default) */
-.card-container.grid-view {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 35px;
-    padding: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* Tabular List view (2 cards per row) */
-.card-container.list-view {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 30px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* Card in list view */
-.card-container.list-view .card {
-    flex-direction: row;
-    align-items: flex-start;
-    min-height: 180px;
-    padding: 20px;
-    text-align: left;
-    border-radius: 15px;
-    margin-bottom: 0;
-    transition: all 0.3s ease;
-    background: var(--bg-card);
-    border: 1px solid var(--border-primary);
-    box-shadow: var(--shadow-sm);
-}
-
-/* Remove hover animations that don't work well in list view */
-.card-container.list-view .card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--primary-color);
-    background: var(--hover-bg);
-}
-
-/* Image in list view */
-.card-container.list-view .card-img {
-    width: 90px;
-    height: 90px;
-    margin: 0 20px 0 0;
-    border-width: 2px;
-    flex-shrink: 0;
-}
-
-.card-container.list-view .card:hover .card-img {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-}
-
-/* Card inner layout for list view */
-.card-container.list-view .card-inner {
-    flex-direction: row;
-    align-items: flex-start;
-    width: 100%;
-    height: 100%;
-}
-
-/* Content wrapper for list view */
-.card-container.list-view .card-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* Name and role container */
-.card-container.list-view .card-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
-}
-
-/* Name in list view */
-.card-container.list-view h2 {
-    font-size: 1.3rem;
-    margin: 0;
-    color: var(--text-primary);
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-/* Role badge in list view */
-.card-container.list-view .role {
-    font-size: 0.8rem;
-    padding: 4px 12px;
-    margin: 0;
-    background: rgba(56, 189, 248, 0.1);
-    color: var(--primary-color);
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    border-radius: 20px;
-    font-weight: 600;
-    display: inline-block;
-    white-space: nowrap;
-}
-
-/* Quote in list view */
-.card-container.list-view p {
-    display: block !important;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    margin: 10px 0 15px 0;
-    line-height: 1.5;
-    flex-grow: 1;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-
-/* Buttons in list view */
-.card-container.list-view .card-actions {
-    margin-top: auto;
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-}
-
-.card-container.list-view .card-btn {
-    padding: 8px 20px;
-    font-size: 0.85rem;
-    min-width: 120px;
-    white-space: nowrap;
-}
-
-/* =========================================
-   LIGHT MODE ADJUSTMENTS FOR LIST VIEW
-   ========================================= */
-body.light-mode .card-container.list-view .card {
-    background: rgba(255, 255, 255, 0.98);
-    border: 1px solid rgba(2, 132, 199, 0.15);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-body.light-mode .card-container.list-view .card:hover {
-    background: white;
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-body.light-mode .card-container.list-view .role {
-    background: rgba(2, 132, 199, 0.1);
-    color: var(--primary-color);
-    border-color: rgba(2, 132, 199, 0.2);
-}
-
-/* =========================================
-   RESPONSIVE TABULAR LIST VIEW
-   ========================================= */
-@media (max-width: 1024px) {
-    .card-container.list-view {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 20px;
-    }
-
-    .card-container.list-view .card {
-        min-height: 170px;
-        padding: 15px;
-    }
-
-    .card-container.list-view .card-img {
-        width: 80px;
-        height: 80px;
-        margin-right: 15px;
-    }
-
-    .card-container.list-view h2 {
-        font-size: 1.2rem;
-    }
-
-    .card-container.list-view p {
-        font-size: 0.85rem;
-        -webkit-line-clamp: 2;
-    }
-
-    .card-container.list-view .card-btn {
-        min-width: 110px;
-        padding: 7px 15px;
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .card-container.list-view {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 15px;
-    }
-
-    .card-container.list-view .card {
-        min-height: 160px;
-        padding: 15px;
-    }
-
-    .card-container.list-view .card-img {
-        width: 70px;
-        height: 70px;
-        margin-right: 15px;
-    }
-
-    .card-container.list-view h2 {
-        font-size: 1.1rem;
-    }
-
-    .card-container.list-view .role {
-        font-size: 0.75rem;
-        padding: 3px 10px;
-    }
-
-    .card-container.list-view p {
-        font-size: 0.85rem;
-        -webkit-line-clamp: 2;
-        margin: 8px 0 12px 0;
-    }
-
-    .card-container.list-view .card-actions {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .card-container.list-view .card-btn {
-        min-width: 100px;
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .card-container.list-view .card {
-        flex-direction: column;
-        text-align: center;
-        min-height: auto;
-        padding: 20px;
-    }
-
-    .card-container.list-view .card-inner {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card-container.list-view .card-img {
-        margin: 0 auto 15px auto;
-    }
-
-    .card-container.list-view .card-header {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 12px;
-    }
-
-    .card-container.list-view .card-content {
-        text-align: center;
-    }
-
-    .card-container.list-view .card-actions {
-        justify-content: center;
-        margin-top: 15px;
-    }
-
-    .card-container.list-view .card-btn {
-        min-width: 90px;
-        padding: 8px 15px;
-    }
-}
-
-/* =========================================
-   VIEW TOGGLE BUTTON STYLES
-   ========================================= */
-.view-toggle-btn {
-    padding: 10px 15px;
-    border-radius: 50px;
-    border: 1px solid var(--border-primary);
-    background: var(--bg-card);
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 44px;
-    min-height: 44px;
-    font-size: 1.1rem;
-}
-
-.view-toggle-btn:hover {
-    background: var(--primary-color);
-    color: var(--bg-primary);
-    transform: scale(1.05);
-    box-shadow: var(--shadow-sm);
-}
-
-.view-toggle-btn:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-/* Button icon states */
-.view-toggle-btn .fa-list {
-    display: none;
-}
-
-.view-toggle-btn .fa-th-large {
-    display: inline;
-}
-
-/* When in list view, show list icon */
-.card-container.list-view~.search-filter-container .view-toggle-btn .fa-list {
-    display: inline;
-}
-
-.card-container.list-view~.search-filter-container .view-toggle-btn .fa-th-large {
-    display: none;
-}
-
-/* =========================================
-   SMOOTH TRANSITION BETWEEN VIEWS
-   ========================================= */
-.card-container {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card-container.grid-view .card {
-    animation: fadeInUp 0.5s ease forwards;
-}
-
-.card-container.list-view .card {
-    animation: fadeIn 0.4s ease forwards;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
 
 /* ===============================
    PROJECTS PAGE
@@ -4763,368 +4185,128 @@ body[data-theme="light"] .toast-message {
 
 
 
-/ *   = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-       B A D G E   S Y S T E M   S T Y L E S 
-       = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =   * / 
- 
- / *   B a d g e   c o n t a i n e r   o n   c a r d s   * / 
- . c a r d - b a d g e s   { 
-         d i s p l a y :   f l e x ; 
-         f l e x - w r a p :   w r a p ; 
-         g a p :   8 p x ; 
-         j u s t i f y - c o n t e n t :   c e n t e r ; 
-         a l i g n - i t e m s :   c e n t e r ; 
-         m a r g i n :   1 5 p x   0 ; 
-         m i n - h e i g h t :   3 0 p x ; 
- } 
- 
- / *   I n d i v i d u a l   b a d g e   s t y l i n g   * / 
- . b a d g e   { 
-         d i s p l a y :   i n l i n e - f l e x ; 
-         a l i g n - i t e m s :   c e n t e r ; 
-         g a p :   6 p x ; 
-         p a d d i n g :   6 p x   1 2 p x ; 
-         b o r d e r - r a d i u s :   2 0 p x ; 
-         c o l o r :   w h i t e ; 
-         f o n t - s i z e :   0 . 7 5 r e m ; 
-         f o n t - w e i g h t :   6 0 0 ; 
-         t e x t - s h a d o w :   0   1 p x   2 p x   r g b a ( 0 ,   0 ,   0 ,   0 . 3 ) ; 
-         b o x - s h a d o w :   0   2 p x   8 p x   r g b a ( 0 ,   0 ,   0 ,   0 . 1 5 ) ; 
-         t r a n s i t i o n :   a l l   0 . 3 s   e a s e ; 
-         w h i t e - s p a c e :   n o w r a p ; 
-         b o r d e r :   1 p x   s o l i d   r g b a ( 2 5 5 ,   2 5 5 ,   2 5 5 ,   0 . 2 ) ; 
- } 
- 
- . b a d g e : h o v e r   { 
-         t r a n s f o r m :   t r a n s l a t e Y ( - 2 p x )   s c a l e ( 1 . 0 5 ) ; 
-         b o x - s h a d o w :   0   4 p x   1 2 p x   r g b a ( 0 ,   0 ,   0 ,   0 . 2 5 ) ; 
- } 
- 
- / *   = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-       A C H I E V E M E N T S   P A G E   S T Y L E S 
-       = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =   * / 
- 
- / *   A c h i e v e m e n t s   H e r o   S e c t i o n   * / 
- . a c h i e v e m e n t s - h e r o   { 
-         t e x t - a l i g n :   c e n t e r ; 
-         p a d d i n g :   8 0 p x   2 0 p x   6 0 p x ; 
-         b a c k g r o u n d :   l i n e a r - g r a d i e n t ( 1 3 5 d e g ,   v a r ( - - b g - p r i m a r y )   0 % ,   v a r ( - - b g - s e c o n d a r y )   1 0 0 % ) ; 
-         p o s i t i o n :   r e l a t i v e ; 
-         o v e r f l o w :   h i d d e n ; 
- } 
- 
- . a c h i e v e m e n t s - h e r o : : b e f o r e   { 
-         c o n t e n t :   ' ' ; 
-         p o s i t i o n :   a b s o l u t e ; 
-         t o p :   0 ; 
-         l e f t :   0 ; 
-         r i g h t :   0 ; 
-         b o t t o m :   0 ; 
-         b a c k g r o u n d :   r a d i a l - g r a d i e n t ( c i r c l e   a t   3 0 %   4 0 % ,   r g b a ( 5 6 ,   1 8 9 ,   2 4 8 ,   0 . 1 )   0 % ,   t r a n s p a r e n t   5 0 % ) , 
-                                 r a d i a l - g r a d i e n t ( c i r c l e   a t   7 0 %   6 0 % ,   r g b a ( 1 3 9 ,   9 2 ,   2 4 6 ,   0 . 1 )   0 % ,   t r a n s p a r e n t   5 0 % ) ; 
-         a n i m a t i o n :   g r a d i e n t S h i f t   2 0 s   e a s e - i n - o u t   i n f i n i t e ; 
- } 
- 
- . h e r o - c o n t e n t   { 
-         p o s i t i o n :   r e l a t i v e ; 
-         z - i n d e x :   1 ; 
-         m a x - w i d t h :   8 0 0 p x ; 
-         m a r g i n :   0   a u t o ; 
- } 
- 
- . a c h i e v e m e n t s - h e r o   h 1   { 
-         f o n t - s i z e :   3 . 5 r e m ; 
-         m a r g i n - b o t t o m :   2 0 p x ; 
-         b a c k g r o u n d :   v a r ( - - g r a d i e n t - p r i m a r y ) ; 
-         - w e b k i t - b a c k g r o u n d - c l i p :   t e x t ; 
-         b a c k g r o u n d - c l i p :   t e x t ; 
-         c o l o r :   t r a n s p a r e n t ; 
- } 
- 
- . a c h i e v e m e n t s - h e r o   p   { 
-         f o n t - s i z e :   1 . 3 r e m ; 
-         c o l o r :   v a r ( - - t e x t - s e c o n d a r y ) ; 
-         m a r g i n - b o t t o m :   4 0 p x ; 
- } 
- 
- . h e r o - s t a t s   { 
-         d i s p l a y :   f l e x ; 
-         j u s t i f y - c o n t e n t :   c e n t e r ; 
-         g a p :   4 0 p x ; 
-         f l e x - w r a p :   w r a p ; 
- } 
- 
- . s t a t - i t e m   { 
-         t e x t - a l i g n :   c e n t e r ; 
- } 
- 
- . s t a t - n u m b e r   { 
-         d i s p l a y :   b l o c k ; 
-         f o n t - s i z e :   2 . 5 r e m ; 
-         f o n t - w e i g h t :   8 0 0 ; 
-         b a c k g r o u n d :   v a r ( - - g r a d i e n t - p r i m a r y ) ; 
-         - w e b k i t - b a c k g r o u n d - c l i p :   t e x t ; 
-         b a c k g r o u n d - c l i p :   t e x t ; 
-         c o l o r :   t r a n s p a r e n t ; 
-         l i n e - h e i g h t :   1 ; 
-         m a r g i n - b o t t o m :   8 p x ; 
- } 
- 
- . s t a t - l a b e l   { 
-         c o l o r :   v a r ( - - t e x t - s e c o n d a r y ) ; 
-         f o n t - s i z e :   0 . 9 r e m ; 
-         f o n t - w e i g h t :   5 0 0 ; 
-         t e x t - t r a n s f o r m :   u p p e r c a s e ; 
-         l e t t e r - s p a c i n g :   1 p x ; 
- } 
- 
- / *   B a d g e s   S e c t i o n   * / 
- . b a d g e s - s e c t i o n   { 
-         p a d d i n g :   8 0 p x   0 ; 
-         b a c k g r o u n d :   v a r ( - - b g - p r i m a r y ) ; 
- } 
- 
- . b a d g e s - s e c t i o n   . c o n t a i n e r   { 
-         m a x - w i d t h :   1 2 0 0 p x ; 
-         m a r g i n :   0   a u t o ; 
-         p a d d i n g :   0   2 0 p x ; 
- } 
- 
- . b a d g e s - g r i d   { 
-         d i s p l a y :   g r i d ; 
-         g r i d - t e m p l a t e - c o l u m n s :   r e p e a t ( a u t o - f i t ,   m i n m a x ( 3 5 0 p x ,   1 f r ) ) ; 
-         g a p :   3 0 p x ; 
- } 
- 
- / *   B a d g e   S h o w c a s e   C a r d   * / 
- . b a d g e - s h o w c a s e - c a r d   { 
-         b a c k g r o u n d :   v a r ( - - b g - c a r d ) ; 
-         b o r d e r :   1 p x   s o l i d   v a r ( - - b o r d e r - p r i m a r y ) ; 
-         b o r d e r - r a d i u s :   2 0 p x ; 
-         p a d d i n g :   3 0 p x ; 
-         t e x t - a l i g n :   c e n t e r ; 
-         t r a n s i t i o n :   a l l   0 . 4 s   e a s e ; 
-         b o x - s h a d o w :   v a r ( - - s h a d o w - m d ) ; 
-         b a c k d r o p - f i l t e r :   b l u r ( 1 0 p x ) ; 
- } 
- 
- . b a d g e - s h o w c a s e - c a r d : h o v e r   { 
-         t r a n s f o r m :   t r a n s l a t e Y ( - 8 p x ) ; 
-         b o x - s h a d o w :   v a r ( - - s h a d o w - l g ) ; 
-         b o r d e r - c o l o r :   v a r ( - - p r i m a r y - c o l o r ) ; 
- } 
- 
- . b a d g e - d i s p l a y   { 
-         m a r g i n - b o t t o m :   2 5 p x ; 
- } 
- 
- . b a d g e - l a r g e   { 
-         d i s p l a y :   i n l i n e - f l e x ; 
-         a l i g n - i t e m s :   c e n t e r ; 
-         j u s t i f y - c o n t e n t :   c e n t e r ; 
-         g a p :   1 2 p x ; 
-         p a d d i n g :   2 0 p x   3 0 p x ; 
-         b o r d e r - r a d i u s :   2 5 p x ; 
-         c o l o r :   w h i t e ; 
-         f o n t - s i z e :   1 . 2 r e m ; 
-         f o n t - w e i g h t :   7 0 0 ; 
-         b o x - s h a d o w :   0   8 p x   2 5 p x   r g b a ( 0 ,   0 ,   0 ,   0 . 2 ) ; 
-         b o r d e r :   2 p x   s o l i d   r g b a ( 2 5 5 ,   2 5 5 ,   2 5 5 ,   0 . 2 ) ; 
-         t r a n s i t i o n :   a l l   0 . 3 s   e a s e ; 
- } 
- 
- . b a d g e - l a r g e : h o v e r   { 
-         t r a n s f o r m :   s c a l e ( 1 . 0 5 ) ; 
-         b o x - s h a d o w :   0   1 2 p x   3 5 p x   r g b a ( 0 ,   0 ,   0 ,   0 . 3 ) ; 
- } 
- 
- . b a d g e - i c o n   { 
-         f o n t - s i z e :   1 . 8 r e m ; 
- } 
- 
- . b a d g e - n a m e   { 
-         t e x t - s h a d o w :   0   2 p x   4 p x   r g b a ( 0 ,   0 ,   0 ,   0 . 3 ) ; 
- } 
- 
- . b a d g e - i n f o   h 3   { 
-         c o l o r :   v a r ( - - t e x t - p r i m a r y ) ; 
-         f o n t - s i z e :   1 . 4 r e m ; 
-         m a r g i n - b o t t o m :   1 5 p x ; 
- } 
- 
- . b a d g e - d e s c r i p t i o n   { 
-         c o l o r :   v a r ( - - t e x t - s e c o n d a r y ) ; 
-         f o n t - s i z e :   1 r e m ; 
-         l i n e - h e i g h t :   1 . 6 ; 
-         m a r g i n - b o t t o m :   2 0 p x ; 
- } 
- 
- . b a d g e - c r i t e r i a   { 
-         b a c k g r o u n d :   r g b a ( 5 6 ,   1 8 9 ,   2 4 8 ,   0 . 1 ) ; 
-         b o r d e r :   1 p x   s o l i d   r g b a ( 5 6 ,   1 8 9 ,   2 4 8 ,   0 . 2 ) ; 
-         b o r d e r - r a d i u s :   1 2 p x ; 
-         p a d d i n g :   1 5 p x ; 
-         m a r g i n - b o t t o m :   2 0 p x ; 
-         t e x t - a l i g n :   l e f t ; 
- } 
- 
- . b a d g e - c r i t e r i a   h 4   { 
-         c o l o r :   v a r ( - - p r i m a r y - c o l o r ) ; 
-         f o n t - s i z e :   1 r e m ; 
-         m a r g i n - b o t t o m :   8 p x ; 
-         m a r g i n - t o p :   0 ; 
- } 
- 
- . b a d g e - c r i t e r i a   p   { 
-         c o l o r :   v a r ( - - t e x t - s e c o n d a r y ) ; 
-         m a r g i n :   0 ; 
-         f o n t - s i z e :   0 . 9 r e m ; 
-         l i n e - h e i g h t :   1 . 5 ; 
- } 
- 
- . b a d g e - s t a t s   { 
-         p a d d i n g - t o p :   1 5 p x ; 
-         b o r d e r - t o p :   1 p x   s o l i d   v a r ( - - b o r d e r - s e c o n d a r y ) ; 
- } 
- 
- . e a r n e d - c o u n t   { 
-         c o l o r :   v a r ( - - s u c c e s s - c o l o r ) ; 
-         f o n t - s i z e :   0 . 9 r e m ; 
-         f o n t - w e i g h t :   6 0 0 ; 
- } 
- 
- / *   H o w   I t   W o r k s   S e c t i o n   * / 
- . h o w - i t - w o r k s   { 
-         p a d d i n g :   8 0 p x   0 ; 
-         b a c k g r o u n d :   v a r ( - - b g - s e c o n d a r y ) ; 
- } 
- 
- . h o w - i t - w o r k s   . c o n t a i n e r   { 
-         m a x - w i d t h :   1 2 0 0 p x ; 
-         m a r g i n :   0   a u t o ; 
-         p a d d i n g :   0   2 0 p x ; 
- } 
- 
- . h o w - i t - w o r k s   h 2   { 
-         t e x t - a l i g n :   c e n t e r ; 
-         f o n t - s i z e :   2 . 5 r e m ; 
-         m a r g i n - b o t t o m :   6 0 p x ; 
-         b a c k g r o u n d :   v a r ( - - g r a d i e n t - p r i m a r y ) ; 
-         - w e b k i t - b a c k g r o u n d - c l i p :   t e x t ; 
-         b a c k g r o u n d - c l i p :   t e x t ; 
-         c o l o r :   t r a n s p a r e n t ; 
- } 
- 
- . s t e p s - g r i d   { 
-         d i s p l a y :   g r i d ; 
-         g r i d - t e m p l a t e - c o l u m n s :   r e p e a t ( a u t o - f i t ,   m i n m a x ( 2 5 0 p x ,   1 f r ) ) ; 
-         g a p :   3 0 p x ; 
- } 
- 
- . s t e p - c a r d   { 
-         b a c k g r o u n d :   v a r ( - - b g - c a r d ) ; 
-         b o r d e r :   1 p x   s o l i d   v a r ( - - b o r d e r - p r i m a r y ) ; 
-         b o r d e r - r a d i u s :   1 6 p x ; 
-         p a d d i n g :   3 0 p x   2 5 p x ; 
-         t e x t - a l i g n :   c e n t e r ; 
-         t r a n s i t i o n :   a l l   0 . 3 s   e a s e ; 
-         b o x - s h a d o w :   v a r ( - - s h a d o w - s m ) ; 
-         b a c k d r o p - f i l t e r :   b l u r ( 1 0 p x ) ; 
- } 
- 
- . s t e p - c a r d : h o v e r   { 
-         t r a n s f o r m :   t r a n s l a t e Y ( - 5 p x ) ; 
-         b o x - s h a d o w :   v a r ( - - s h a d o w - m d ) ; 
-         b o r d e r - c o l o r :   v a r ( - - p r i m a r y - c o l o r ) ; 
- } 
- 
- . s t e p - i c o n   { 
-         f o n t - s i z e :   2 . 5 r e m ; 
-         m a r g i n - b o t t o m :   2 0 p x ; 
-         d i s p l a y :   b l o c k ; 
- } 
- 
- . s t e p - c a r d   h 3   { 
-         c o l o r :   v a r ( - - t e x t - p r i m a r y ) ; 
-         f o n t - s i z e :   1 . 3 r e m ; 
-         m a r g i n - b o t t o m :   1 5 p x ; 
- } 
- 
- . s t e p - c a r d   p   { 
-         c o l o r :   v a r ( - - t e x t - s e c o n d a r y ) ; 
-         l i n e - h e i g h t :   1 . 6 ; 
-         m a r g i n :   0 ; 
- } 
- 
- / *   R e s p o n s i v e   D e s i g n   f o r   A c h i e v e m e n t s   P a g e   * / 
- @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   { 
-         . a c h i e v e m e n t s - h e r o   { 
-                 p a d d i n g :   6 0 p x   2 0 p x   4 0 p x ; 
-         } 
- 
-         . a c h i e v e m e n t s - h e r o   h 1   { 
-                 f o n t - s i z e :   2 . 5 r e m ; 
-         } 
- 
-         . a c h i e v e m e n t s - h e r o   p   { 
-                 f o n t - s i z e :   1 . 1 r e m ; 
-         } 
- 
-         . h e r o - s t a t s   { 
-                 g a p :   2 0 p x ; 
-         } 
- 
-         . s t a t - n u m b e r   { 
-                 f o n t - s i z e :   2 r e m ; 
-         } 
- 
-         . b a d g e s - g r i d   { 
-                 g r i d - t e m p l a t e - c o l u m n s :   1 f r ; 
-                 g a p :   2 0 p x ; 
-         } 
- 
-         . b a d g e - s h o w c a s e - c a r d   { 
-                 p a d d i n g :   2 5 p x   2 0 p x ; 
-         } 
- 
-         . b a d g e - l a r g e   { 
-                 p a d d i n g :   1 5 p x   2 5 p x ; 
-                 f o n t - s i z e :   1 r e m ; 
-         } 
- 
-         . b a d g e - i c o n   { 
-                 f o n t - s i z e :   1 . 5 r e m ; 
-         } 
- 
-         . s t e p s - g r i d   { 
-                 g r i d - t e m p l a t e - c o l u m n s :   1 f r ; 
-                 g a p :   2 0 p x ; 
-         } 
- 
-         . h o w - i t - w o r k s   h 2   { 
-                 f o n t - s i z e :   2 r e m ; 
-                 m a r g i n - b o t t o m :   4 0 p x ; 
-         } 
- } 
- 
- @ m e d i a   ( m a x - w i d t h :   4 8 0 p x )   { 
-         . a c h i e v e m e n t s - h e r o   h 1   { 
-                 f o n t - s i z e :   2 r e m ; 
-         } 
- 
-         . h e r o - s t a t s   { 
-                 f l e x - d i r e c t i o n :   c o l u m n ; 
-                 g a p :   1 5 p x ; 
-         } 
- 
-         . b a d g e - s h o w c a s e - c a r d   { 
-                 p a d d i n g :   2 0 p x   1 5 p x ; 
-         } 
- 
-         . b a d g e - l a r g e   { 
-                 p a d d i n g :   1 2 p x   2 0 p x ; 
-                 f o n t - s i z e :   0 . 9 r e m ; 
-         } 
- } 
- 
- 
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:40px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #0b1d3a, #0f2c4f);
+  border-radius: 14px;
+}
+
+.nav-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4fd1ff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  list-style: none;
+}
+.nav-links li{
+    margin-right: 1rem;
+}
+.nav-links li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px; 
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.drop-btn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links a:hover,
+.drop-btn:hover {
+  color: #4fd1ff;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #0f2c4f;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 180px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.dropdown-menu li {
+  padding: 8px 10px;
+}
+
+.dropdown-menu a {
+  font-size: 0.9rem;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Right side */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: white;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
