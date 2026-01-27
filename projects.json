@@ -6096,6 +6096,18 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Submarine Salvage",
+    "description": "Pilot a mini-sub to recover wreckage underwater. Features 3D underwater physics, sonar scanning, grab arms, and limited power/oxygen resources.",
+    "tags": ["HTML", "CSS", "JavaScript", "Three.js", "Game", "3D", "Underwater", "Physics"],
+    "links": {
+      "live": "./projects/Submarine-Salvage/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
 
