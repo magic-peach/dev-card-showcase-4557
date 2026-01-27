@@ -1218,6 +1218,22 @@
             "github": "https://github.com/neeru24"
         }
     },
+        {
+        "title": "AI Prompt Generator",
+        "description": "A tool that generates AI prompts based on user input and preferences.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/AIPrompt/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
     {
         "title": "Horse Run Game",
         "description": "An exciting endless runner game where players control a horse to jump over obstacles and collect coins. Features increasing speed and score tracking for added challenge.",
