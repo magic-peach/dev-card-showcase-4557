@@ -72,6 +72,23 @@
         }
     },
     {
+        "title": "Font Previewer Lab",
+        "description": "An advanced font previewing tool designed as a typography playground. Features live text editing, real-time font switching via interactive font cards, adjustable size and letter spacing controls, and a modern designer-focused UI for exploring typography visually.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "UI/UX"
+        ],
+        "links": {
+            "live": "./projects/font-previewer/"
+        },
+        "author": {
+            "name": "Anvesha",
+            "github": "https://github.com/your-github-username"
+        }
+},
+    {
         "title": "Gravity Golf",
         "description": "A physics-based puzzle golf game where players launch a ball around planets using gravity wells to reach the goal flag. Features slingshot mechanics, orbital trajectories, par scoring system, and progressive difficulty levels.",
         "tags": [
