@@ -1727,6 +1727,18 @@
             "github": "https://github.com/CodeMaster11000"
         }
     },
+       {
+    "title": "Window Size Tester",
+    "description": "A simple web tool that displays the current browser window dimensions in real-time, updating as the window is resized. Useful for developers and designers to test responsive layouts.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "live": "./projects/current-window/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
     {
         "title": "IRIDUM Game",
         "description": "An engaging web-based game where players control a character to navigate through obstacles and collect iridium crystals. Features smooth animations, scoring system, and increasing difficulty levels for an exciting gaming experience.",
