@@ -6875,6 +6875,26 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "CRT Screen Effect Simulator",
+    "description": "A CRT television screen effect simulator with CSS scanlines, screen flicker animation, and slight distortion effects. Enhances storytelling and retro-themed projects visually.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Animation",
+      "Retro",
+      "Visual Effects",
+      "CRT"
+    ],
+    "links": {
+      "live": "./projects/CRT-Screen-Effect-Simulator/"
+    },
+    "author": {
+      "name": "Sneha-Amballa",
+      "github": "https://github.com/Sneha-Amballa"
+    }
   }
 ]
 
