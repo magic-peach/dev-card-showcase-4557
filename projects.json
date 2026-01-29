@@ -1551,6 +1551,22 @@
         }
     },
     {
+        "title": "Floating Books Animation",
+        "description": "An interactive animation featuring books that float and respond to user interactions, creating a visually appealing experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/FloatingBooks/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
+    {
         "title": "Weather Sculprate Game",
         "description": "An engaging weather-themed game where players sculpt clouds to match given weather conditions. Features multiple levels, scoring, and interactive gameplay.",
         "tags": [
