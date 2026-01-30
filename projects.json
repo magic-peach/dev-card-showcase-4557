@@ -1582,6 +1582,23 @@
             "github": "https://github.com/neeru24"
         }
     },
+
+    {
+        "title": "Quote Wallpaper Generator",
+        "description": "A web application that generates beautiful quote wallpapers with customizable fonts, colors, and layouts.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/QuoteWallpaper/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
     {
         "title": "AI Prompt Generator",
         "description": "A tool that generates AI prompts based on user input and preferences.",
