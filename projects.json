@@ -128,6 +128,22 @@
             "github": "https://github.com/Gupta-02"
         }
     },
+        {
+        "title": "Toast notification playground",
+        "description": "A web application that demonstrates various styles and types of toast notifications. Users can trigger different notifications to see how they appear and behave.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/Toast-Notification-Playground/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
      {
         "title": "Tilted Words",
         "description": "Tilted words .",
