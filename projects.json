@@ -184,6 +184,25 @@
             "github": "https://github.com/Gupta-02"
         }
     },
+    {
+    "title": "Fitness Stats Tracker",
+    "description": "A fully fledged fitness tracking dashboard that allows users to log daily activity metrics and monitor overall progress over time. Features a modern dark-themed UI, persistent local storage, real-time calorie calculations, and a responsive left–right dashboard layout that presents summaries and historical data in a clean, intuitive manner.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "UI/UX",
+        "Dashboard",
+        "Health"
+    ],
+    "links": {
+        "live": "./projects/fitness-stats-tracker/"
+    },
+    "author": {
+        "name": "Anvesha",
+        "github": "https://github.com/your-github-username"
+    }
+},
         {
         "title": "Toast notification playground",
         "description": "A web application that demonstrates various styles and types of toast notifications. Users can trigger different notifications to see how they appear and behave.",
