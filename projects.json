@@ -3244,6 +3244,22 @@
             "github": "https://github.com/omkarhole"
         }
     },
+     {
+        "title": "Digital Creatures playground",
+        "description": "A web application that allows users to create and interact with digital creatures in a virtual environment. Users can customize their creatures' appearance and behaviors, and observe how they interact with each other and their surroundings.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/digital-creatures/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Number Guess",
         "description": "Think you can outsmart the number?",
