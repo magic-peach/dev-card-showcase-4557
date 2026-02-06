@@ -3823,6 +3823,22 @@
             "github": "https://github.com/your-github-username"
         }
     },
+        {
+        "title": "3D QR Generator",
+        "description": "A web application that generates a 3D QR code based on user input. The QR code can be customized with different colors and styles, and users can interact with it in a 3D space.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/3D/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Focus Timer",
         "description": "A productivity-focused timer that allows users to set custom focus and break durations, control the timer with start, pause, and reset actions, and track completed focus sessions to build consistent work habits.",
