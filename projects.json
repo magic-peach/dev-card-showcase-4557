@@ -187,6 +187,24 @@
             "github": "https://github.com/your-github-username"
         }
     },
+    
+    {
+        "title": "CSS color Name Finder",
+        "description": "A web application that allows users to input a color code (hex, RGB, or HSL) and returns the closest CSS color name along with its code. Features a user-friendly interface, real-time color matching, and a comprehensive color database for accurate results.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/Color-Finder/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Elevator Control Simulator Game",
         "description": "A polished gamified elevator control game where users operate a multi-floor elevator in a neon black & blue building. Features include calling the elevator from any floor, animated doors, queue management, direction indicators, emergency stop, and interactive responsive controls. Designed for an arcade-style immersive experience.",
