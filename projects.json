@@ -679,6 +679,23 @@
             "github": "https://github.com/your-github-username"
         }
     },
+     {
+        "title": "Gradient Playground",
+        "description": "A tool to create and customize CSS gradients through the magic of CSS variables. Features a live preview, adjustable angles, and hue settings for a visually engaging experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/Gradient-Playground/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Personal Portfolio Builder",
         "description": "A tool to create and customize your personal portfolio with ease. Features a user-friendly interface, live preview, and export options for a professional online presence.",
