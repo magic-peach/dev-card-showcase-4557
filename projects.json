@@ -755,6 +755,23 @@
         }
     },
      {
+        "title": "3D Periodic Table",
+        "description": "An interactive 3D periodic table that allows users to explore elements in a visually engaging way. Features include rotating the table, clicking on elements for detailed information, and a modern design with smooth animations.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/Periodic-Table-project/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
+     {
         "title": "Gradient Playground",
         "description": "A tool to create and customize CSS gradients through the magic of CSS variables. Features a live preview, adjustable angles, and hue settings for a visually engaging experience.",
         "tags": [
