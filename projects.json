@@ -805,6 +805,23 @@
             "github": "https://github.com/omkarhole"
         }
     },
+      {
+        "title": "Liquid glass animation",
+        "description": "A visually engaging liquid glass animation effect using CSS and JavaScript. Features smooth transitions, interactive elements, and customizable settings for a modern UI experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/Liquid-Glass-Animation/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
      {
         "title": "Colors Contrast Checker",
         "description": "A utility tool to check the contrast between different colors and ensure WCAG compliance. Features a user-friendly interface, real-time contrast calculation, and visual feedback for accessibility.",
