@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Search Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #3a7bd5);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 15px 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info-box {
+            text-align: center;
+        }
+        
+        .info-title {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .scene-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .scene-title {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #FFD700;
+        }
+        
+        .scene {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            background-color: #2c3e50;
+            position: relative;
+            overflow: hidden;
+            cursor: crosshair;
+            background-image: radial-gradient(circle at 30% 30%, #34495e 0%, #2c3e50 100%);
+        }
+        
+        .target-list-container {
+            flex: 0 0 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .target-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #FFD700;
+        }
+        
+        .target-list {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .target-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .target-item.found {
+            background-color: rgba(46, 204, 113, 0.3);
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        
+        .target-icon {
+            font-size: 1.8rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .target-name {
+            font-size: 1.2rem;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        
+        button {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        #start-btn {
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            color: white;
+        }
+        
+        #reset-btn {
+            background: linear-gradient(to right, #FF416C, #FF4B2B);
+            color: white;
+        }
+        
+        #next-btn {
+            background: linear-gradient(to right, #3a7bd5, #00d2ff);
+            color: white;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .game-object {
+            position: absolute;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .game-object:hover {
+            transform: scale(1.1);
+        }
+        
+        .game-object.found {
+            opacity: 0.5;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+        
+        .instructions {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .instructions h3 {
+            color: #FFD700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .instructions p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .level-indicator {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 1100px) {
+            .game-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .target-list-container {
+                width: 100%;
+                max-width: 800px;
+            }
+            
+            .scene {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .game-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .scene {
+                height: 350px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .controls {
+                flex-wrap: wrap;
+            }
+        }
+        
+        .click-feedback {
+            position: absolute;
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1.5rem;
+            pointer-events: none;
+            animation: floatUp 1s forwards;
+        }
+        
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-50px); opacity: 0; }
+        }
+        
+        .game-over {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            z-index: 10;
+            display: none;
+        }
+        
+        .game-over h2 {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+        
+        .game-over p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-search"></i> Visual Search Challenge</h1>
+            <p class="subtitle">Find all the hidden objects before time runs out!</p>
+        </header>
+        
+        <div class="game-info">
+            <div class="info-box">
+                <div class="info-title">Time Remaining</div>
+                <div class="info-value" id="timer">60s</div>
+            </div>
+            <div class="info-box">
+                <div class="info-title">Level</div>
+                <div class="info-value" id="level">1</div>
+            </div>
+            <div class="info-box">
+                <div class="info-title">Objects Found</div>
+                <div class="info-value" id="found">0/5</div>
+            </div>
+            <div class="info-box">
+                <div class="info-title">Score</div>
+                <div class="info-value" id="score">0</div>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div class="scene-container">
+                <h2 class="scene-title">Find the Hidden Objects <span class="level-indicator">Level <span id="level-indicator">1</span></span></h2>
+                <div class="scene" id="scene">
+                    <!-- Game objects will be dynamically added here -->
+                </div>
+            </div>
+            
+            <div class="target-list-container">
+                <h2 class="target-title">Objects to Find</h2>
+                <ul class="target-list" id="target-list">
+                    <!-- Target list will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="start-btn"><i class="fas fa-play"></i> Start Game</button>
+            <button id="reset-btn"><i class="fas fa-redo"></i> Reset Level</button>
+            <button id="next-btn" disabled><i class="fas fa-forward"></i> Next Level</button>
+        </div>
+        
+        <div class="instructions">
+            <h3>How to Play</h3>
+            <p><i class="fas fa-mouse-pointer"></i> <strong>Click on objects</strong> in the scene that match the items in the list.</p>
+            <p><i class="fas fa-clock"></i> <strong>Find all objects</strong> before the timer runs out to advance to the next level.</p>
+            <p><i class="fas fa-star"></i> <strong>Earn more points</strong> by finding objects quickly and advancing to higher levels.</p>
+            <p><i class="fas fa-trophy"></i> <strong>Complete all 5 levels</strong> to win the game!</p>
+        </div>
+    </div>
+
+    <script>
+        // Game configuration
+        const gameConfig = {
+            levels: 5,
+            timePerLevel: 60, // seconds
+            baseObjectsPerLevel: 5,
+            objects: [
+                { name: "Star", icon: "fa-star", color: "#FFD700", emoji: "⭐" },
+                { name: "Heart", icon: "fa-heart", color: "#FF416C", emoji: "❤️" },
+                { name: "Music Note", icon: "fa-music", color: "#9B59B6", emoji: "🎵" },
+                { name: "Key", icon: "fa-key", color: "#FFA500", emoji: "🔑" },
+                { name: "Gem", icon: "fa-gem", color: "#00d2ff", emoji: "💎" },
+                { name: "Apple", icon: "fa-apple-alt", color: "#FF4B2B", emoji: "🍎" },
+                { name: "Book", icon: "fa-book", color: "#8B4513", emoji: "📚" },
+                { name: "Camera", icon: "fa-camera", color: "#34495E", emoji: "📷" },
+                { name: "Globe", icon: "fa-globe-americas", color: "#3498DB", emoji: "🌎" },
+                { name: "Coffee Cup", icon: "fa-coffee", color: "#8B4513", emoji: "☕" },
+                { name: "Lightbulb", icon: "fa-lightbulb", color: "#F1C40F", emoji: "💡" },
+                { name: "Cloud", icon: "fa-cloud", color: "#ECF0F1", emoji: "☁️" }
+            ],
+            sceneObjects: [
+                "fa-circle", "fa-square", "fa-triangle", "fa-hexagon", 
+                "fa-ellipsis-h", "fa-times", "fa-plus", "fa-minus",
+                "fa-asterisk", "fa-certificate", "fa-dot-circle"
+            ]
+        };
+
+        // Game state
+        let gameState = {
+            currentLevel: 1,
+            score: 0,
+            timeLeft: gameConfig.timePerLevel,
+            objectsFound: 0,
+            totalObjects: gameConfig.baseObjectsPerLevel,
+            gameActive: false,
+            timerInterval: null,
+            currentTargets: [],
+            foundTargets: [],
+            sceneObjects: []
+        };
+
+        // DOM elements
+        const scene = document.getElementById('scene');
+        const targetList = document.getElementById('target-list');
+        const timerElement = document.getElementById('timer');
+        const levelElement = document.getElementById('level');
+        const foundElement = document.getElementById('found');
+        const scoreElement = document.getElementById('score');
+        const levelIndicator = document.getElementById('level-indicator');
+        const startBtn = document.getElementById('start-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        // Initialize game
+        function initGame() {
+            clearInterval(gameState.timerInterval);
+            gameState.currentLevel = 1;
+            gameState.score = 0;
+            gameState.timeLeft = gameConfig.timePerLevel;
+            gameState.objectsFound = 0;
+            gameState.totalObjects = gameConfig.baseObjectsPerLevel;
+            gameState.gameActive = false;
+            gameState.currentTargets = [];
+            gameState.foundTargets = [];
+            gameState.sceneObjects = [];
+            
+            updateUI();
+            generateLevel();
+            setupEventListeners();
+        }
+
+        // Generate a level
+        function generateLevel() {
+            // Clear previous objects
+            scene.innerHTML = '';
+            targetList.innerHTML = '';
+            gameState.currentTargets = [];
+            gameState.foundTargets = [];
+            gameState.sceneObjects = [];
+            
+            // Set level-specific values
+            gameState.totalObjects = gameConfig.baseObjectsPerLevel + Math.floor(gameState.currentLevel / 2);
+            gameState.timeLeft = gameConfig.timePerLevel - (gameState.currentLevel * 3);
+            if (gameState.timeLeft < 20) gameState.timeLeft = 20;
+            
+            // Select random target objects for this level
+            const shuffledObjects = [...gameConfig.objects].sort(() => Math.random() - 0.5);
+            gameState.currentTargets = shuffledObjects.slice(0, gameState.totalObjects);
+            
+            // Create target list
+            gameState.currentTargets.forEach((target, index) => {
+                const li = document.createElement('li');
+                li.className = 'target-item';
+                li.id = `target-${index}`;
+                li.innerHTML = `
+                    <div class="target-icon" style="color: ${target.color}">
+                        <i class="fas ${target.icon}"></i>
+                    </div>
+                    <span class="target-name">${target.name}</span>
+                `;
+                targetList.appendChild(li);
+            });
+            
+            // Generate scene with objects
+            generateSceneObjects();
+            
+            // Update UI
+            updateUI();
+        }
+
+        // Generate objects in the scene
+        function generateSceneObjects() {
+            const sceneWidth = scene.offsetWidth;
+            const sceneHeight = scene.offsetHeight;
+            
+            // Add target objects
+            gameState.currentTargets.forEach((target, index) => {
+                const size = 30 + Math.random() * 30;
+                const x = Math.random() * (sceneWidth - size * 2) + size;
+                const y = Math.random() * (sceneHeight - size * 2) + size;
+                
+                const obj = document.createElement('div');
+                obj.className = 'game-object';
+                obj.id = `obj-${index}`;
+                obj.dataset.targetIndex = index;
+                obj.style.width = `${size}px`;
+                obj.style.height = `${size}px`;
+                obj.style.left = `${x}px`;
+                obj.style.top = `${y}px`;
+                obj.style.color = target.color;
+                obj.style.fontSize = `${size}px`;
+                obj.innerHTML = `<i class="fas ${target.icon}"></i>`;
+                
+                scene.appendChild(obj);
+                gameState.sceneObjects.push(obj);
+                
+                // Add click event
+                obj.addEventListener('click', () => handleObjectClick(index));
+            });
+            
+            // Add decoy objects (not targets)
+            const decoyCount = 20 + gameState.currentLevel * 5;
+            for (let i = 0; i < decoyCount; i++) {
+                const size = 20 + Math.random() * 25;
+                const x = Math.random() * (sceneWidth - size * 2) + size;
+                const y = Math.random() * (sceneHeight - size * 2) + size;
+                const decoyType = gameConfig.sceneObjects[Math.floor(Math.random() * gameConfig.sceneObjects.length)];
+                const colors = ['#7F8C8D', '#95A5A6', '#BDC3C7', '#ECF0F1', '#D5DBDB'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                const obj = document.createElement('div');
+                obj.className = 'game-object decoy';
+                obj.style.width = `${size}px`;
+                obj.style.height = `${size}px`;
+                obj.style.left = `${x}px`;
+                obj.style.top = `${y}px`;
+                obj.style.color = color;
+                obj.style.fontSize = `${size}px`;
+                obj.style.opacity = 0.7 + Math.random() * 0.3;
+                obj.innerHTML = `<i class="fas ${decoyType}"></i>`;
+                
+                scene.appendChild(obj);
+                gameState.sceneObjects.push(obj);
+                
+                // Add click event to decoys (wrong answer)
+                obj.addEventListener('click', handleDecoyClick);
+            }
+        }
+
+        // Handle clicking on a target object
+        function handleObjectClick(targetIndex) {
+            if (!gameState.gameActive || gameState.foundTargets.includes(targetIndex)) return;
+            
+            // Mark object as found
+            gameState.foundTargets.push(targetIndex);
+            gameState.objectsFound++;
+            
+            // Update score
+            const timeBonus = Math.floor(gameState.timeLeft / 2);
+            const levelBonus = gameState.currentLevel * 10;
+            gameState.score += 50 + timeBonus + levelBonus;
+            
+            // Update UI
+            const targetElement = document.getElementById(`target-${targetIndex}`);
+            targetElement.classList.add('found');
+            
+            const objElement = document.getElementById(`obj-${targetIndex}`);
+            objElement.classList.add('found');
+            
+            // Show feedback
+            showClickFeedback(objElement, '+ ' + (50 + timeBonus + levelBonus));
+            
+            // Check if level is complete
+            if (gameState.objectsFound === gameState.totalObjects) {
+                levelComplete();
+            }
+            
+            updateUI();
+        }
+
+        // Handle clicking on a decoy object
+        function handleDecoyClick(event) {
+            if (!gameState.gameActive) return;
+            
+            // Penalty for wrong click
+            gameState.score -= 10;
+            if (gameState.score < 0) gameState.score = 0;
+            
+            // Show feedback
+            showClickFeedback(event.target, '-10');
+            
+            updateUI();
+        }
+
+        // Show feedback when clicking objects
+        function showClickFeedback(element, text) {
+            const rect = element.getBoundingClientRect();
+            const sceneRect = scene.getBoundingClientRect();
+            
+            const feedback = document.createElement('div');
+            feedback.className = 'click-feedback';
+            feedback.textContent = text;
+            feedback.style.left = `${rect.left - sceneRect.left + rect.width / 2}px`;
+            feedback.style.top = `${rect.top - sceneRect.top}px`;
+            
+            scene.appendChild(feedback);
+            
+            // Remove feedback after animation
+            setTimeout(() => {
+                feedback.remove();
+            }, 1000);
+        }
+
+        // Level complete
+        function levelComplete() {
+            clearInterval(gameState.timerInterval);
+            gameState.gameActive = false;
+            
+            // Bonus for time left
+            const timeBonus = gameState.timeLeft * 5;
+            gameState.score += timeBonus;
+            
+            // Show level complete message
+            const gameOverDiv = document.createElement('div');
+            gameOverDiv.className = 'game-over';
+            gameOverDiv.innerHTML = `
+                <h2>Level ${gameState.currentLevel} Complete!</h2>
+                <p>Time Bonus: +${timeBonus} points</p>
+                <p>Total Score: ${gameState.score}</p>
+                <button id="continue-btn" style="margin-top: 20px; padding: 15px 40px; font-size: 1.3rem;">
+                    ${gameState.currentLevel < gameConfig.levels ? 'Next Level' : 'Play Again'}
+                </button>
+            `;
+            
+            scene.appendChild(gameOverDiv);
+            gameOverDiv.style.display = 'flex';
+            
+            // Enable next button
+            nextBtn.disabled = false;
+            
+            // Update UI
+            updateUI();
+            
+            // Add event listener to continue button
+            document.getElementById('continue-btn').addEventListener('click', () => {
+                gameOverDiv.remove();
+                
+                if (gameState.currentLevel < gameConfig.levels) {
+                    nextLevel();
+                } else {
+                    // Game complete
+                    showGameComplete();
+                }
+            });
+        }
+
+        // Show game complete screen
+        function showGameComplete() {
+            const gameOverDiv = document.createElement('div');
+            gameOverDiv.className = 'game-over';
+            gameOverDiv.innerHTML = `
+                <h2>Congratulations!</h2>
+                <p>You've completed all ${gameConfig.levels} levels!</p>
+                <p>Final Score: <strong>${gameState.score}</strong></p>
+                <button id="restart-btn" style="margin-top: 20px; padding: 15px 40px; font-size: 1.3rem;">
+                    Play Again
+                </button>
+            `;
+            
+            scene.appendChild(gameOverDiv);
+            gameOverDiv.style.display = 'flex';
+            
+            // Add event listener to restart button
+            document.getElementById('restart-btn').addEventListener('click', () => {
+                gameOverDiv.remove();
+                initGame();
+            });
+        }
+
+        // Move to next level
+        function nextLevel() {
+            gameState.currentLevel++;
+            gameState.objectsFound = 0;
+            gameState.foundTargets = [];
+            
+            generateLevel();
+            updateUI();
+            
+            // Disable next button until level is complete
+            nextBtn.disabled = true;
+        }
+
+        // Start the game timer
+        function startGame() {
+            if (gameState.gameActive) return;
+            
+            gameState.gameActive = true;
+            gameState.timeLeft = gameConfig.timePerLevel - (gameState.currentLevel * 3);
+            if (gameState.timeLeft < 20) gameState.timeLeft = 20;
+            
+            // Update timer every second
+            gameState.timerInterval = setInterval(() => {
+                gameState.timeLeft--;
+                updateUI();
+                
+                // Check if time ran out
+                if (gameState.timeLeft <= 0) {
+                    clearInterval(gameState.timerInterval);
+                    gameState.timeLeft = 0;
+                    gameState.gameActive = false;
+                    
+                    // Show time's up message
+                    const gameOverDiv = document.createElement('div');
+                    gameOverDiv.className = 'game-over';
+                    gameOverDiv.innerHTML = `
+                        <h2>Time's Up!</h2>
+                        <p>You found ${gameState.objectsFound} of ${gameState.totalObjects} objects</p>
+                        <button id="retry-btn" style="margin-top: 20px; padding: 15px 40px; font-size: 1.3rem;">
+                            Try Again
+                        </button>
+                    `;
+                    
+                    scene.appendChild(gameOverDiv);
+                    gameOverDiv.style.display = 'flex';
+                    
+                    // Add event listener to retry button
+                    document.getElementById('retry-btn').addEventListener('click', () => {
+                        gameOverDiv.remove();
+                        generateLevel();
+                        updateUI();
+                    });
+                }
+            }, 1000);
+            
+            updateUI();
+        }
+
+        // Update UI elements
+        function updateUI() {
+            timerElement.textContent = `${gameState.timeLeft}s`;
+            levelElement.textContent = gameState.currentLevel;
+            levelIndicator.textContent = gameState.currentLevel;
+            foundElement.textContent = `${gameState.objectsFound}/${gameState.totalObjects}`;
+            scoreElement.textContent = gameState.score;
+            
+            // Update button states
+            startBtn.disabled = gameState.gameActive;
+            startBtn.innerHTML = gameState.gameActive 
+                ? '<i class="fas fa-play"></i> Game Running' 
+                : '<i class="fas fa-play"></i> Start Game';
+                
+            resetBtn.disabled = !gameState.gameActive && gameState.objectsFound > 0;
+            nextBtn.disabled = gameState.currentLevel >= gameConfig.levels || 
+                gameState.objectsFound < gameState.totalObjects || 
+                gameState.gameActive;
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            startBtn.addEventListener('click', startGame);
+            resetBtn.addEventListener('click', () => {
+                clearInterval(gameState.timerInterval);
+                gameState.gameActive = false;
+                gameState.objectsFound = 0;
+                gameState.foundTargets = [];
+                gameState.timeLeft = gameConfig.timePerLevel - (gameState.currentLevel * 3);
+                if (gameState.timeLeft < 20) gameState.timeLeft = 20;
+                
+                // Reset target and object states
+                gameState.currentTargets.forEach((_, index) => {
+                    const targetElement = document.getElementById(`target-${index}`);
+                    if (targetElement) targetElement.classList.remove('found');
+                    
+                    const objElement = document.getElementById(`obj-${index}`);
+                    if (objElement) objElement.classList.remove('found');
+                });
+                
+                updateUI();
+            });
+            
+            nextBtn.addEventListener('click', nextLevel);
+        }
+
+        // Initialize the game when page loads
+        window.addEventListener('DOMContentLoaded', initGame);
+    </script>
+</body>
+</html>
