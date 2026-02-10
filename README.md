@@ -998,19 +998,6 @@ We extend our heartfelt thanks to:
 
 ---
 
-## 📞 Contact Information
-
-### Project Maintainers
-- **Jayanta Banerjee:** [GitHub](https://github.com/Jayanta2004)
-- **Community Team:** [GitHub](https://github.com/orgs/community-card-showcase/people)
-
-### Business Inquiries
-- Email: hello@devcardshowcase.com
-- LinkedIn: [Company Profile]
-- Twitter: [@devcardshowcase]
-
----
-
 ## 🎉 Conclusion
 
 The Community Card Showcase represents more than just a collection of developer profiles—it's a celebration of the global developer community. Every contribution, every line of code, every design improvement brings us closer to our vision of creating the most welcoming and inspiring open source project.
@@ -1021,4 +1008,4 @@ Thank you for being part of this amazing community. Let's continue building some
 
 ---
 
-*This README is continuously updated. Last updated: February 2024*
+*Happy Coding*
