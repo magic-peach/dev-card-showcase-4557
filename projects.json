@@ -1052,6 +1052,23 @@
             "github": "https://github.com/omkarhole"
         }
     },
+       {
+        "title": "Loading animations",
+        "description": "A collection of visually appealing loading animations created using HTML, CSS, and JavaScript. Features smooth transitions, customizable colors, and responsive design for an engaging visual experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/Loading-Animations/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Budget Survival Game",
         "description": "A real-life financial survival simulator that challenges players to manage cash flow, savings, and health under unpredictable daily expenses. Features dynamic income generation, user-defined earnings, emergency handling through savings, and a modern dark cyber-themed UI—transforming budgeting concepts into an engaging game-like experience.",
