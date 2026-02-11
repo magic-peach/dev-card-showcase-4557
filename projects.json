@@ -1753,6 +1753,26 @@
         }
     },
     {
+    "title": "Mistake Logbook Tool",
+    "description": "A productivity-focused web application that allows users to record, categorize, and review their mistakes along with explanations and corrective actions. Designed with a clean, modern interface, it helps learners track patterns, improve problem-solving skills, and build a personal knowledge base for continuous improvement.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Productivity",
+        "Learning",
+        "UI/UX",
+        "LocalStorage"
+    ],
+    "links": {
+        "live": "./projects/mistake-log-tool/"
+    },
+    "author": {
+        "name": "Anvesha",
+        "github": "https://github.com/your-github-username"
+    }
+},
+    {
         "title": "Pac-Man Inspired Maze",
         "description": "A maze-based game inspired by Pac-Man where players collect dots while avoiding enemy ghosts. Features grid-based movement, score tracking, and simple AI for enemies.",
         "tags": [
