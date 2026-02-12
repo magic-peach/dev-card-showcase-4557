@@ -452,6 +452,23 @@
             "github": "https://github.com/omkarhole"
         }
     },
+       {
+        "title": "Lavender project",
+        "description": "A web application that allows users to input a color code (hex, RGB, or HSL) and returns the closest CSS color name along with its code. Features a user-friendly interface, real-time color matching, and a comprehensive color database for accurate results.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/Lavender-project/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Embers in the Dark",
         "description": "A dark, narrative-driven incremental survival game inspired by A Dark Room. Players gather resources, stoke a fire to survive the cold, and gradually build a small community through progressive unlocks. Features atmospheric UI, persistent saves, and simple but engaging mechanics built with pure web technologies.",
