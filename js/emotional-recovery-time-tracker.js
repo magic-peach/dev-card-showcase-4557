@@ -1,12 +1,19 @@
 // Emotional Recovery Time Tracker JavaScript
+// This module tracks emotional recovery times from stressful events to measure and improve emotional resilience
 
 class EmotionalRecoveryTracker {
     constructor() {
+        // Initialize recovery data from localStorage
         this.recoveryData = this.loadData();
+        // Chart instance for Chart.js
         this.chart = null;
+        // Initialize the application
         this.init();
     }
 
+    /**
+     * Initialize the application by setting up event listeners and rendering all components
+     */
     init() {
         this.setupEventListeners();
         this.updateDashboard();
@@ -17,19 +24,22 @@ class EmotionalRecoveryTracker {
         this.updateStressDisplay();
     }
 
+    /**
+     * Set up all event listeners for user interactions
+     */
     setupEventListeners() {
-        // Form submission
+        // Form submission for logging recovery events
         document.getElementById('recoveryForm').addEventListener('submit', (e) => {
             e.preventDefault();
             this.logRecoveryEvent();
         });
 
-        // Stress level slider
+        // Stress level slider updates display in real-time
         document.getElementById('stressLevel').addEventListener('input', () => {
             this.updateStressDisplay();
         });
 
-        // Chart controls
+        // Chart time range controls
         document.getElementById('timeRange').addEventListener('change', () => {
             this.renderChart();
         });
@@ -38,7 +48,7 @@ class EmotionalRecoveryTracker {
             this.renderChart();
         });
 
-        // History controls
+        // History view controls
         document.getElementById('viewRecent').addEventListener('click', () => {
             this.toggleHistoryView('recent');
         });
@@ -48,6 +58,10 @@ class EmotionalRecoveryTracker {
         });
     }
 
+    /**
+     * Update the stress level display based on slider value
+     * Maps numerical values to descriptive labels
+     */
     updateStressDisplay() {
         const stressLevel = document.getElementById('stressLevel').value;
         const stressValue = document.getElementById('stressValue');
@@ -55,6 +69,7 @@ class EmotionalRecoveryTracker {
 
         stressValue.textContent = stressLevel;
 
+        // Map stress levels to descriptive labels
         const stressLabels = {
             1: 'Minimal',
             2: 'Low',
@@ -71,7 +86,12 @@ class EmotionalRecoveryTracker {
         stressText.textContent = stressLabels[stressLevel] || 'Moderate';
     }
 
+    /**
+     * Log a new recovery event from the form data
+     * Calculates recovery duration and validates input
+     */
     logRecoveryEvent() {
+        // Collect form data
         const formData = {
             id: Date.now(),
             eventDate: document.getElementById('eventDate').value,
@@ -89,6 +109,7 @@ class EmotionalRecoveryTracker {
         const recoveryDateTime = new Date(formData.recoveryTime);
         const recoveryDuration = Math.round((recoveryDateTime - eventDateTime) / (1000 * 60)); // minutes
 
+        // Validate that recovery time is after event time
         if (recoveryDuration <= 0) {
             alert('Recovery time must be after the event time.');
             return;
@@ -96,6 +117,7 @@ class EmotionalRecoveryTracker {
 
         formData.recoveryDuration = recoveryDuration;
 
+        // Save the event and update UI
         this.recoveryData.push(formData);
         this.saveData();
         this.resetForm();
@@ -185,6 +207,13 @@ class EmotionalRecoveryTracker {
         return 'Needs Improvement';
     }
 
+    /**
+     * Update the metrics display elements
+     * @param {string} avgRecovery - Formatted average recovery time
+     * @param {string} fastestRecovery - Formatted fastest recovery time
+     * @param {string} totalEvents - Total number of events
+     * @param {string} resilienceScore - Resilience score
+     */
     updateMetrics(avgRecovery, fastestRecovery, totalEvents, resilienceScore) {
         document.getElementById('avgRecoveryTime').textContent = avgRecovery;
         document.getElementById('fastestRecovery').textContent = fastestRecovery;
@@ -192,6 +221,11 @@ class EmotionalRecoveryTracker {
         document.getElementById('resilienceScore').textContent = resilienceScore;
     }
 
+    /**
+     * Update the visual resilience level indicator
+     * @param {number} percentage - Resilience percentage (0-1)
+     * @param {string} label - Descriptive label for resilience level
+     */
     updateResilienceLevel(percentage, label) {
         const fill = document.getElementById('resilienceFill');
         const labelEl = document.getElementById('resilienceLabel');
@@ -200,10 +234,15 @@ class EmotionalRecoveryTracker {
         labelEl.textContent = label;
     }
 
+    /**
+     * Render the recovery trends chart using Chart.js
+     * Shows recovery time and stress levels over time
+     */
     renderChart() {
         const timeRange = document.getElementById('timeRange').value;
         const filteredData = this.filterDataByTimeRange(timeRange);
 
+        // Destroy existing chart if it exists
         if (this.chart) {
             this.chart.destroy();
         }
@@ -279,6 +318,11 @@ class EmotionalRecoveryTracker {
         });
     }
 
+    /**
+     * Filter recovery data by time range
+     * @param {string} range - Time range ('7', '30', '90', or 'all')
+     * @returns {Array} Filtered recovery data
+     */
     filterDataByTimeRange(range) {
         const now = new Date();
         const cutoff = new Date();
@@ -303,6 +347,11 @@ class EmotionalRecoveryTracker {
         });
     }
 
+    /**
+     * Prepare data for chart visualization
+     * @param {Array} data - Filtered recovery data
+     * @returns {Object} Chart data with labels, durations, and stress levels
+     */
     prepareChartData(data) {
         // Sort by date
         const sortedData = data.sort((a, b) => new Date(a.eventDate) - new Date(b.eventDate));
@@ -314,6 +363,10 @@ class EmotionalRecoveryTracker {
         };
     }
 
+    /**
+     * Render the recovery event history
+     * @param {string} view - View type ('recent' or 'all')
+     */
     renderHistory(view = 'recent') {
         const historyList = document.getElementById('eventHistory');
         let data = this.recoveryData;
@@ -355,12 +408,19 @@ class EmotionalRecoveryTracker {
         lucide.createIcons();
     }
 
+    /**
+     * Toggle between recent and all history views
+     * @param {string} view - View type ('recent' or 'all')
+     */
     toggleHistoryView(view) {
         document.getElementById('viewRecent').classList.toggle('active', view === 'recent');
         document.getElementById('viewAll').classList.toggle('active', view === 'all');
         this.renderHistory(view);
     }
 
+    /**
+     * Render emotional intelligence insights based on recovery data
+     */
     renderInsights() {
         const data = this.recoveryData;
 
@@ -369,7 +429,7 @@ class EmotionalRecoveryTracker {
             return;
         }
 
-        // Recovery patterns
+        // Recovery patterns analysis
         const avgByType = this.calculateAverageByType(data);
         const patterns = Object.entries(avgByType)
             .sort(([,a], [,b]) => a - b)
@@ -380,7 +440,7 @@ class EmotionalRecoveryTracker {
             <p>Your fastest recovery is typically from ${Object.entries(avgByType).reduce((a, b) => avgByType[a[0]] < avgByType[b[0]] ? a : b)[0]} events (${this.formatDuration(Math.min(...Object.values(avgByType)))}), while ${Object.entries(avgByType).reduce((a, b) => avgByType[a[0]] > avgByType[b[0]] ? a : b)[0]} events take longer (${this.formatDuration(Math.max(...Object.values(avgByType)))}).</p>
         `;
 
-        // Stress triggers
+        // Stress triggers analysis
         const stressByType = this.calculateAverageStressByType(data);
         const triggers = Object.entries(stressByType)
             .sort(([,a], [,b]) => b - a)
@@ -392,7 +452,7 @@ class EmotionalRecoveryTracker {
             <p>Your most stressful events are typically: ${triggers}.</p>
         `;
 
-        // Improvement areas
+        // Improvement areas suggestions
         const improvements = this.generateImprovementTips(data);
         document.getElementById('improvementAreas').innerHTML = `
             <p>${improvements}</p>
@@ -402,6 +462,9 @@ class EmotionalRecoveryTracker {
         this.renderTips(data);
     }
 
+    /**
+     * Render empty state for insights when no data is available
+     */
     renderEmptyInsights() {
         document.getElementById('recoveryPatterns').innerHTML = '<p>Log some recovery events to see patterns.</p>';
         document.getElementById('stressTriggers').innerHTML = '<p>Track events to identify stress triggers.</p>';
@@ -409,6 +472,11 @@ class EmotionalRecoveryTracker {
         document.getElementById('tips').innerHTML = '';
     }
 
+    /**
+     * Calculate average recovery time by event type
+     * @param {Array} data - Recovery data array
+     * @returns {Object} Average recovery time by event type
+     */
     calculateAverageByType(data) {
         const typeGroups = {};
         data.forEach(item => {
@@ -426,6 +494,11 @@ class EmotionalRecoveryTracker {
         return averages;
     }
 
+    /**
+     * Calculate average stress level by event type
+     * @param {Array} data - Recovery data array
+     * @returns {Object} Average stress level by event type
+     */
     calculateAverageStressByType(data) {
         const typeGroups = {};
         data.forEach(item => {
@@ -443,6 +516,11 @@ class EmotionalRecoveryTracker {
         return averages;
     }
 
+    /**
+     * Generate personalized improvement tips based on recovery data
+     * @param {Array} data - Recovery data array
+     * @returns {string} Improvement suggestions
+     */
     generateImprovementTips(data) {
         const avgDuration = data.reduce((sum, item) => sum + item.recoveryDuration, 0) / data.length;
         const avgStress = data.reduce((sum, item) => sum + item.stressLevel, 0) / data.length;
@@ -464,6 +542,10 @@ class EmotionalRecoveryTracker {
         return tips.length > 0 ? tips.join(' ') : 'Keep tracking to maintain your emotional resilience!';
     }
 
+    /**
+     * Render personalized tips based on recovery patterns
+     * @param {Array} data - Recovery data array
+     */
     renderTips(data) {
         const tips = [
             {
@@ -494,6 +576,9 @@ class EmotionalRecoveryTracker {
         lucide.createIcons();
     }
 
+    /**
+     * Render resilience benchmarks for comparison
+     */
     renderBenchmarks() {
         const benchmarks = [
             {
@@ -532,7 +617,13 @@ class EmotionalRecoveryTracker {
         `).join('');
     }
 
-    // Utility methods
+    // Utility Methods
+
+    /**
+     * Format duration in minutes to a readable string
+     * @param {number} minutes - Duration in minutes
+     * @returns {string} Formatted duration string
+     */
     formatDuration(minutes) {
         if (minutes < 60) {
             return `${minutes}m`;
@@ -542,6 +633,11 @@ class EmotionalRecoveryTracker {
         return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
     }
 
+    /**
+     * Format date to a readable string
+     * @param {Date} date - Date object to format
+     * @returns {string} Formatted date string
+     */
     formatDate(date) {
         return date.toLocaleDateString('en-US', {
             month: 'short',
@@ -550,20 +646,37 @@ class EmotionalRecoveryTracker {
         });
     }
 
+    /**
+     * Capitalize the first letter of a string
+     * @param {string} str - String to capitalize
+     * @returns {string} Capitalized string
+     */
     capitalizeFirst(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
+    /**
+     * Show notification to user
+     * @param {string} message - Notification message
+     * @param {string} type - Notification type ('success', 'error', 'info')
+     */
     showNotification(message, type = 'info') {
         // Simple notification - could be enhanced with a proper notification system
         alert(message);
     }
 
+    /**
+     * Load recovery data from localStorage
+     * @returns {Array} Recovery data array
+     */
     loadData() {
         const data = localStorage.getItem('emotionalRecoveryData');
         return data ? JSON.parse(data) : [];
     }
 
+    /**
+     * Save recovery data to localStorage
+     */
     saveData() {
         localStorage.setItem('emotionalRecoveryData', JSON.stringify(this.recoveryData));
     }
