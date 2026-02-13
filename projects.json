@@ -660,7 +660,7 @@
             "github": "https://github.com/your-github-username"
         }
     },
-    {
+      {
         "title": "Tower Stack Pro",
         "description": "A polished and advanced 2D tower stacking arcade game built using pure HTML, CSS, and JavaScript. Players must precisely drop moving blocks to build the tallest possible tower. Features accurate overlap calculation, dynamic block cutting, increasing difficulty, smooth animations using requestAnimationFrame, combo-based progression, modern UI styling, and a structured restart system without page reload.",
         "tags": [
@@ -673,6 +673,25 @@
         ],
         "links": {
             "live": "./projects/Tower-Stack-Pro/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/PriyanshuSingh00-hub"
+        }
+    },
+    {
+        "title": "Snow effect page",
+        "description": "A beautiful animated snow effect page built using pure HTML, CSS, and JavaScript. Features realistic falling snowflakes with varying sizes, speeds, and opacity for a natural winter scene.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Game Development",
+            "Arcade Game",
+            "Physics Logic"
+        ],
+        "links": {
+            "live": "./projects/Snow-Effect-Page/index.html"
         },
         "author": {
             "name": "Omkar",
