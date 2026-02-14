@@ -10953,5 +10953,28 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Post-Injury Mobility Score",
+        "description": "Track your rehabilitation progress with objective range-of-motion scoring and milestone tracking. Monitor mobility recovery after injury with pain levels and functionality assessments for physiotherapy guidance.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Chart.js",
+            "Data Visualization",
+            "LocalStorage",
+            "Wellness",
+            "Health Monitoring",
+            "Rehabilitation",
+            "Physiotherapy"
+        ],
+        "links": {
+            "live": "./post-injury-mobility-score/post-injury-mobility-score.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
