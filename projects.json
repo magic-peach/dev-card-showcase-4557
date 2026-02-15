@@ -11312,22 +11312,22 @@
         }
     },
     {
-        "title": "Pelvic Stability Monitor",
-        "description": "Track core and pelvic strength metrics with exercise logging and stability score tracking. Monitor progress over time with personalized insights for preventing back pain and improving posture. Perfect for postpartum recovery and rehabilitation.",
+        "title": "Focus Session Quality Analyzer",
+        "description": "Measure deep work session quality with Pomodoro timing, self-rating, and distraction tracking. Generate focus efficiency index and analyze productivity patterns to improve concentration and work habits.",
         "tags": [
             "HTML",
             "CSS",
             "JavaScript",
-            "Health",
-            "Fitness",
+            "Productivity",
+            "Focus",
+            "Pomodoro",
             "Data Visualization",
             "Chart.js",
             "LocalStorage",
-            "Core Strength",
-            "Rehabilitation"
+            "Time Management"
         ],
         "links": {
-            "live": "./pelvic-stability-monitor/pelvic-stability-monitor.html"
+            "live": "./focus-session-quality-analyzer/focus-session-quality-analyzer.html"
         },
         "author": {
             "name": "Gupta-02",
