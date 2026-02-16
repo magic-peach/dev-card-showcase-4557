@@ -435,6 +435,27 @@
         }
     },
     {
+        "title": "Contrast Therapy Scheduler",
+        "description": "Schedule and track hot-cold therapy cycles for optimal recovery. Features configurable session timers, phase tracking, progress analytics, and safety guidelines for contrast therapy routines.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Fitness",
+            "Health",
+            "Recovery",
+            "Timer",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./contrast-therapy-scheduler/contrast-therapy-scheduler.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Password Rotation Reminder Tool",
         "description": "A cyber-themed security dashboard that helps users track password rotation schedules across multiple accounts. Features interval-based reminders, real-time status indicators, and persistent storage for managing security compliance in a sleek, neon-styled interface.",
         "tags": [
