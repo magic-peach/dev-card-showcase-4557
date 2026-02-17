@@ -3329,7 +3329,7 @@
             "github": "https://github.com/your-github-username"
         }
     },
-    {
+      {
         "title": "Roadmap",
         "description": "An interactive roadmap guiding users through the essential skills and technologies needed to become a proficient full stack developer. Features multiple tracks, checkpoints, and tooltips for detailed learning paths.",
         "tags": [
@@ -3339,6 +3339,22 @@
         ],
         "links": {
             "live": "./projects/roadmap/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
+    {
+        "title": "Palette Lab",
+        "description": "An accessible color palette builder that generates harmonious color schemes with WCAG contrast compliance. Features real-time preview, hex code generation, and export options for seamless integration into web projects.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/Palette-Lab/index.html"
         },
         "author": {
             "name": "Omkar",
