@@ -12072,5 +12072,26 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Inflammatory Diet Risk Index",
+        "description": "Evaluate dietary patterns for inflammation potential with omega-6/omega-3 ratio tracking and processed food analysis. Get personalized scores and weekly trend graphs for optimal diet optimization.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Nutrition",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./inflammatory-diet-risk-index.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
