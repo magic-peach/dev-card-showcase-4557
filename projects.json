@@ -12009,5 +12009,26 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Emotional Recovery Timer",
+        "description": "Track the time required to emotionally stabilize after stressful events. Log events with stress levels and monitor recovery patterns for better emotional resilience and therapy tracking.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Mental Health",
+            "Emotional Wellness",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./emotional-recovery-timer.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
