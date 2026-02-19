@@ -11415,6 +11415,29 @@
         }
     },
     {
+        "title": "Thermoregulation Stability Monitor 🌡️",
+        "description": "Track body temperature regulation stability to identify patterns that may indicate stress, illness, or recovery status. Monitor daily temperature variations, calculate stability index, and get health insights from temperature patterns.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Temperature",
+            "Medical",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Wellness"
+        ],
+        "links": {
+            "live": "./projects/thermoregulation-stability-monitor/thermoregulation-stability-monitor.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Doctor Visit History 🧑‍⚕️",
         "description": "A comprehensive medical visit history tracker to help users maintain their healthcare records. Features visit logging with doctor details, diagnosis, medications, and notes, a chronological timeline view of all visits, and a general notes section for ongoing health observations. Improves medical record keeping and helps prevent forgetting past diagnoses and treatments.",
         "tags": [
