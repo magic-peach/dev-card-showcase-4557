@@ -1,5 +1,28 @@
 [
     {
+        "title": "Burnout Early Detection Meter",
+        "description": "Monitor early warning signs of burnout through comprehensive daily assessments. Track work hours, fatigue levels, stress, motivation, and symptoms to calculate burnout risk scores and receive prevention insights.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Mental Health",
+            "Burnout",
+            "Wellness",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Risk Assessment"
+        ],
+        "links": {
+            "live": "./projects/burnout-early-detection-meter/burnout-early-detection-meter.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
         "title": "Heat Recovery Speed Monitor",
         "description": "Track how quickly your body cools after heat exposure. Monitor temperature readings over time to calculate recovery rate and assess heat stress recovery for outdoor athletes.",
         "tags": [
