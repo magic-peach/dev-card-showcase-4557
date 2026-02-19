@@ -148,6 +148,29 @@
         }
     },
     {
+        "title": "Proprioception Improvement Log",
+        "description": "Track balance and spatial awareness exercises to improve proprioception and reduce injury risk. Log various drill types, monitor stability ratings, and visualize improvement trends over time.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Fitness",
+            "Health",
+            "Balance",
+            "Proprioception",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./projects/proprioception-improvement-log/proprioception-improvement-log.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Progressive Overload Calculator",
         "description": "Calculate optimal weight increases for strength training progression. Input your current personal records and get scientifically-backed increment suggestions based on experience level and lift type.",
         "tags": [
