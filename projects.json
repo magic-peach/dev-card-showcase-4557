@@ -170,7 +170,7 @@
             "github": "https://github.com/Gupta-02"
         }
     },
-       {
+    {
         "title": "CSS shake Playground",
         "description": "A fun, interactive playground that simulates the Harlem Shake meme using CSS animations. Click the button to trigger a chaotic dance party with shaking elements and lively music, all built with HTML, CSS, and JavaScript for a nostalgic and entertaining experience.",
         "tags": [
@@ -2389,7 +2389,7 @@
         }
     },
     {
-        "title": "color palettes generator"
+        "title": "color palettes generator",
         "description": "A web-based color palette generator that allows users to create and explore various color schemes. Features include a palette display, mood-based color selection, and smooth animations for an engaging user experience.",
         "tags": [
             "HTML",
@@ -2404,7 +2404,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-    ,
     {
         "title": "CSS Hover Transform",
         "description": "A web application that showcases various CSS hover transform effects. Users can hover over different elements to see the transform animations in action.",
@@ -2421,7 +2420,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-    ,
     {
         "title": "ResultWise - Universal Result Analyzer",
         "description": "A flexible and user-friendly result analysis utility that allows users to dynamically add any subjects and marks. It calculates total marks, percentage, grade, and pass/fail status while providing clear performance feedback, all within a clean and responsive interface.",
@@ -2438,7 +2436,7 @@
             "github": "https://github.com/your-github-username"
         }
     },
-        {
+    {
         "title": "Page Transitions Gallery",
         "description": "A showcase of creative page transition effects implemented using HTML, CSS, and JavaScript. Features a variety of smooth and visually appealing transitions that enhance the user experience when navigating between pages.",
         "tags": [
@@ -2454,7 +2452,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-    ,
     {
         "title": "Tron Minesweeper",
         "description": "A visually striking Tron-themed Minesweeper game that combines classic gameplay with a futuristic aesthetic. Features neon grid design, glowing mines, and smooth animations for an immersive gaming experience.",
@@ -2487,7 +2484,7 @@
             "github": "https://github.com/omkarhole"
         }
     },
-       {
+    {
         "title": "PDF To Word Converter",
         "description": "A web application that converts PDF files to Word documents with a clean and user-friendly interface.",
         "tags": [
@@ -2541,7 +2538,7 @@
             "github": "https://github.com/your-github-username"
         }
     },
-      {
+    {
         "title": "Heat mapping",
         "description": "A web application that visualizes data points on a heatmap, allowing users to see patterns and trends in their data through color-coded intensity.",
         "tags": [
@@ -2605,7 +2602,7 @@
             "github": "https://github.com/omkarhole"
         }
     },
-        {
+    {
         "title": " Simple Drawing App with Palette and Color Picker",
         "description": "A simple drawing application with a color palette and color picker, inspired by CodePen's home page design.",
         "tags": [
@@ -2681,10 +2678,7 @@
             "HTML",
             "CSS",
             "JavaScript",
-            "Data Visualization",
-            "Chart.js",
-            "Mental Health",
-            "LocalStorage"
+            "Data Visualization"
         ],
         "links": {
             "live": "./projects/stress-trigger-frequency-map/stress-trigger-frequency-map.html"
@@ -2785,7 +2779,7 @@
             "github": "https://github.com/Gupta-02"
         }
     },
-        {
+    {
         "title": "Mario world Game",
         "description": "A side-scrolling platformer game inspired by classic Mario games. Players navigate through levels, avoid obstacles, collect coins, and defeat enemies to reach the end goal.",
         "tags": [
@@ -2837,7 +2831,7 @@
             "github": "https://github.com/your-github-username"
         }
     },
-      {
+    {
         "title": "Two colors walk into a bar",
         "description": "An interactive color mixing tool that allows users to blend two colors and see the resulting mixed color in real-time.",
         "tags": [
@@ -2889,7 +2883,7 @@
             "github": "https://github.com/your-github-username"
         }
     },
-        {
+    {
         "title": "Blend colors project",
         "description": "A web application that allows users to blend different colors and visualize the resulting color combinations.",
         "tags": [
@@ -2955,7 +2949,7 @@
             "github": "https://github.com/your-github-username"
         }
     },
-          {
+    {
         "title": "Color Mixology",
         "description": "An interactive color mixing tool that allows users to blend primary colors to create new ones. Features a visual color wheel, real-time preview, and a palette of mixed colors.",
         "tags": [
@@ -3027,7 +3021,7 @@
             "github": "https://github.com/omkarhole"
         }
     },
-        {
+    {
         "title": "A walking man on ice",
         "description": "A simple and addictive stacking cards game where players must stack moving cards as high as possible without letting them fall. Features smooth animations, score tracking, and increasing difficulty levels.",
         "tags": [
@@ -3159,7 +3153,7 @@
             "github": "https://github.com/your-github-username"
         }
     },
-        {
+    {
         "title": "Particulate",
         "description": "A web application that visualizes particle systems in real-time. Users can interact with particles using mouse controls and customize their behavior with various settings.",
         "tags": [
@@ -3210,7 +3204,7 @@
             "github": "https://github.com/omkarhole"
         }
     },
-            {
+    {
         "title": "Pixel Art Maker",
         "description": "A simple and user-friendly pixel art creation tool that allows users to draw and customize pixel art grids. Features customizable grid sizes, color selection, and a clean, intuitive interface.",
         "tags": [
@@ -3294,7 +3288,7 @@
             "github": "https://github.com/omkarhole"
         }
     },
-            {
+    {
         "title": "API Tester",
         "description": "A simple and user-friendly API testing tool that allows users to send HTTP requests and view responses. Supports various HTTP methods, custom headers, and request bodies for comprehensive API testing.",
         "tags": [
@@ -3311,7 +3305,7 @@
             "github": "https://github.com/omkarhole"
         }
     },
-        {
+    {
         "title": "Dreamscape Colour Palette",
         "description": "An interactive tool for generating and exploring color palettes inspired by the beauty of aurora borealis. Features include dynamic gradient generation, color harmony algorithms, and a visually stunning animated background.",
         "tags": [
@@ -3378,7 +3372,7 @@
             "github": "https://github.com/CodeMaster11000"
         }
     },
-      {
+    {
         "title": "emoji survivors",
         "description": " A web application that helps users split expenses among a group of people. Users can input the total expense amount and the number of people, and the app will calculate how much each person owes.",
         "tags": [
@@ -3493,7 +3487,7 @@
             "github": "https://github.com/your-github-username"
         }
     },
-        {
+    {
         "title": "Interactive Color Palette Generator",
         "description": "An interactive tool that generates and displays color palettes with real-time preview and customization options. Features a sleek UI with copy-to-clipboard functionality and contrast ratio analysis.",
         "tags": [
@@ -3662,7 +3656,7 @@
             "github": "https://github.com/your-github-username"
         }
     },
-      {
+    {
         "title": "Roadmap",
         "description": "An interactive roadmap guiding users through the essential skills and technologies needed to become a proficient full stack developer. Features multiple tracks, checkpoints, and tooltips for detailed learning paths.",
         "tags": [
@@ -3710,7 +3704,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-    
     {
         "title": "VectorForge",
         "description": "A vector graphics editor that allows users to create and manipulate vector shapes, paths, and designs. Features include drawing tools, shape transformations, color fills, and export options for SVG files.",
@@ -3727,7 +3720,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "Corn Viz",
         "description": "A data visualization tool that presents corn production statistics using interactive charts and graphs. Users can explore trends, compare data across regions, and gain insights into corn production patterns.",
@@ -3744,7 +3736,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "Geography Capital Matcher",
         "description": "An interactive geography game where players match countries with their capitals. Features multiple levels, score tracking, and a visually appealing interface.",
@@ -3761,7 +3752,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "Physics Sandbox",
         "description": "A physics simulation sandbox with interactive controls and visualizations.",
@@ -3778,7 +3768,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-
     {
         "title": "JSON Formattor",
         "description": "A utility tool to format and minify JSON data with a user-friendly interface and live preview.",
@@ -3796,7 +3785,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "Virtual Keyboard",
         "description": "An interactive virtual keyboard that allows users to type using on-screen keys, complete with visual feedback and support for multiple keyboard layouts.",
@@ -3813,7 +3801,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "Memory Game",
         "description": "A classic memory card matching game with multiple themes and difficulty levels.",
@@ -3830,7 +3817,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-
     {
         "title": "CodePong Game",
         "description": "A classic Pong game with enhanced features including power-ups, sound effects, and responsive controls. Players can compete against an AI opponent with adjustable difficulty levels for an engaging gaming experience.",
@@ -3848,7 +3834,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "Name Picker Tool",
         "description": "A fun and interactive name picker tool that randomly selects a name from a list of entries. Perfect for giveaways, raffles, or choosing team members.",
@@ -3865,7 +3850,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-
     {
         "title": "lyric searcher",
         "description": "A Classic Lyric Searcher.",
@@ -3883,7 +3867,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "Puzzle Game",
         "description": "A fun and interactive puzzle game with multiple difficulty levels and image customization options.",
@@ -3900,7 +3883,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-    
     {
         "title": "Pixel Art Drawing Tool",
         "description": "A pixel art editor where users can draw and export pixel designs. Features a grid-based canvas, color palette selection, and export functionality as image.",
@@ -3936,7 +3918,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-
     {
         "title": "Dice Roller",
         "description": "A simple and interactive dice rolling simulator. Press the button to roll the dice and get a random number from 1 to 6.",
@@ -3969,7 +3950,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-
     {
         "title": "Binary Hex Convertor",
         "description": "A simple and interactive binary to hexadecimal converter with real-time conversion and validation.",
@@ -3986,7 +3966,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-
     {
         "title": "Interactive Periodic Table",
         "description": "An interactive periodic table that provides detailed information about each element, including atomic number, symbol, atomic mass, and electron configuration. Features search functionality and responsive design for easy access on all devices.",
@@ -4005,7 +3984,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "Time Line Project",
         "description": "An interactive timeline that allows users to visualize historical events in a chronological order. Features include zooming, filtering by categories, and detailed event descriptions.",
@@ -4024,7 +4002,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "Virtual Plant Grower",
         "description": "A virtual plant growing simulator where users can plant, water, and care for their digital plants. Features realistic growth stages, environmental effects, and a variety of plant species to choose from.",
@@ -4041,7 +4018,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-
     {
         "title": "checkers game",
         "description": "A classic checkers game with two-player mode, valid move enforcement, kinging, and a clean user interface for an enjoyable gaming experience.",
@@ -4058,7 +4034,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "Code Snippet Manager",
         "description": "A web application that allows users to save, organize, and manage code snippets in various programming languages. Features include syntax highlighting, categorization, and search functionality for easy retrieval of snippets.",
@@ -4075,7 +4050,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-
     {
         "title": "PDF Watermark Tool",
         "description": "Browser-based tool to add text/image watermarks to PDFs with full customization. Process files locally for privacy.",
@@ -4094,7 +4068,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-
     {
         "title": "Note Taker App",
         "description": "A simple and intuitive note-taking application that allows users to create, edit, and delete notes. Features a clean interface with local storage for saving notes.",
@@ -4113,7 +4086,6 @@
             "github": "https://github.com/omkarhole"
         }
     },
-
     {
         "title": "AI Story Generator",
         "description": "A web application that generates creative stories based on user-provided nouns.",
@@ -4130,7 +4102,6 @@
             "github": "https://github.com/neeru24"
         }
     },
-
     {
         "title": "Cosmic Drift — Ultra Edition",
         "description": "A visually rich space-drift game featuring smooth inertia-based movement, glowing particle trails, energy collection mechanics, and a luxurious glassmorphism-inspired interface for an engaging and easy-to-play experience.",
@@ -4147,7 +4118,6 @@
             "github": "https://github.com/PriyanshuSingh00-hub"
         }
     },
-
     {
         "title": "Untangle Puzzle Game",
         "description": "An engaging untangle puzzle game where players must rearrange interconnected nodes to eliminate overlapping lines. Features multiple difficulty levels, timer, and move counter for an immersive experience.",
