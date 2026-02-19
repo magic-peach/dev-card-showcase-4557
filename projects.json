@@ -11479,6 +11479,26 @@
         }
     },
     {
+        "title": "Aerobic Base Builder Tracker",
+        "description": "Track low-intensity Zone 2 aerobic training volume to build endurance foundation. Log sessions with heart rate monitoring, perceived effort tracking, and weekly progress visualization. Features Zone 2 compliance analysis, consistency scoring, and personalized training insights for optimal aerobic development.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Fitness",
+            "Data Visualization",
+            "LocalStorage",
+            "Chart.js"
+        ],
+        "links": {
+            "live": "./projects/aerobic-base-builder-tracker/aerobic-base-builder-tracker.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Muscle Group Recovery Tracker",
         "description": "Track recovery times for individual muscle groups to prevent overtraining and optimize workout scheduling. Log workouts by muscle group with intensity levels, view recovery status dashboard, and visualize recovery timelines. Features color-coded status indicators, training statistics, and overtraining prevention alerts.",
         "tags": [
