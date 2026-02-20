@@ -13498,5 +13498,29 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Body Temperature Variability Chart",
+        "description": "Track your body temperature throughout the day and over time to monitor circadian rhythms, hormonal patterns, and overall health. Log readings with different measurement methods and analyze variability.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Body Temperature",
+            "Circadian Rhythm",
+            "Hormones",
+            "Wellness",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./body-temperature-variability-chart/body-temperature-variability-chart.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
