@@ -3876,6 +3876,22 @@
             "github": "https://github.com/omkarhole"
         }
     },
+        {
+        "title": "Project Management Dashboard UI",
+        "description": " A responsive and interactive project management dashboard UI built with HTML, CSS, and JavaScript. Features include task tracking, progress visualization, and a clean, modern design.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/Project-Management/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Lego Builder Project",
         "description": "A 3D Lego building game where players can create structures using different brick sizes and colors. Features include rotation, placement, and deletion of bricks in a 3D environment.",
