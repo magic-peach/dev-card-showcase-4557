@@ -3942,6 +3942,22 @@
             "github": "https://github.com/CodeMaster11000"
         }
     },
+      {
+        "title": "Portfolio sample page",
+        "description": "A sample portfolio page built with HTML, CSS, and JavaScript. Features a responsive design, interactive navigation, and a clean layout showcasing projects and skills.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/Portfolio-sample-Page/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Logic Puzzle Solver",
         "description": "An interactive logic-based problem solver designed with a puzzle-board interface. Allows users to analyze numbers using logical rules such as even/odd checks, prime validation, and divisibility tests, while clearly presenting step-by-step reasoning for each solution.",
