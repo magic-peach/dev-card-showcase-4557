@@ -3724,6 +3724,23 @@
             "github": "https://github.com/omkarhole"
         }
     },
+        {
+        "title": "GSAP color wheel project",
+        "description": "A web application that demonstrates the use of GSAP (GreenSock Animation Platform) to create a dynamic and interactive color wheel. Users can interact with the color wheel to see smooth animations and transitions between colors.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/GSAP-color-wheel/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Contrast Checker Tool",
         "description": "A web application that checks the contrast ratio between foreground and background colors to ensure accessibility compliance. It provides real-time feedback and suggestions for improving color combinations.",
