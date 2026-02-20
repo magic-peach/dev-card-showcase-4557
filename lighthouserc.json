@@ -1,10 +1,10 @@
 {
     "ci": {
         "collect": {
-            "staticDistDir": "./dev-card-showcase",
+            "startServerCommand": "npx http-server ./dev-card-showcase -p 3000",
             "url": [
-                "http://localhost/index.html",
-                "http://localhost/projects.html"
+                "http://localhost:3000/index.html",
+                "http://localhost:3000/projects.html"
             ],
             "numberOfRuns": 3
         },
