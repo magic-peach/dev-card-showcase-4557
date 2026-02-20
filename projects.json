@@ -1,5 +1,31 @@
 [
     {
+        "title": "Kinetic Chain Integrity Log",
+        "description": "Monitor and optimize your kinetic chain integrity by tracking how body segments work together in coordinated movement patterns. Identify movement compensations, assess biomechanical efficiency, and develop strategies for improved movement quality and injury prevention.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Fitness",
+            "Biomechanics",
+            "Movement Analysis",
+            "Physical Therapy",
+            "Injury Prevention",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Kinetic Chain"
+        ],
+        "links": {
+            "live": "./projects/kinetic-chain-integrity-log/kinetic-chain-integrity-log.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Reflective Thinking Frequency Monitor",
         "description": "Track and analyze your reflective thinking patterns to enhance metacognition and self-awareness. Monitor the frequency, quality, and themes of your reflections to develop stronger critical thinking habits and emotional intelligence.",
         "tags": [
@@ -14006,5 +14032,28 @@
             "name": "Tanmayi",
             "github": "https://github.com/Tanmayi30"
         }
+    },
+    {
+        "title": "Botany Sim: Time-Series Engine",
+        "description": "An interactive web-based simulation that mathematically models plant growth over time. Cultivate a virtual garden, manage resources like water and fertilizer, and use a global timeline slider to dynamically calculate and visualize plant maturity stages.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Simulation",
+            "Botany",
+            "Time-Series",
+            "State Machine",
+            "UI/UX",
+            "Flexbox"
+        ],
+        "links": {
+            "live": "./botany-sim/index.html"
+        },
+        "author": {
+            "name": "Tanmayi",
+            "github": "https://github.com/Tanmayi30"
+        }
     }
 ]
+
