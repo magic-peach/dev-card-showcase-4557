@@ -3842,6 +3842,22 @@
             "github": "https://github.com/omkarhole"
         }
     },
+        {
+        "title": "Sci-Fi/HUD SVG frame generator",
+        "description": "A tool for generating sci-fi styled HUD (Heads-Up Display) SVG frames with customizable parameters like size, padding, and seed values.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/Sci-Fi/HUD-SVG-frame/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Dreamscape Colour Palette",
         "description": "An interactive tool for generating and exploring color palettes inspired by the beauty of aurora borealis. Features include dynamic gradient generation, color harmony algorithms, and a visually stunning animated background.",
