@@ -27,6 +27,34 @@
     }
   },
   {
+    "title": "Multi-Plane Mobility Tracker",
+    "description": "Track and improve your mobility across all three planes of movement: sagittal, frontal, and transverse. Monitor range of motion, identify imbalances, assess pain levels, and track progress over time with comprehensive mobility assessments and data visualization.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Fitness",
+      "Mobility",
+      "Physical Therapy",
+      "Range of Motion",
+      "Movement Assessment",
+      "Pain Tracking",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Biomechanics"
+    ],
+    "links": {
+      "live": "./multi-plane-mobility-tracker/multi-plane-mobility-tracker.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
     "title": "Heavy Metal Exposure Monitoring Log",
     "description": "Track and monitor potential exposure to toxic heavy metals like lead, mercury, arsenic, and cadmium. Log exposure incidents, symptoms, risk levels, and mitigation strategies. Includes educational information about heavy metals and prevention tips for maintaining optimal health.",
     "tags": [
