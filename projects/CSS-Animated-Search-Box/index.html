@@ -7,54 +7,113 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="score">Press UP</div>
+    <h1>CSS Animated Search Boxes</h1>
+<p>(with occasional help from javascript to assign focus)</p>
+<p>buttons don't actually function.  all animations are triggered on the focus state of the input.</p>
 
-<div id="controls">
-  <div id="buttons">
-    <button id="accelerate">
-      <svg width="30" height="30" viewBox="0 0 10 10">
-        <g transform="rotate(0, 5,5)">
-          <path d="M5,4 L7,6 L3,6 L5,4" />
-        </g>
-      </svg>
-    </button>
-    <button id="decelerate">
-      <svg width="30" height="30" viewBox="0 0 10 10">
-        <g transform="rotate(180, 5,5)">
-          <path d="M5,4 L7,6 L3,6 L5,4" />
-        </g>
-      </svg>
-    </button>
-  </div>
-  <div id="instructions">
-    Press UP to start. Avoid collision with other vehicles by accelerating
-    or decelerating with the UP and DOWN keys.
-  </div>
+<p class="sample">JUST A SEARCH BUTTON...</p>
+<p class="sample">...WITH A RESET BUTTON</p>
+<div class="sample one">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search fa fa-search"></button>
 </div>
 
-<div id="results">
-  <div class="content">
-    <h1>You hit another vehicle</h1>
-    <p>To reset the game press R</p>
-
-    <a id="result-youtube" target="_top" href="https://youtu.be/JhgBwJn1bQw">
-      <div class="youtube"></div>
-      <span>Learn how to build this game with Three.js on YouTube</span>
-    </a>
-
-    <p>
-      Follow me
-      <a href="https://twitter.com/HunorBorbely" , target="_top">@HunorBorbely</a>
-    </p>
-  </div>
+<div class="sample two">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search fa fa-search"></button>
+  <button type="reset" class="btn btn-reset fa fa-times"></button>
 </div>
 
-<a id="youtube-main" class="youtube" target="_top" href="https://youtu.be/JhgBwJn1bQw">
-  <span>Learn Three.js</span>
-</a>
-<div id="youtube-card">
-  Learn Three.js while building this game on YouTube
+<div class="sample three">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search fa-flip-horizontal"></i>
+  </button>
 </div>
+
+<div class="sample four">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search fa-flip-horizontal"></i>
+  </button>
+  <button type="reset" class="btn btn-reset fa fa-times"></button>
+</div>
+
+<div class="sample five">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search fa-flip-horizontal"></i>
+  </button>
+</div>
+
+<div class="sample six">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search fa-flip-horizontal"></i>
+  </button>
+  <button type="reset" class="btn btn-reset fa fa-times"></button>
+</div>
+
+<div class="sample seven">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search"></i>
+  </button>
+</div>
+
+<div class="sample eight">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search"></i>
+  </button>
+  <button type="reset" class="btn btn-reset fa fa-times"></button>
+</div>
+
+<div class="sample nine">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search"></i>
+  </button>
+</div>
+
+<div class="sample ten">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search"></i>
+  </button>
+  <button type="reset" class="btn btn-reset fa fa-times"></button>
+</div>
+
+<div class="sample eleven">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search"></i>
+  </button>
+</div>
+
+<div class="sample twelve">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search"></i>
+  </button>
+  <button type="reset" class="btn btn-reset fa fa-times"></button>
+</div>
+
+<div class="sample thirteen">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search"></i>
+  </button>
+</div>
+
+<div class="sample fourteen">
+  <input type="text" name="search" placeholder="search">
+  <button type="submit" class="btn btn-search">
+    <i class="fa fa-search"></i>
+  </button>
+  <button type="reset" form="form" class="btn btn-reset fa fa-times"></button>
+</div>
+
     <script src="app.js"></script>
 </body>
 </html>
