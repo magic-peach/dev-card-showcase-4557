@@ -11760,5 +11760,32 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Abstract Thinking Progress Tracker",
+    "description": "Enhance your abstract thinking skills through targeted exercises and track your progress over time. Features various types of abstract thinking exercises including pattern recognition, analogical reasoning, conceptual thinking, and creative problem solving with progress tracking and performance analytics.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Mental Health",
+      "Productivity",
+      "Cognitive Science",
+      "Abstract Thinking",
+      "Problem Solving",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Mental Training",
+      "Cognitive Development"
+    ],
+    "links": {
+      "live": "./abstract-thinking-progress-tracker.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
