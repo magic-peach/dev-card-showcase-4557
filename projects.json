@@ -12495,5 +12495,33 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Secure Plugin Marketplace",
+    "description": "A comprehensive marketplace for secure plugins with real-time security scanning, community reviews, and developer tools. Features include plugin discovery, security badges, detailed reviews, and submission system for developers.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Security",
+      "Marketplace",
+      "Plugin System",
+      "Web Development",
+      "User Authentication",
+      "Security Scanning",
+      "Community Reviews",
+      "Developer Tools",
+      "Responsive Design",
+      "LocalStorage",
+      "Dynamic Filtering",
+      "Modal System"
+    ],
+    "links": {
+      "live": "./secure-plugin-marketplace/secure-plugin-marketplace.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
