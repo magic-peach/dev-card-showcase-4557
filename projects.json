@@ -2045,6 +2045,18 @@
       "github": "https://github.com/Gupta-02"
     }
   },
+    {
+    "title": "Theme Toggle",
+    "description": "An interactive theme toggle that switches between light and dark modes. Features smooth transitions, persistent theme settings using localStorage, and a responsive design for all device sizes.",
+    "tags": ["HTML", "CSS", "JavaScript", "Theme"],
+    "links": {
+      "live": "./projects/theme-toogle/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Fitness Stats Tracker",
     "description": "A fully fledged fitness tracking dashboard that allows users to log daily activity metrics and monitor overall progress over time. Features a modern dark-themed UI, persistent local storage, real-time calorie calculations, and a responsive left–right dashboard layout that presents summaries and historical data in a clean, intuitive manner.",
