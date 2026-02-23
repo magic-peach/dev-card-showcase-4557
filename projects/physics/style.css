@@ -1,7 +1,3 @@
-/* ═══════════════════════════════════════
-   PHYSICS FORGE — style.css
-   Glassmorphism Physics Simulator
-═══════════════════════════════════════ */
 
 :root {
   --bg-1:   #0d0d1a;
@@ -11,11 +7,11 @@
   --glass-hover:  rgba(255,255,255,0.11);
   --blur: blur(18px);
 
-  --accent-1: #7b6ff0;   /* violet */
-  --accent-2: #38d9f5;   /* cyan   */
-  --accent-3: #f06292;   /* pink   */
-  --accent-4: #66ffa6;   /* mint   */
-  --accent-5: #ffb347;   /* amber  */
+  --accent-1: #7b6ff0;   
+  --accent-2: #38d9f5; 
+  --accent-3: #f06292;   
+  --accent-4: #66ffa6;   
+  --accent-5: #ffb347;  
 
   --text:     #e8e8ff;
   --text-dim: rgba(200,200,255,0.45);

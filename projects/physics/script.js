@@ -1,7 +1,4 @@
-// ═══════════════════════════════════════
-//   PHYSICS FORGE — script.js
-//   6 Real Physics Simulators
-// ═══════════════════════════════════════
+
 
 const canvas  = document.getElementById('sim-canvas');
 const ctx     = canvas.getContext('2d');
@@ -11,7 +8,6 @@ let animId = null;
 let currentSim = null;
 let frameCount = 0, lastFPSTime = performance.now();
 
-// ── Resize canvas to its CSS size ──
 function resizeCanvas() {
   const rect = canvas.parentElement.getBoundingClientRect();
   canvas.width  = rect.width  - 8;
@@ -20,7 +16,7 @@ function resizeCanvas() {
 }
 window.addEventListener('resize', resizeCanvas);
 
-// ── FPS counter ──
+
 function updateFPS() {
   frameCount++;
   const now = performance.now();
@@ -788,9 +784,14 @@ function simGas() {
   return { start() { getControls(); initParticles(); draw(); }, onResize() { initParticles(); } };
 }
 
-// ══════════════════════════════════════════════════════
-//  6. SPRING & OSCILLATION (SHM + Damping)
-// ══════════════════════════════════════════════════════
+
+
+
+
+
+
+
+
 function simSpring() {
   let k=80, mass=2, damping=0.3, x=1.5, v=0, t=0;
   let posHistory=[], velHistory=[], maxHist=300;
