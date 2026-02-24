@@ -59,27 +59,28 @@
     }
   },
   {
-    "title": "Modular Data Integrity Sentinel #5217",
-    "description": "Comprehensive data integrity validation system with modular checks for health and cognitive tracking data. Ensure your data remains consistent, valid, and secure across all trackers. Features include consistency checks, checksum validation, range validation, duplicate detection, full system scans, and data repair tools.",
+    "title": "Cross-Modal Cognition Amplifier #5218",
+    "description": "Enhance cognitive abilities through multi-sensory integration and cross-modal training. Engage visual, auditory, and kinesthetic modalities simultaneously to improve learning, memory, and cognitive flexibility. Features interactive exercises, progress tracking, and real-time cognitive insights.",
     "tags": [
       "HTML",
       "CSS",
       "JavaScript",
-      "Data Integrity",
-      "Data Validation",
-      "Security",
-      "Consistency Checks",
-      "Checksum Validation",
-      "Range Validation",
-      "Duplicate Detection",
-      "Data Repair",
-      "LocalStorage",
-      "Health Data",
-      "Cognitive Data",
-      "Data Security"
+      "Cognitive Training",
+      "Multi-Sensory Learning",
+      "Cross-Modal Integration",
+      "Visual-Auditory",
+      "Kinesthetic Learning",
+      "Cognitive Enhancement",
+      "Pattern Recognition",
+      "Memory Training",
+      "Interactive Exercises",
+      "Progress Tracking",
+      "Cognitive Flexibility",
+      "Web Audio API",
+      "Canvas Drawing"
     ],
     "links": {
-      "live": "./projects/modular-data-integrity-sentinel/modular-data-integrity-sentinel.html"
+      "live": "./cross-modal-cognition-amplifier/index.html"
     },
     "author": {
       "name": "Gupta-02",
