@@ -31,6 +31,38 @@
     }
   },
   {
+    "title": "Proactive Infrastructure Resilience Hub #5219",
+    "description": "Monitor, analyze, and enhance infrastructure resilience with proactive insights and automated recommendations. Features real-time component monitoring, resilience scoring, failure simulation, automated alerting, and comprehensive reporting for maintaining robust infrastructure health.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Infrastructure Monitoring",
+      "Resilience Engineering",
+      "DevOps",
+      "System Health",
+      "Failure Simulation",
+      "Automated Alerting",
+      "Capacity Planning",
+      "Risk Assessment",
+      "Data Visualization",
+      "Chart.js",
+      "Real-Time Analytics",
+      "Infrastructure as Code",
+      "Cloud Architecture",
+      "System Reliability",
+      "Performance Monitoring",
+      "Incident Response"
+    ],
+    "links": {
+      "live": "./proactive-infrastructure-resilience-hub/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
     "title": "Abstract Thinking Progress Tracker",
     "description": "Enhance your abstract thinking skills through targeted exercises and track your progress over time. Abstract thinking involves recognizing patterns, forming concepts, and solving problems creatively. Features include various exercise types, performance tracking, difficulty assessment, and progress visualization.",
     "tags": [
