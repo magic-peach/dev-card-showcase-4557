@@ -3797,9 +3797,36 @@
     }
   },
   {
-    "title": "Number System Converter",
-    "description": "A compact utility that converts numbers between Binary, Decimal, Octal, and Hexadecimal. Built with a consistent, responsive UI and clear visual output for quick and accurate base conversions.",
-    "tags": ["HTML", "CSS", "JavaScript"],
+    "title": "Distributed Event Streaming Bus #5066",
+    "description": "A comprehensive event streaming system simulator and management tool. Features real-time message simulation, producer/consumer management, topic and partition handling, monitoring dashboards with interactive charts, message flow visualization using D3.js, and advanced settings for connection, performance, and data management. Includes comprehensive analytics, export/import functionality, and a professional UI with dark/light theme support.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Event Streaming",
+      "Real-time Processing",
+      "Data Visualization",
+      "Chart.js",
+      "D3.js",
+      "LocalStorage",
+      "Producer/Consumer",
+      "Topic Management",
+      "Partition Handling",
+      "Monitoring",
+      "Analytics",
+      "Message Flow",
+      "Responsive Design",
+      "Dark/Light Theme"
+    ],
+    "links": {
+      "live": "./projects/distributed-event-streaming-bus/distributed-event-streaming-bus.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  }
+]    "tags": ["HTML", "CSS", "JavaScript"],
     "links": {
       "live": "./projects/number-system-converter/"
     },
