@@ -1870,11 +1870,11 @@ const staticProjects = [
         }
     },
     {
-        title: "Autonomous Compliance Verification Kernel 🔍",
-        description: "An intelligent system that autonomously verifies compliance with health, productivity, and development protocols using rule-based and machine learning approaches. Monitors multiple trackers and provides automated feedback.",
-        tags: ["HTML", "CSS", "JavaScript", "Health", "Productivity", "AI", "Compliance"],
+        title: "Secure Multi-Tenant Isolation Architecture 🔒",
+        description: "Interactive visualization of secure multi-tenant architecture with isolation controls, attack simulation, and real-time security metrics.",
+        tags: ["HTML", "CSS", "JavaScript", "Security", "Architecture", "Multi-Tenant", "Visualization"],
         links: {
-            live: "autonomous-compliance-verification-kernel.html"
+            live: "./projects/Secure Multi-Tenant Isolation Architecture/index.html"
         },
         author: {
             name: "Gupta-02",
