@@ -9,20 +9,145 @@
 <body>//
     <div class="container">
         <h1>Community Skill Barter Platform</h1>
-        <form id="barterForm">
-            <label for="username">Your Name (or Alias):</label>
-            <input type="text" id="username" name="username" maxlength="24" required>
-            <label for="offer">I can offer:</label>
-            <input type="text" id="offer" name="offer" maxlength="48" required>
-            <label for="request">I want in return:</label>
-            <input type="text" id="request" name="request" maxlength="48" required>
-            <button type="submit">Post Barter</button>
-        </form>
-        <div id="confirmation" class="hidden"></div>
-        <hr>
-        <h2>Available Barters</h2>
-        <div id="barterList"></div>
+        <nav>
+            <button id="navProfiles" class="active">Skill Profiles</button>
+            <button id="navBarter">Barter Board</button>
+            <button id="navMatch">Find Match</button>
+        </nav>
+        <section id="profilesSection" class="active">
+            <h2>Your Skill Profile</h2>
+            <form id="profileForm" class="card">
+                <label>Name (or Alias)</label>
+                <input type="text" id="profileName" maxlength="32" required>
+                <label>Skills You Offer (comma separated)</label>
+                <input type="text" id="profileSkills" maxlength="100" required placeholder="e.g. Math Tutoring, Graphic Design">
+                <label>Skills You Need (comma separated)</label>
+                <input type="text" id="profileNeeds" maxlength="100" required placeholder="e.g. Guitar Lessons, Web Help">
+                <button type="submit">Save Profile</button>
+            </form>
+            <div id="profileStatus"></div>
+            <h3>All Skill Profiles</h3>
+            <ul id="profileList" class="profile-list"></ul>
+        </section>
+        <section id="barterSection">
+            <h2>Barter Board</h2>
+            <form id="barterForm" class="card">
+                <label>What do you offer?</label>
+                <input type="text" id="barterOffer" maxlength="60" required>
+                <label>What do you need?</label>
+                <input type="text" id="barterNeed" maxlength="60" required>
+                <label>Describe your request</label>
+                <textarea id="barterDesc" rows="2" maxlength="200" required></textarea>
+                <button type="submit">Post Barter Request</button>
+            </form>
+            <div id="barterStatus"></div>
+            <h3>Recent Barter Requests</h3>
+            <ul id="barterList" class="barter-list"></ul>
+        </section>
+        <section id="matchSection">
+            <h2>Find a Match</h2>
+            <div class="card">
+                <label>Skill you need:</label>
+                <input type="text" id="matchNeed" maxlength="40" placeholder="e.g. Spanish Tutoring">
+                <button id="findMatchBtn" type="button">Find Match</button>
+            </div>
+            <div id="matchResults"></div>
+        </section>
     </div>
-    <script src="app.js"></script>
+    <script>
+        // Navigation
+        const navProfiles = document.getElementById('navProfiles');
+        const navBarter = document.getElementById('navBarter');
+        const navMatch = document.getElementById('navMatch');
+        const profilesSection = document.getElementById('profilesSection');
+        const barterSection = document.getElementById('barterSection');
+        const matchSection = document.getElementById('matchSection');
+        function showSection(section) {
+            [profilesSection, barterSection, matchSection].forEach(s => s.classList.remove('active'));
+            section.classList.add('active');
+            [navProfiles, navBarter, navMatch].forEach(b => b.classList.remove('active'));
+            if(section===profilesSection) navProfiles.classList.add('active');
+            if(section===barterSection) navBarter.classList.add('active');
+            if(section===matchSection) navMatch.classList.add('active');
+        }
+        navProfiles.onclick = () => showSection(profilesSection);
+        navBarter.onclick = () => showSection(barterSection);
+        navMatch.onclick = () => showSection(matchSection);
+        // Profile logic
+        const profileForm = document.getElementById('profileForm');
+        const profileName = document.getElementById('profileName');
+        const profileSkills = document.getElementById('profileSkills');
+        const profileNeeds = document.getElementById('profileNeeds');
+        const profileStatus = document.getElementById('profileStatus');
+        const profileList = document.getElementById('profileList');
+        let profiles = JSON.parse(localStorage.getItem('skillBarterProfiles')||'[]');
+        function renderProfiles() {
+            profileList.innerHTML = '';
+            profiles.forEach((p,i) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<b>${p.name}</b><br><span class="tag">Offers:</span> ${p.skills.join(', ')}<br><span class="tag">Needs:</span> ${p.needs.join(', ')}`;
+                profileList.appendChild(li);
+            });
+        }
+        profileForm.onsubmit = e => {
+            e.preventDefault();
+            const name = profileName.value.trim()||'Anonymous';
+            const skills = profileSkills.value.split(',').map(s=>s.trim()).filter(Boolean);
+            const needs = profileNeeds.value.split(',').map(s=>s.trim()).filter(Boolean);
+            if(!skills.length||!needs.length) { profileStatus.innerHTML = '<div class="error">Please enter at least one skill offered and needed.</div>'; return; }
+            profiles.push({name,skills,needs});
+            localStorage.setItem('skillBarterProfiles',JSON.stringify(profiles));
+            profileStatus.innerHTML = '<div class="success">Profile saved!</div>';
+            renderProfiles();
+            profileForm.reset();
+        };
+        renderProfiles();
+        // Barter logic
+        const barterForm = document.getElementById('barterForm');
+        const barterOffer = document.getElementById('barterOffer');
+        const barterNeed = document.getElementById('barterNeed');
+        const barterDesc = document.getElementById('barterDesc');
+        const barterStatus = document.getElementById('barterStatus');
+        const barterList = document.getElementById('barterList');
+        let barters = JSON.parse(localStorage.getItem('skillBarterBarters')||'[]');
+        function renderBarters() {
+            barterList.innerHTML = '';
+            barters.slice().reverse().forEach((b,i) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span class="tag">Offers:</span> ${b.offer} <span class="tag">Needs:</span> ${b.need}<br>${b.desc}`;
+                barterList.appendChild(li);
+            });
+        }
+        barterForm.onsubmit = e => {
+            e.preventDefault();
+            const offer = barterOffer.value.trim();
+            const need = barterNeed.value.trim();
+            const desc = barterDesc.value.trim();
+            if(!offer||!need||!desc) { barterStatus.innerHTML = '<div class="error">All fields required.</div>'; return; }
+            barters.push({offer,need,desc});
+            localStorage.setItem('skillBarterBarters',JSON.stringify(barters));
+            barterStatus.innerHTML = '<div class="success">Barter request posted!</div>';
+            renderBarters();
+            barterForm.reset();
+        };
+        renderBarters();
+        // Match logic
+        const matchNeed = document.getElementById('matchNeed');
+        const findMatchBtn = document.getElementById('findMatchBtn');
+        const matchResults = document.getElementById('matchResults');
+        findMatchBtn.onclick = () => {
+            const need = matchNeed.value.trim().toLowerCase();
+            if(!need) { matchResults.innerHTML = '<div class="error">Enter a skill you need.</div>'; return; }
+            const matches = profiles.filter(p=>p.skills.some(s=>s.toLowerCase().includes(need)));
+            if(!matches.length) { matchResults.innerHTML = '<div class="error">No matches found.</div>'; return; }
+            matchResults.innerHTML = '<h4>Potential Matches:</h4>';
+            matches.forEach(m => {
+                const div = document.createElement('div');
+                div.className = 'card';
+                div.innerHTML = `<b>${m.name}</b><br><span class="tag">Offers:</span> ${m.skills.join(', ')}<br><span class="tag">Needs:</span> ${m.needs.join(', ')}`;
+                matchResults.appendChild(div);
+            });
+        };
+    </script>
 </body>
 </html>
