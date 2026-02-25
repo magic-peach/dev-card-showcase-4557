@@ -3216,6 +3216,18 @@
     }
   },
   {
+  "title": "Health Check Dashboard",
+  "description": "A modern front-end Health Check Dashboard that simulates server status with unique glassmorphic UI. Features pulsing heartbeat indicators, animated gradient response bars, dynamic uptime and logs, and a fully responsive minimalist layout. Built entirely with HTML, CSS, and JavaScript, it demonstrates interactive UI design and real-time monitoring simulation.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/health-check-endpoint/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Mood Match",
     "description": "A colorful and emotionally intelligent mood-matching application that lets users select how they feel and receive thoughtful responses with activity suggestions. Designed with a playful yet mature UI, smooth animations, and vibrant gradients to enhance user engagement and self-awareness.",
     "tags": [
