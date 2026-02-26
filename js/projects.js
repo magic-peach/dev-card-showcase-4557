@@ -1991,6 +1991,19 @@ const staticProjects = [
             name: "Gupta-02",
             github: "https://github.com/Gupta-02"
         }
+    },
+    {
+        title: "Cross-Domain Semantic Integrator",
+        description:
+            "An intelligent system that unifies data and insights across multiple domains into coherent semantic frameworks. Features entity mapping, relationship discovery, knowledge graph generation, and cross-domain correlation analysis for enterprise analytics and AI training.",
+        tags: ["HTML", "CSS", "JavaScript", "AI", "Data Integration", "Knowledge Graph", "Semantic Web", "Analytics"],
+        links: {
+            live: "./projects/cross-domain-semantic-integrator/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];
