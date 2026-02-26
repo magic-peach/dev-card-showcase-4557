@@ -13839,5 +13839,38 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Conversation Flow Optimizer #5909",
+    "description": "Advanced AI-powered conversation flow optimization system that analyzes historical dialogue patterns to suggest adaptive branching and response prioritization for efficiency and clarity in multi-turn interactions. Features include interactive flow visualization, real-time optimization algorithms, conversation simulation, pattern analysis, automated suggestions, and comprehensive analytics dashboard.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "AI",
+      "Conversation Optimization",
+      "Flow Visualization",
+      "Pattern Analysis",
+      "Interactive Dashboard",
+      "Real-time Analytics",
+      "Canvas API",
+      "Optimization Algorithms",
+      "Dialogue Management",
+      "User Experience",
+      "Adaptive Branching",
+      "Response Prioritization",
+      "Conversation Simulation",
+      "Data Visualization",
+      "Performance Metrics",
+      "Flow Editor",
+      "Drag and Drop"
+    ],
+    "links": {
+      "live": "./projects/conversation-flow-optimizer/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
