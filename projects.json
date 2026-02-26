@@ -9704,6 +9704,18 @@
     }
   },
   {
+  "title": "Comic Strip Creator – Futuristic Interactive Tool",
+  "description": "A modern and interactive Comic Strip Creator that allows users to design comic strips with draggable characters, customizable dialogue bubbles, dynamic panel layouts, and multiple backgrounds. Features include staggered/futuristic panels, neon/glow UI, drag-and-drop characters and dialogues, dark/light mode, and export functionality (JSON). Built with HTML, CSS, and JavaScript for an engaging comic creation experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/comic-strip-creator/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Neural Network Playground",
     "description": "An interactive machine learning visualization built with vanilla JavaScript. Features a custom matrix math engine, real-time training visualization, and architecture configuration to demonstrate neural network internals without external libraries.",
     "tags": [
