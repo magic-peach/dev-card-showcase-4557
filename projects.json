@@ -7526,6 +7526,18 @@
     }
   },
   {
+  "title": "Task XP Gamifier – RPG-Style Interactive Task Manager",
+  "description": "A gamified task manager where each task gives XP and contributes to leveling up. Features include multiple task types (Routine, Challenge, Bonus, Timed, Special), priority-based XP multipliers, streak bonuses, animated XP bars, pop-up level-up notifications, badges for milestones, and a game-style interactive UI. Built with HTML, CSS, and JavaScript for a visually engaging and rewarding task experience.",
+  "tags": ["HTML", "CSS", "JavaScript", "Interactive UI", "Gamification"],
+  "links": {
+    "live": "./projects/task-xp-gamifier/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Password Strength Checker",
     "description": "Check the strength of your passwords to ensure they are secure and robust.",
     "tags": ["HTML", "CSS", "JavaScript"],
