@@ -183,6 +183,38 @@
             </div>
         </div>
 
+        <!-- Smart Break Recommendations Section -->
+        <div class="break-recommendations-section">
+            <h2>☕ Smart Break Recommendations</h2>
+            
+            <div class="break-stats-grid">
+                <div class="focus-score-card">
+                    <h3>Focus Score</h3>
+                    <div class="focus-score-circle" id="focus-score-circle">
+                        <span id="focus-score">0</span>
+                    </div>
+                    <p class="focus-score-label">Your focus quality score (0-100)</p>
+                </div>
+                
+                <div class="break-analytics-card">
+                    <h3>Break Analytics</h3>
+                    <div id="break-analytics" class="break-analytics-content">
+                        <div class="break-stat">
+                            <span class="stat-label">Breaks Taken:</span>
+                            <span class="stat-value">0</span>
+                        </div>
+                        <div class="break-stat">
+                            <span class="stat-label">Log your first break to see analytics!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container" style="height: 300px;">
+                <canvas id="break-effectiveness-chart"></canvas>
+            </div>
+        </div>
+
         <div class="recent-switches">
             <h2>Recent Task Switches</h2>
             <div id="switches-list"></div>
@@ -226,6 +258,32 @@
             <div class="modal-buttons">
                 <button id="import-cancel" class="btn-secondary">Cancel</button>
                 <button id="import-confirm" class="btn-primary">Yes, Import Data</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Break Recommendation Modal -->
+    <div id="break-modal" class="modal">
+        <div class="modal-content break-modal-content">
+            <h3>☕ Time for a Break!</h3>
+            <div class="break-recommendation-details">
+                <p>
+                    <span>Focus Duration:</span>
+                    <strong id="break-duration">0</strong> minutes
+                </p>
+                <p>
+                    <span>Avg Cognitive Load:</span>
+                    <strong id="break-cognitive-load">0</strong>/10
+                </p>
+                <p>
+                    <span>Est. Productivity Gain:</span>
+                    <strong id="break-benefit">+25%</strong>
+                </p>
+            </div>
+            <p class="break-message">Taking a short break now can help maintain your focus and productivity. Studies show that regular breaks improve cognitive performance and reduce mental fatigue.</p>
+            <div class="modal-buttons">
+                <button id="modal-snooze" class="btn-secondary">Snooze (30 min)</button>
+                <button id="modal-dismiss" class="btn-primary">OK, Take Break</button>
             </div>
         </div>
     </div>
