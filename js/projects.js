@@ -1940,6 +1940,18 @@ const staticProjects = [
             name: "Gupta-02",
             github: "https://github.com/Gupta-02"
         }
+    },
+    {
+        title: "Predictive Conversation Termination Advisor 💬",
+        description: "Analyzes conversational signals and suggests optimal closure points to improve efficiency and prevent prolonged or redundant conversations.",
+        tags: ["HTML", "CSS", "JavaScript", "AI/ML", "Conversational AI", "Productivity"],
+        links: {
+            live: "./projects/predictive-conversation-termination-advisor/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];
