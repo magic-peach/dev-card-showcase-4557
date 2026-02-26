@@ -13339,6 +13339,35 @@
     "links": {
       "live": "./federated-insight-aggregation-network/index.html"
     },
+  },
+  {
+    "title": "Intelligent Query Acceleration Framework #5332",
+    "description": "Advanced database query performance monitoring and optimization platform. Features real-time query analysis, performance metrics dashboard, execution time histograms, query type distribution charts, optimization suggestions, automated query optimization, and comprehensive performance insights for database administrators and developers.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Database Performance",
+      "Query Optimization",
+      "Real-time Monitoring",
+      "Data Visualization",
+      "Chart.js",
+      "Performance Analytics",
+      "Query Analysis",
+      "Database Administration",
+      "SQL Optimization",
+      "Performance Metrics",
+      "Execution Time Analysis",
+      "Query Caching",
+      "Index Optimization",
+      "Database Tuning",
+      "Performance Dashboard",
+      "Query Profiling",
+      "Database Monitoring"
+    ],
+    "links": {
+      "live": "./projects/intelligent-query-acceleration-framework/index.html"
+    },
     "author": {
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
