@@ -6,6 +6,13 @@ class CognitiveSwitchTracker {
         this.currentTask = localStorage.getItem('current-task') || null;
         this.AVERAGE_SWITCH_COST = 25; // minutes based on research
         this.importedData = null;
+        this.lastBreakTime = localStorage.getItem('last-break-time') ? 
+            new Date(localStorage.getItem('last-break-time')) : new Date();
+        this.BREAK_THRESHOLD = 90; 
+        this.HIGH_COGNITIVE_LOAD = 7; 
+        this.notificationShown = false;
+        this.focusScore = 0;
+        
         this.categoryColors = {
             'Development': '#4a90e2',
             'Meetings': '#e74c3c',
@@ -14,7 +21,8 @@ class CognitiveSwitchTracker {
             'Research': '#9b59b6',
             'Admin': '#1abc9c',
             'Creative': '#e67e22',
-            'Other': '#95a5a6'
+            'Other': '#95a5a6',
+            'Break': '#f1c40f'
         };
 
         this.init();
@@ -28,6 +36,10 @@ class CognitiveSwitchTracker {
         this.renderCharts();
         this.renderFlowAnalysis();
         this.displayRecentSwitches();
+        this.startBreakMonitoring();
+        this.calculateFocusScore();
+        this.displayFocusScore();
+        this.displayBreakAnalytics();
     }
 
     setupEventListeners() {
@@ -76,6 +88,7 @@ class CognitiveSwitchTracker {
         const exportData = {
             switches: this.switches,
             currentTask: this.currentTask,
+            lastBreakTime: this.lastBreakTime,
             exportDate: new Date().toISOString(),
             version: '1.0'
         };
@@ -177,12 +190,19 @@ class CognitiveSwitchTracker {
             this.currentTask = this.importedData.currentTask;
         }
 
+        if (this.importedData.lastBreakTime) {
+            this.lastBreakTime = new Date(this.importedData.lastBreakTime);
+        }
+
         this.saveData();
         this.destroyCharts();
         this.updateUI();
         this.renderCharts();
         this.renderFlowAnalysis();
         this.displayRecentSwitches();
+        this.calculateFocusScore();
+        this.displayFocusScore();
+        this.displayBreakAnalytics();
         this.showNotification(`Successfully imported ${newSwitches.length} new records!`, 'success');
         this.importedData = null;
     }
@@ -190,10 +210,13 @@ class CognitiveSwitchTracker {
     setupModalEventListeners() {
         const modal = document.getElementById('confirm-modal');
         const importModal = document.getElementById('import-confirm-modal');
+        const breakModal = document.getElementById('break-modal');
         const cancelBtn = document.getElementById('modal-cancel');
         const confirmBtn = document.getElementById('modal-confirm');
         const importCancel = document.getElementById('import-cancel');
         const importConfirm = document.getElementById('import-confirm');
+        const snoozeBtn = document.getElementById('modal-snooze');
+        const dismissBtn = document.getElementById('modal-dismiss');
 
         cancelBtn.addEventListener('click', () => {
             this.hideConfirmationModal();
@@ -203,6 +226,22 @@ class CognitiveSwitchTracker {
             this.clearAllData();
             this.hideConfirmationModal();
         });
+
+        if (snoozeBtn) {
+            snoozeBtn.addEventListener('click', () => {
+                this.hideBreakModal();
+                this.notificationShown = true;
+                setTimeout(() => {
+                    this.notificationShown = false;
+                }, 30 * 60 * 1000); // Reset after 30 minutes
+            });
+        }
+
+        if (dismissBtn) {
+            dismissBtn.addEventListener('click', () => {
+                this.hideBreakModal();
+            });
+        }
 
         importCancel.addEventListener('click', () => {
             this.hideImportModal();
@@ -225,6 +264,12 @@ class CognitiveSwitchTracker {
             }
         });
 
+        breakModal.addEventListener('click', (e) => {
+            if (e.target === breakModal) {
+                this.hideBreakModal();
+            }
+        });
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 if (modal.classList.contains('show')) {
@@ -232,6 +277,9 @@ class CognitiveSwitchTracker {
                 }
                 if (importModal.classList.contains('show')) {
                     this.hideImportModal();
+                }
+                if (breakModal.classList.contains('show')) {
+                    this.hideBreakModal();
                 }
             }
         });
@@ -247,6 +295,16 @@ class CognitiveSwitchTracker {
         modal.classList.remove('show');
     }
 
+    showBreakModal() {
+        const modal = document.getElementById('break-modal');
+        modal.classList.add('show');
+    }
+
+    hideBreakModal() {
+        const modal = document.getElementById('break-modal');
+        modal.classList.remove('show');
+    }
+
     hideImportModal() {
         const modal = document.getElementById('import-confirm-modal');
         modal.classList.remove('show');
@@ -256,9 +314,11 @@ class CognitiveSwitchTracker {
     clearAllData() {
         localStorage.removeItem('cognitive-switches');
         localStorage.removeItem('current-task');
+        localStorage.removeItem('last-break-time');
         
         this.switches = [];
         this.currentTask = null;
+        this.lastBreakTime = new Date();
         
         document.getElementById('task-switch-form').reset();
         document.getElementById('cognitive-load').value = 5;
@@ -270,6 +330,9 @@ class CognitiveSwitchTracker {
         this.renderCharts();
         this.renderFlowAnalysis();
         this.displayRecentSwitches();
+        this.calculateFocusScore();
+        this.displayFocusScore();
+        this.displayBreakAnalytics();
         
         this.showNotification('All data has been cleared successfully!', 'success');
         
@@ -277,7 +340,7 @@ class CognitiveSwitchTracker {
     }
 
     destroyCharts() {
-        const charts = ['switch-frequency-chart', 'time-loss-chart', 'flow-sankey-chart', 'top-transitions-chart'];
+        const charts = ['switch-frequency-chart', 'time-loss-chart', 'flow-sankey-chart', 'top-transitions-chart', 'break-effectiveness-chart'];
         charts.forEach(chartId => {
             const canvas = document.getElementById(chartId);
             if (canvas) {
@@ -298,6 +361,225 @@ class CognitiveSwitchTracker {
         `;
     }
 
+    startBreakMonitoring() {
+        setInterval(() => {
+            this.checkBreakRecommendation();
+        }, 60000);
+    }
+
+    checkBreakRecommendation() {
+        if (this.notificationShown) return;
+
+        const focusDuration = this.calculateCurrentFocusDuration();
+        const avgCognitiveLoad = this.calculateAverageCognitiveLoad();
+        
+        const lastSwitch = this.switches[0];
+        if (lastSwitch && lastSwitch.reason === 'break') {
+            this.lastBreakTime = new Date(lastSwitch.timestamp);
+            return;
+        }
+
+        const now = new Date();
+        const timeSinceBreak = Math.round((now - this.lastBreakTime) / (1000 * 60));
+
+        if (timeSinceBreak > this.BREAK_THRESHOLD && avgCognitiveLoad > this.HIGH_COGNITIVE_LOAD) {
+            this.showBreakRecommendation(timeSinceBreak, avgCognitiveLoad);
+        }
+    }
+
+    calculateCurrentFocusDuration() {
+        if (this.switches.length === 0) return 0;
+        
+        const lastSwitch = new Date(this.switches[0].timestamp);
+        const now = new Date();
+        return Math.round((now - lastSwitch) / (1000 * 60));
+    }
+
+    calculateAverageCognitiveLoad() {
+        if (this.switches.length === 0) return 0;
+        
+        const recentSwitches = this.switches.slice(0, 5);
+        const sum = recentSwitches.reduce((total, s) => total + s.cognitiveLoad, 0);
+        return sum / recentSwitches.length;
+    }
+
+    showBreakRecommendation(duration, load) {
+        const modal = document.getElementById('break-modal');
+        const durationSpan = document.getElementById('break-duration');
+        const loadSpan = document.getElementById('break-cognitive-load');
+        const benefitSpan = document.getElementById('break-benefit');
+
+        durationSpan.textContent = duration;
+        loadSpan.textContent = load.toFixed(1);
+        
+        const productivityGain = this.calculateProductivityGain();
+        benefitSpan.textContent = `+${productivityGain}%`;
+
+        modal.classList.add('show');
+        this.notificationShown = true;
+    }
+
+    calculateProductivityGain() {
+        const breaks = this.switches.filter(s => s.reason === 'break');
+        if (breaks.length < 2) return 25; // Default value
+
+        let totalGain = 0;
+        let validBreaks = 0;
+
+        for (let i = 0; i < breaks.length; i++) {
+            const breakIndex = this.switches.findIndex(s => s.id === breaks[i].id);
+            
+            if (breakIndex > 0 && breakIndex < this.switches.length - 1) {
+                const beforeBreak = this.switches[breakIndex + 1];
+                const afterBreak = this.switches[breakIndex - 1];
+                
+                if (beforeBreak && afterBreak) {
+                    const loadReduction = beforeBreak.cognitiveLoad - afterBreak.cognitiveLoad;
+                    const gain = (loadReduction / beforeBreak.cognitiveLoad) * 100;
+                    totalGain += gain;
+                    validBreaks++;
+                }
+            }
+        }
+
+        return validBreaks > 0 ? Math.round(totalGain / validBreaks) : 25;
+    }
+
+    calculateFocusScore() {
+        if (this.switches.length === 0) {
+            this.focusScore = 0;
+            return 0;
+        }
+
+        let score = 100;
+
+        // Penalize frequent switches (more than 4 per hour)
+        const lastHour = this.switches.filter(s => {
+            const switchTime = new Date(s.timestamp);
+            const hourAgo = new Date(Date.now() - 60 * 60 * 1000);
+            return switchTime > hourAgo;
+        }).length;
+
+        if (lastHour > 4) {
+            score -= (lastHour - 4) * 10;
+        }
+
+        const highLoadSwitches = this.switches.filter(s => s.cognitiveLoad > 7).length;
+        score -= highLoadSwitches * 2;
+
+        const breaks = this.switches.filter(s => s.reason === 'break').length;
+        score += breaks * 5;
+
+        if (this.switches.length > 1) {
+            let avgFocusTime = 0;
+            for (let i = 0; i < Math.min(5, this.switches.length - 1); i++) {
+                const time1 = new Date(this.switches[i].timestamp);
+                const time2 = new Date(this.switches[i + 1].timestamp);
+                const diff = Math.abs(time2 - time1) / (1000 * 60);
+                avgFocusTime += diff;
+            }
+            avgFocusTime /= Math.min(5, this.switches.length - 1);
+            
+            if (avgFocusTime > 45) {
+                score += 10;
+            } else if (avgFocusTime > 25) {
+                score += 5;
+            }
+        }
+
+        this.focusScore = Math.max(0, Math.min(100, Math.round(score)));
+        return this.focusScore;
+    }
+
+    displayFocusScore() {
+        const scoreElement = document.getElementById('focus-score');
+        const circleElement = document.getElementById('focus-score-circle');
+        
+        if (scoreElement) {
+            scoreElement.textContent = this.focusScore;
+        }
+
+        if (circleElement) {
+            let color = '#e74c3c'; 
+            if (this.focusScore >= 70) color = '#27ae60'; 
+            else if (this.focusScore >= 40) color = '#f39c12'; 
+            
+            const percentage = this.focusScore;
+            circleElement.style.background = `conic-gradient(${color} 0deg ${percentage * 3.6}deg, #e1e5e9 ${percentage * 3.6}deg 360deg)`;
+        }
+    }
+
+    displayBreakAnalytics() {
+        const analyticsDiv = document.getElementById('break-analytics');
+        if (!analyticsDiv) return;
+
+        const breaks = this.switches.filter(s => s.reason === 'break');
+        
+        if (breaks.length === 0) {
+            analyticsDiv.innerHTML = `
+                <div class="break-stat">
+                    <span class="stat-label">Breaks Taken:</span>
+                    <span class="stat-value">0</span>
+                </div>
+                <div class="break-stat">
+                    <span class="stat-label">Log your first break to see analytics!</span>
+                </div>
+            `;
+            return;
+        }
+
+        // Calculate average break interval
+        let totalInterval = 0;
+        let intervalCount = 0;
+        
+        for (let i = 0; i < breaks.length - 1; i++) {
+            const break1 = new Date(breaks[i].timestamp);
+            const break2 = new Date(breaks[i + 1].timestamp);
+            const interval = Math.abs(break2 - break1) / (1000 * 60);
+            totalInterval += interval;
+            intervalCount++;
+        }
+        
+        const avgInterval = intervalCount > 0 ? Math.round(totalInterval / intervalCount) : 0;
+        
+        // Calculate average break duration (time between break and next switch)
+        let totalBreakDuration = 0;
+        let durationCount = 0;
+        
+        for (let i = 0; i < breaks.length; i++) {
+            const breakIndex = this.switches.findIndex(s => s.id === breaks[i].id);
+            if (breakIndex > 0) {
+                const nextSwitch = this.switches[breakIndex - 1];
+                const breakTime = new Date(breaks[i].timestamp);
+                const nextTime = new Date(nextSwitch.timestamp);
+                const duration = Math.abs(nextTime - breakTime) / (1000 * 60);
+                totalBreakDuration += duration;
+                durationCount++;
+            }
+        }
+        
+        const avgBreakDuration = durationCount > 0 ? Math.round(totalBreakDuration / durationCount) : 0;
+
+        analyticsDiv.innerHTML = `
+            <div class="break-stat">
+                <span class="stat-label">Total Breaks:</span>
+                <span class="stat-value">${breaks.length}</span>
+            </div>
+            <div class="break-stat">
+                <span class="stat-label">Avg Break Interval:</span>
+                <span class="stat-value">${avgInterval} min</span>
+            </div>
+            <div class="break-stat">
+                <span class="stat-label">Avg Break Duration:</span>
+                <span class="stat-value">${avgBreakDuration} min</span>
+            </div>
+            <div class="break-stat">
+                <span class="stat-label">Productivity Gain:</span>
+                <span class="stat-value">+${this.calculateProductivityGain()}%</span>
+            </div>
+        `;
+    }
+
     logTaskSwitch() {
         const previousTask = document.getElementById('previous-task').value.trim();
         const previousCategory = document.getElementById('previous-category').value;
@@ -313,7 +595,7 @@ class CognitiveSwitchTracker {
 
         // Calculate dynamic switch cost based on cognitive load
         const baseCost = this.AVERAGE_SWITCH_COST;
-        const cognitiveMultiplier = cognitiveLoad / 5; // Scale with cognitive load
+        const cognitiveMultiplier = cognitiveLoad / 5;
         const switchCost = Math.round(baseCost * cognitiveMultiplier);
 
         const switchData = {
@@ -326,11 +608,17 @@ class CognitiveSwitchTracker {
             reason,
             cognitiveLoad,
             switchCost,
-            date: new Date().toDateString()
+            date: new Date().toDateString(),
+            isBreak: reason === 'break'
         };
 
         this.switches.unshift(switchData);
         this.currentTask = currentTaskInput;
+
+        if (reason === 'break') {
+            this.lastBreakTime = new Date();
+            localStorage.setItem('last-break-time', this.lastBreakTime.toISOString());
+        }
 
         // Keep only last 100 switches
         if (this.switches.length > 100) {
@@ -345,13 +633,16 @@ class CognitiveSwitchTracker {
         this.renderFlowAnalysis();
         
         this.displayRecentSwitches();
+        this.calculateFocusScore();
+        this.displayFocusScore();
+        this.displayBreakAnalytics();
+        this.hideBreakModal();
 
         // Reset form
         document.getElementById('task-switch-form').reset();
         document.getElementById('cognitive-load').value = 5;
         document.getElementById('cognitive-load-value').textContent = '5';
 
-        // Show success message
         this.showNotification('Task switch logged successfully!', 'success');
     }
 
@@ -384,12 +675,12 @@ class CognitiveSwitchTracker {
     renderCharts() {
         this.renderSwitchFrequencyChart();
         this.renderTimeLossChart();
+        this.renderBreakEffectivenessChart();
     }
 
     renderSwitchFrequencyChart() {
         const ctx = document.getElementById('switch-frequency-chart').getContext('2d');
 
-        // Get data for last 7 days
         const last7Days = [];
         for (let i = 6; i >= 0; i--) {
             const date = new Date();
@@ -438,7 +729,6 @@ class CognitiveSwitchTracker {
     renderTimeLossChart() {
         const ctx = document.getElementById('time-loss-chart').getContext('2d');
 
-        // Group by reason
         const reasons = {};
         this.switches.forEach(switchItem => {
             if (!reasons[switchItem.reason]) {
@@ -504,6 +794,100 @@ class CognitiveSwitchTracker {
                     },
                     legend: {
                         position: 'bottom'
+                    }
+                }
+            }
+        });
+    }
+
+    renderBreakEffectivenessChart() {
+        const ctx = document.getElementById('break-effectiveness-chart');
+        if (!ctx) return;
+
+        const breaks = this.switches.filter(s => s.reason === 'break');
+        
+        if (breaks.length < 2) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['No Data'],
+                    datasets: [{
+                        data: [0]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Not enough break data yet'
+                        }
+                    }
+                }
+            });
+            return;
+        }
+        
+        const recentBreaks = breaks.slice(0, 5).reverse();
+        const labels = [];
+        const beforeLoad = [];
+        const afterLoad = [];
+        
+        recentBreaks.forEach((breakItem, index) => {
+            const breakIndex = this.switches.findIndex(s => s.id === breakItem.id);
+            if (breakIndex > 0 && breakIndex < this.switches.length - 1) {
+                const beforeBreak = this.switches[breakIndex + 1];
+                const afterBreak = this.switches[breakIndex - 1];
+                
+                if (beforeBreak && afterBreak) {
+                    labels.push(`Break ${index + 1}`);
+                    beforeLoad.push(beforeBreak.cognitiveLoad);
+                    afterLoad.push(afterBreak.cognitiveLoad);
+                }
+            }
+        });
+        
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels,
+                datasets: [
+                    {
+                        label: 'Cognitive Load Before Break',
+                        data: beforeLoad,
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: 'Cognitive Load After Break',
+                        data: afterLoad,
+                        borderColor: '#27ae60',
+                        backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Break Effectiveness - Cognitive Load Reduction'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Cognitive Load (1-10)'
+                        }
                     }
                 }
             }
@@ -650,20 +1034,6 @@ class CognitiveSwitchTracker {
             }
             flows[key].count++;
         });
-
-        const nodes = new Set();
-        Object.values(flows).forEach(f => {
-            nodes.add(f.from);
-            nodes.add(f.to);
-        });
-
-        const nodeArray = Array.from(nodes);
-        
-        const flowData = Object.values(flows).map(f => ({
-            from: f.from,
-            to: f.to,
-            flow: f.count
-        }));
 
         const topFlows = Object.values(flows)
             .sort((a, b) => b.count - a.count)
@@ -825,7 +1195,7 @@ class CognitiveSwitchTracker {
         }
 
         list.innerHTML = recentSwitches.map(switchItem => `
-            <div class="switch-item">
+            <div class="switch-item ${switchItem.reason === 'break' ? 'break-item' : ''}">
                 <div class="time">${new Date(switchItem.timestamp).toLocaleString()}</div>
                 <div class="tasks">
                     <span class="category-badge prev-category">${switchItem.previousCategory}</span>
@@ -836,6 +1206,7 @@ class CognitiveSwitchTracker {
                 </div>
                 <div class="reason">Reason: ${this.formatReason(switchItem.reason)}</div>
                 <div class="cost">Time Lost: ${switchItem.switchCost} min (Load: ${switchItem.cognitiveLoad}/10)</div>
+                ${switchItem.reason === 'break' ? '<span class="break-badge">☕ Break Taken</span>' : ''}
             </div>
         `).join('');
     }
@@ -843,6 +1214,9 @@ class CognitiveSwitchTracker {
     saveData() {
         localStorage.setItem('cognitive-switches', JSON.stringify(this.switches));
         localStorage.setItem('current-task', this.currentTask || '');
+        if (this.lastBreakTime) {
+            localStorage.setItem('last-break-time', this.lastBreakTime.toISOString());
+        }
     }
 
     showNotification(message, type = 'info') {
