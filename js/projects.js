@@ -2004,6 +2004,19 @@ const staticProjects = [
             name: "Gupta-02",
             github: "https://github.com/Gupta-02"
         }
+    },
+    {
+        title: "Real-Time Interaction Quality Evaluator",
+        description:
+            "A comprehensive system for measuring and analyzing user-system interaction quality in real-time. Features multi-dimensional scoring (relevance, timing, satisfaction, clarity), automated quality assessment algorithms, interactive feedback collection, and performance analytics with trend visualization.",
+        tags: ["HTML", "CSS", "JavaScript", "Real-time Analytics", "Quality Assessment", "User Experience", "Machine Learning"],
+        links: {
+            live: "./projects/real-time-interaction-quality-evaluator/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];
