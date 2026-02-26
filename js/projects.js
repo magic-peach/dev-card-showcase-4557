@@ -1978,6 +1978,19 @@ const staticProjects = [
             name: "Gupta-02",
             github: "https://github.com/Gupta-02"
         }
+    },
+    {
+        title: "Distributed Event Orchestration Hub",
+        description:
+            "A comprehensive event orchestration system that coordinates asynchronous events across microservices with deterministic ordering and dependency resolution. Demonstrates event-driven architecture with real-time monitoring, multiple orchestration modes, and workflow management.",
+        tags: ["HTML", "CSS", "JavaScript", "Event-Driven Architecture", "Microservices", "Distributed Systems", "Real-Time", "Data Visualization"],
+        links: {
+            live: "./projects/distributed-event-orchestration-hub/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];
