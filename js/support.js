@@ -3,19 +3,35 @@
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
+function updateThemeIcon(isDark) {
+    if (!themeToggle) return;
+    let icon = themeToggle.querySelector('i');
+    if (!icon) {
+        icon = document.createElement('i');
+        themeToggle.appendChild(icon);
+    }
+    if (isDark) {
+        icon.className = 'fas fa-moon';
+        themeToggle.setAttribute('aria-label', 'Switch to light theme');
+    } else {
+        icon.className = 'fas fa-sun';
+        themeToggle.setAttribute('aria-label', 'Switch to dark theme');
+    }
+}
+
 // Check for saved theme preference or default to light mode
 const currentTheme = localStorage.getItem("theme") || "light";
 if (currentTheme === "dark") {
     body.classList.add("theme-dark");
-    themeToggle.textContent = "🌙";
+    updateThemeIcon(true);
 } else {
-    themeToggle.textContent = "☀️";
+    updateThemeIcon(false);
 }
 
 themeToggle.addEventListener("click", () => {
     body.classList.toggle("theme-dark");
     const isDark = body.classList.contains("theme-dark");
-    themeToggle.textContent = isDark ? "🌙" : "☀️";
+    updateThemeIcon(isDark);
     localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 

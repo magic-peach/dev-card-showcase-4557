@@ -468,12 +468,30 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener('DOMContentLoaded', function() {
             const body = document.body;
             const themeButtons = document.querySelectorAll('.theme-option');
+            const themeToggle = document.getElementById('themeToggle');
             const themeKey = 'theme';
+
+            function updateThemeIcon(theme) {
+                if (!themeToggle) return;
+                const icon = themeToggle.querySelector('i');
+                if (!icon) return;
+                
+                if (theme === 'minimal') {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    themeToggle.setAttribute('aria-label', 'Switch to dark theme');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    themeToggle.setAttribute('aria-label', 'Switch to light theme');
+                }
+            }
 
             function setTheme(theme) {
                 body.setAttribute('data-theme', theme);
                 body.classList.toggle('light-mode', theme === 'minimal');
                 localStorage.setItem(themeKey, theme);
+                updateThemeIcon(theme);
 
                 themeButtons.forEach(btn => {
                     const isActive = btn.dataset.theme === theme;
@@ -487,6 +505,15 @@ document.addEventListener("DOMContentLoaded", () => {
             themeButtons.forEach(btn => {
                 btn.addEventListener('click', () => setTheme(btn.dataset.theme));
             });
+
+            // Theme toggle button click handler
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const currentTheme = localStorage.getItem(themeKey) || body.getAttribute('data-theme') || 'ocean';
+                    const newTheme = currentTheme === 'minimal' ? 'ocean' : 'minimal';
+                    setTheme(newTheme);
+                });
+            }
 
             // Update copyright year dynamically
             const copyrightElement = document.getElementById('copyright');
