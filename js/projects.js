@@ -2133,6 +2133,9 @@ function createProjectCard(project, index) {
         .join("");
 
     const authorName = (project.author && project.author.name) ? project.author.name : "Unknown Contributor";
+    const projectUrl = project.links?.live || project.links?.github || '';
+    const shareText = encodeURIComponent(`Check out this project: ${project.title}`);
+    const shareUrl = encodeURIComponent(projectUrl);
 
     card.innerHTML = `
         <h2>${project.title || "Untitled Project"}</h2>
@@ -2145,8 +2148,25 @@ function createProjectCard(project, index) {
         <div class="project-footer">
             <span>By ${authorName}</span>
             <div class="project-links">
-                ${(project.links && project.links.github) ? `<a href="${project.links.github}" target="_blank"><i class="fab fa-github"></i></a>` : ""}
-                ${(project.links && project.links.live) ? `<a href="${project.links.live}" target="_blank"><i class="fas fa-external-link-alt"></i></a>` : ""}
+                ${(project.links && project.links.github) ? `<a href="${project.links.github}" target="_blank" aria-label="View on GitHub"><i class="fab fa-github"></i></a>` : ""}
+                ${(project.links && project.links.live) ? `<a href="${project.links.live}" target="_blank" aria-label="View live demo"><i class="fas fa-external-link-alt"></i></a>` : ""}
+                <button class="share-btn" aria-label="Share project" onclick="toggleShareMenu(this)">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+                <div class="share-menu" role="menu" aria-label="Share options">
+                    <a href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}" target="_blank" role="menuitem" aria-label="Share on Twitter">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}" target="_blank" role="menuitem" aria-label="Share on LinkedIn">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" role="menuitem" aria-label="Share on Facebook">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                    <button onclick="copyToClipboard('${projectUrl}')" role="menuitem" aria-label="Copy link">
+                        <i class="fas fa-link"></i> Copy Link
+                    </button>
+                </div>
             </div>
         </div>
         `;
@@ -2519,5 +2539,30 @@ document.addEventListener('DOMContentLoaded', function () {
             hideShortcutsOverlay();
         }
     });
+});
+
+function toggleShareMenu(btn) {
+    const menu = btn.nextElementSibling;
+    document.querySelectorAll('.share-menu.active').forEach(m => {
+        if (m !== menu) m.classList.remove('active');
+    });
+    menu.classList.toggle('active');
+}
+
+function copyToClipboard(text) {
+    if (!text) return;
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Link copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.share-btn') && !e.target.closest('.share-menu')) {
+        document.querySelectorAll('.share-menu.active').forEach(m => {
+            m.classList.remove('active');
+        });
+    }
 });
 
