@@ -1868,6 +1868,256 @@ const staticProjects = [
             name: "Bavanetha M.R",
             github: "https://github.com/Bavanetha27"
         }
+    },
+    {
+        title: "Secure Multi-Tenant Isolation Architecture 🔒",
+        description: "Interactive visualization of secure multi-tenant architecture with isolation controls, attack simulation, and real-time security metrics.",
+        tags: ["HTML", "CSS", "JavaScript", "Security", "Architecture", "Multi-Tenant", "Visualization"],
+        links: {
+            live: "./projects/Secure Multi-Tenant Isolation Architecture/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Autonomous Conversation Risk Assessor 🧭",
+        description: "A contextual risk scoring cockpit that flags sensitive interactions, assigns oversight tiers, and captures audit-ready guidance for moderation teams.",
+        tags: ["HTML", "CSS", "JavaScript", "Safety", "Moderation", "Analytics"],
+        links: {
+            live: "./projects/autonomous-conversation-risk-assessor/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Distributed Event Recovery Coordinator 🛰️",
+        description: "Designs replay plans for missed asynchronous events with durable logs, ordering safeguards, and deterministic recovery guidance.",
+        tags: ["HTML", "CSS", "JavaScript", "Resilience", "Observability", "Eventing"],
+        links: {
+            live: "./projects/distributed-event-recovery-coordinator/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Intelligent Resource Consumption Optimizer 🌿",
+        description: "Continuously forecasts workloads and adapts scaling policies to balance utilization, cost, and sustainability goals.",
+        tags: ["HTML", "CSS", "JavaScript", "Optimization", "Sustainability", "Scaling"],
+        links: {
+            live: "./projects/intelligent-resource-consumption-optimizer/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Context-Aware Error Mitigation Engine 🧠",
+        description: "Analyzes failure patterns and context signals to generate targeted recovery workflows and reduce downtime.",
+        tags: ["HTML", "CSS", "JavaScript", "Reliability", "Automation", "Observability"],
+        links: {
+            live: "./projects/context-aware-error-mitigation-engine/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Adaptive Model Precision Regulator ⚡",
+        description: "Dynamically adjust model inference granularity based on task criticality and resource availability to balance performance and computational expense.",
+        tags: ["HTML", "CSS", "JavaScript", "AI/ML", "Performance", "Optimization"],
+        links: {
+            live: "./projects/adaptive-model-precision-regulator/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Predictive Conversation Termination Advisor 💬",
+        description: "Analyzes conversational signals and suggests optimal closure points to improve efficiency and prevent prolonged or redundant conversations.",
+        tags: ["HTML", "CSS", "JavaScript", "AI/ML", "Conversational AI", "Productivity"],
+        links: {
+            live: "./projects/predictive-conversation-termination-advisor/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Distributed Log Integrity Validator",
+        description:
+            "A comprehensive tool for validating log integrity across distributed systems using cryptographic hashing and cross-node consistency checks. Demonstrates distributed security concepts with real-time tampering simulation and integrity scoring.",
+        tags: ["HTML", "CSS", "JavaScript", "Cryptography", "Distributed Systems", "Security"],
+        links: {
+            live: "./projects/distributed-log-integrity-validator/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Data Retention Compliance Auditor",
+        description:
+            "An automated compliance auditing tool that continuously monitors data retention policies, identifies violations, and ensures regulatory compliance across financial, user data, logs, and communication records with real-time alerts and remediation workflows.",
+        tags: ["HTML", "CSS", "JavaScript", "Compliance", "Data Governance", "Security", "Audit"],
+        links: {
+            live: "./projects/data-retention-compliance-auditor/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Predictive Maintenance Scheduler",
+        description:
+            "An intelligent maintenance scheduling system that forecasts equipment failures using historical data and sensor readings. Features multiple prediction models (statistical, ML-based, hybrid), cost-benefit analysis, and optimized maintenance planning to prevent unexpected downtime.",
+        tags: ["HTML", "CSS", "JavaScript", "Data Visualization", "Machine Learning", "IoT", "Predictive Analytics", "Industrial IoT"],
+        links: {
+            live: "./projects/predictive-maintenance-scheduler/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Threat Response Orchestrator",
+        description:
+            "An automated threat mitigation and incident response orchestration system that coordinates security responses across multiple systems. Features real-time threat detection, automated playbook execution, incident management, security metrics tracking, and manual override capabilities for comprehensive cybersecurity operations.",
+        tags: ["HTML", "CSS", "JavaScript", "Security", "Automation", "Incident Response", "Threat Intelligence", "Cybersecurity"],
+        links: {
+            live: "./projects/threat-response-orchestrator/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Knowledge Prioritization Engine",
+        description:
+            "An intelligent knowledge management system that dynamically ranks stored knowledge based on contextual relevance, recency, usage patterns, and importance. Features real-time scoring algorithms, contextual analysis, interactive prioritization controls, and comprehensive analytics for optimal knowledge organization and retrieval.",
+        tags: ["HTML", "CSS", "JavaScript", "AI", "Knowledge Management", "Prioritization", "Analytics", "Real-time"],
+        links: {
+            live: "./projects/knowledge-prioritization-engine/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Real-Time Dependency Impact Analyzer",
+        description:
+            "An advanced system for analyzing service dependencies and their cascading failure impacts in real-time. Features interactive dependency graph visualization, impact simulation controls, service health monitoring, automated mitigation strategy generation, and comprehensive system resilience assessment.",
+        tags: ["HTML", "CSS", "JavaScript", "System Architecture", "Dependency Analysis", "Real-time Monitoring", "Impact Simulation", "Resilience Engineering"],
+        links: {
+            live: "./projects/real-time-dependency-impact-analyzer/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Adaptive Session Persistence Layer",
+        description:
+            "An intelligent session data management system that dynamically determines which session data to persist based on usage patterns, relevance, recency, and importance. Features real-time scoring algorithms, adaptive persistence controls, storage optimization, and comprehensive analytics for efficient session state management.",
+        tags: ["HTML", "CSS", "JavaScript", "AI", "Session Management", "Persistence", "Storage Optimization", "Real-time Analytics"],
+        links: {
+            live: "./projects/adaptive-session-persistence-layer/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Resource Contention Resolver",
+        description:
+            "An intelligent resource management system that identifies and mitigates resource contention across competing workloads through automated redistribution and throttling policies. Features real-time monitoring, automated resolution strategies, workload prioritization, and comprehensive analytics for high-density computing environments.",
+        tags: ["HTML", "CSS", "JavaScript", "Resource Management", "AI", "Automation", "Performance", "Monitoring"],
+        links: {
+            live: "./projects/resource-contention-resolver/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Predictive Conversation Termination Advisor",
+        description:
+            "An intelligent system that analyzes conversational signals and determines optimal conversation closure points to improve efficiency. Features real-time monitoring, automated termination detection, signal analysis, and contextually appropriate wrap-up responses for chatbots and automated customer service systems.",
+        tags: ["HTML", "CSS", "JavaScript", "AI", "NLP", "Conversation Analysis", "Automation", "Customer Service"],
+        links: {
+            live: "./projects/predictive-conversation-termination-advisor/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Distributed Model Performance Tracker",
+        description:
+            "A comprehensive monitoring system for tracking machine learning model performance across distributed deployments. Features real-time metrics collection, drift detection algorithms, automated alerting, and interactive analytics dashboards for AI observability at scale.",
+        tags: ["HTML", "CSS", "JavaScript", "AI", "Machine Learning", "Monitoring", "Analytics", "Distributed Systems"],
+        links: {
+            live: "./projects/distributed-model-performance-tracker/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Response Orchestrator #5956",
+        description: "An automated incident coordination system that connects detection signals to structured remediation workflows across infrastructure layers. Features alert pipelines, predefined response playbooks, and automated containment actions including access revocation, traffic isolation, and credential rotation.",
+        tags: ["HTML", "CSS", "JavaScript", "Security", "Automation", "Incident Response"],
+        links: {
+            live: "./projects/response-orchestrator/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "ECHOVERSE · Immersive Resonance Chamber #5971",
+        description: "An interactive digital environment where users can explore layered ambient sound compositions that dynamically evolve based on movement, cursor interaction, or touch gestures. Features Web Audio API integration, spatial audio positioning, and real-time sound modulation.",
+        tags: ["HTML", "CSS", "JavaScript", "Web Audio API", "Interactive Audio", "Spatial Audio", "Sound Design"],
+        links: {
+            live: "./projects/echoverse-immersive-resonance-chamber/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "BIOSONIC TERRAIN · Environmental Audio Mapper #5975",
+        description: "An immersive environmental audio mapping system where users navigate through procedurally generated biomes (forest, desert, tundra, mountain, wetland, grassland) and experience adaptive soundscapes that dynamically change based on location, proximity to biome centers, and weather conditions. Features Web Audio API integration, terrain navigation, weather effects, exploration statistics, and real-time audio layer management.",
+        tags: ["HTML", "CSS", "JavaScript", "Web Audio API", "Environmental Audio", "Terrain Generation", "Interactive Navigation", "Weather Effects", "Audio Synthesis", "Canvas Rendering", "Biome Mapping", "Spatial Audio"],
+        links: {
+            live: "./projects/biosonic-terrain-environmental-audio-mapper/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Letter Vault with AR Unlock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Future Letter Vault</h1>
+        <nav>
+            <button id="navVault" class="active">Vault</button>
+            <button id="navAR">AR Mode</button>
+            <button id="navTrends">Emotion Trends</button>
+        </nav>
+        <section id="vaultSection" class="active">
+            <h2>Store a Capsule</h2>
+            <form id="vaultForm" class="card">
+                <label>Type:</label>
+                <select id="vaultType" required>
+                    <option value="letter">Letter</option>
+                    <option value="voice">Voice Note</option>
+                    <option value="photo">Photo</option>
+                </select>
+                <label>Content:</label>
+                <textarea id="vaultContent" rows="3" maxlength="500" required></textarea>
+                <label>Unlock Date:</label>
+                <input type="date" id="vaultDate" required>
+                <label>Unlock Location (optional):</label>
+                <input type="text" id="vaultLocation" placeholder="e.g. Mumbai, India">
+                <button type="submit">Store Capsule</button>
+            </form>
+            <div id="vaultStatus"></div>
+            <h2>Capsule Vault</h2>
+            <ul id="vaultList" class="vault-list"></ul>
+        </section>
+        <section id="arSection">
+            <h2>AR Mode</h2>
+            <div id="arInfo" class="card">Capsules will appear floating in your room (demo).</div>
+            <button class="ar-btn" id="startARBtn">Start AR Demo</button>
+            <div id="arDemo"></div>
+        </section>
+        <section id="trendsSection">
+            <h2>Emotion Trend Analysis</h2>
+            <canvas id="trendChart" width="400" height="120"></canvas>
+            <div id="trendInfo"></div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

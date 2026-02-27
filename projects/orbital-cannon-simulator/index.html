@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbital Cannon Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Orbital Cannon Simulator</h1>
+        <p>Simulate launching objects into orbit and learn physics!</p>
+    </header>
+    <main>
+        <section id="controls-section">
+            <h2>Launch Parameters</h2>
+            <form id="launch-form">
+                <label>Mass (kg): <input type="number" step="any" id="mass" required></label><br>
+                <label>Velocity (m/s): <input type="number" step="any" id="velocity" required></label><br>
+                <label>Angle (degrees): <input type="number" step="any" id="angle" required></label><br>
+                <button type="submit">Launch</button>
+            </form>
+        </section>
+        <section id="sim-section">
+            <h2>Simulation</h2>
+            <canvas id="sim-canvas" width="600" height="600"></canvas>
+        </section>
+        <section id="info-section">
+            <h2>Physics Info</h2>
+            <div id="info"></div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
