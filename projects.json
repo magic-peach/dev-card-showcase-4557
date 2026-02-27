@@ -1,5 +1,411 @@
 [
   {
+    "title": "Autonomous Dataset Validator #5069",
+    "description": "Advanced dataset validation, quality assessment, and automated cleaning for data science workflows. Features include file upload (CSV/JSON), automated validation (data types, missing values, duplicates, outliers, consistency), comprehensive data analysis with statistics and correlations, automated data cleaning, and export functionality with quality reporting.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Data Science",
+      "Data Validation",
+      "Data Cleaning",
+      "Quality Assessment",
+      "Statistics",
+      "Chart.js",
+      "PapaParse",
+      "File Upload",
+      "Data Analysis",
+      "Outlier Detection",
+      "Correlation Analysis",
+      "Data Export",
+      "Quality Metrics",
+      "LocalStorage",
+      "Data Visualization"
+    ],
+    "links": {
+      "live": "./autonomous-dataset-validator/autonomous-dataset-validator.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+  "title": "Micro Life Metrics Dashboard – Interactive Habit & Health Tracker",
+  "description": "A modern, interactive dashboard to track daily life metrics such as water intake, sleep, steps, exercise, mood, meditation, reading, calories intake, screen time, and tasks completed. Features include circular progress indicators, line charts for weekly trends, goal tracking with automatic badge notifications, user input for adding custom metrics, dark/light mode toggle, and responsive, game-style UI built with HTML, CSS, and JavaScript.",
+  "tags": ["HTML", "CSS", "JavaScript", "Interactive UI", "Charts", "Gamification"],
+  "links": {
+    "live": "./projects/metrics-dashboard/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+  "title": "Data Sorter – Futuristic Multi-Type Sorter",
+  "description": "A futuristic Data Sorter that supports both numbers and alphabets. Features include multiple sort algorithms, ascending/descending order, animated visualizations (bars for numbers, colored cards for strings), random data generation, copy/export JSON functionality, and a dark/light mode toggle. Built with HTML, CSS, and JavaScript for an interactive and visually engaging experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/data-sorter/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+  "title": "Word Chain Arena",
+  "description": "A modern, turn-based Word Chain Game with Player vs Player and Player vs CPU modes. Features include a colorful dashboard UI, word history tracking, turn-based scoreboard, last-letter validation, difficulty levels for AI, and responsive design. Built with HTML, CSS, and JavaScript for a fun and engaging experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/word-chain-game/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+{
+  "title": "Mini Synonym Chain Game – Board Puzzle Edition",
+  "description": "A fun and interactive word game where players create a chain of synonyms. Features include a unique board-puzzle style UI with floating word bubbles, animated word entries, score and streak tracking, hint support, dark/light mode toggle, and dynamic chaining based on the last entered word. Built with HTML, CSS, and JavaScript for an engaging gameplay experience.",
+  "tags": ["HTML", "CSS", "JavaScript", "Game UI", "Interactive", "Word Game"],
+  "links": {
+    "live": "./projects/synonym-game/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+  "title": "Keyword Density Analyzer",
+  "description": "An analytics-style Keyword Density Analyzer that calculates real-time word frequency and keyword density. Features stop-word filtering, reading time estimation, top keyword ranking with progress visualization, custom keyword highlight, and report copy functionality. Designed with a modern dashboard UI for an engaging SEO analysis experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/keyword-density-analyzer/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+{
+  "title": "Text Readability Checker Neon",
+  "description": "A modern, neon-themed Text Readability Checker with a side-by-side dashboard layout. Features live analysis of words, sentences, average word length, average sentence length, Flesch Reading Ease, Flesch-Kincaid Grade, Gunning Fog Index, and SMOG Index. Includes copy and download actions, fully responsive and interactive, built with HTML, CSS, and JavaScript.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/text-readability-check/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+  "title": "Emoji Quiz / Picker",
+  "description": "A fun and interactive Emoji Quiz / Picker where users guess the meaning of emojis or pick the correct answer. Features randomized emoji sets, score tracking, animated feedback for correct and wrong answers, playful gradient UI, and responsive design. Built entirely with HTML, CSS, and JavaScript for a portfolio-worthy, engaging experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/emoji-quiz-picker/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+{
+  "title": "Flexbox Playground",
+  "description": "An interactive Flexbox Playground with a cyber/neon-themed UI. Users can dynamically change flex properties like direction, justify-content, align-items, and wrap using a futuristic button dashboard. Features include live preview of flex items, hover effects, active highlights, reset functionality, and responsive design, making it perfect for learning and portfolio showcase.",
+  "tags": ["HTML", "CSS", "JavaScript", "Flexbox", "UI/UX"],
+  "links": {
+    "live": "./projects/flexbox-play-ground/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+  "title": "Priority Matrix (Eisenhower Matrix)",
+  "description": "An interactive drag-and-drop task management web application based on the Eisenhower Productivity Principle. Users can organize tasks into four priority quadrants (Urgent & Important, Not Urgent & Important, Urgent & Not Important, Not Urgent & Not Important). Features include real-time task updates, LocalStorage persistence, responsive design, and a modern glassmorphism UI for an engaging productivity experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/priority-matrix/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+    "title": "Proactive Infrastructure Resilience Hub #5219",
+    "description": "Monitor, analyze, and enhance infrastructure resilience with proactive insights and automated recommendations. Features real-time component monitoring, resilience scoring, failure simulation, automated alerting, and comprehensive reporting for maintaining robust infrastructure health.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Infrastructure Monitoring",
+      "Resilience Engineering",
+      "DevOps",
+      "System Health",
+      "Failure Simulation",
+      "Automated Alerting",
+      "Capacity Planning",
+      "Risk Assessment",
+      "Data Visualization",
+      "Chart.js",
+      "Real-Time Analytics",
+      "Infrastructure as Code",
+      "Cloud Architecture",
+      "System Reliability",
+      "Performance Monitoring",
+      "Incident Response"
+    ],
+    "links": {
+      "live": "./proactive-infrastructure-resilience-hub/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+  "title": "Daily Energy Map – Side-by-Side Energy Dashboard",
+  "description": "A modern, interactive dashboard to track daily energy levels hour by hour. Features include a circular energy map on the left, sliders and summary stats on the right, color-coded energy levels (low: red, medium: yellow, high: green), weekly trend chart, dark/light mode toggle, and responsive side-by-side layout for a visually engaging experience. Built with HTML, CSS, JavaScript, and Chart.js.",
+  "tags": ["HTML", "CSS", "JavaScript", "Charts", "Interactive UI", "Dashboard"],
+  "links": {
+    "live": "./projects/daily-energy-map/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+  "title": "Markdown Linter",
+  "description": "A clean and interactive Markdown Linter that detects formatting issues in real-time. Features live preview, rule toggles, auto-fix functionality, issue counter, and a modern glassmorphism UI. Helps developers maintain consistent Markdown formatting efficiently.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/markdown-linter/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+  "title": "EMI Calculator Pro",
+  "description": "A modern and interactive EMI (Equated Monthly Installment) calculator built with a premium fintech-style UI. The application calculates monthly EMI, total interest, and total payment using standard financial formulas. It features dynamic result updates, a doughnut chart visualization for principal vs interest breakdown, responsive design, and a clean neumorphism-based interface for an enhanced user experience.",
+  "tags": ["HTML", "CSS", "JavaScript", "Chart.js"],
+  "links": {
+    "live": "./projects/emi-calculator/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+    "title": "Abstract Thinking Progress Tracker",
+    "description": "Enhance your abstract thinking skills through targeted exercises and track your progress over time. Abstract thinking involves recognizing patterns, forming concepts, and solving problems creatively. Features include various exercise types, performance tracking, difficulty assessment, and progress visualization.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Mental Health",
+      "Cognitive Training",
+      "Abstract Thinking",
+      "Problem Solving",
+      "Pattern Recognition",
+      "Analogical Reasoning",
+      "Creative Thinking",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking"
+    ],
+    "links": {
+      "live": "./abstract-thinking-progress-tracker/abstract-thinking-progress-tracker.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+  "title": "Live HTML Editor",
+  "description": "A modern Live HTML Editor that renders HTML in real-time with an interactive device preview frame. Features desktop, tablet, and mobile simulation, fullscreen preview mode, auto-save using localStorage, download functionality, reset option, and a sleek glassmorphism UI with neon accents.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/live-html-editor/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+{
+  "title": "Invoice Tracker Pro",
+  "description": "A modern, card-based Invoice Tracker that allows adding, editing, deleting, searching, and filtering invoices. Features include total calculations, color-coded status badges (Paid/Unpaid/Pending), responsive design, and export to CSV. Built with HTML, CSS, and JavaScript for a sleek, professional dashboard experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/invoice-tracker/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+    "title": "Multi-Plane Mobility Tracker",
+    "description": "Track and improve your mobility across all three planes of movement: sagittal, frontal, and transverse. Monitor range of motion, identify imbalances, assess pain levels, and track progress over time with comprehensive mobility assessments and data visualization.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Fitness",
+      "Mobility",
+      "Physical Therapy",
+      "Range of Motion",
+      "Movement Assessment",
+      "Pain Tracking",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Biomechanics"
+    ],
+    "links": {
+      "live": "./multi-plane-mobility-tracker/multi-plane-mobility-tracker.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Nutritional Bioavailability Analyzer",
+    "description": "Analyze how well nutrients are absorbed from your meals. Optimize food combinations, preparation methods, and timing for maximum nutritional benefit. Features food database, bioavailability calculations, nutrient interactions, and personalized recommendations for better nutrient absorption.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Nutrition",
+      "Bioavailability",
+      "Nutrient Absorption",
+      "Food Science",
+      "Diet Optimization",
+      "Meal Analysis",
+      "Nutrient Interactions",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Personalized Nutrition"
+    ],
+    "links": {
+      "live": "./nutritional-bioavailability-analyzer/nutritional-bioavailability-analyzer.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+  "title": "Pomodoro Analytics Dashboard",
+  "description": "A modern productivity dashboard based on the Pomodoro Technique featuring real-time session tracking, interactive analytics, and persistent progress storage using localStorage. The application includes dynamic timer modes (Focus & Break), live statistics updates, and a responsive data visualization chart to analyze completed sessions and total focus time. Designed with a premium dashboard-style UI for enhanced user engagement.",
+  "tags": ["HTML", "CSS", "JavaScript", "Chart.js"],
+  "links": {
+    "live": "./projects/pomodoro-analytics/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+    "title": "Heavy Metal Exposure Monitoring Log",
+    "description": "Track and monitor potential exposure to toxic heavy metals like lead, mercury, arsenic, and cadmium. Log exposure incidents, symptoms, risk levels, and mitigation strategies. Includes educational information about heavy metals and prevention tips for maintaining optimal health.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Environmental Health",
+      "Toxicology",
+      "Heavy Metals",
+      "Exposure Monitoring",
+      "Risk Assessment",
+      "Symptom Tracking",
+      "Detoxification",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Health Monitoring"
+    ],
+    "links": {
+      "live": "./heavy-metal-exposure-monitoring-log/heavy-metal-exposure-monitoring-log.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+  "title": "Auto Tag Generator",
+  "description": "A cyber-inspired Auto Tag Generator that dynamically extracts keywords from text or code. Features real-time frequency analysis, interactive neon-style tags, and a futuristic dark dashboard UI. Provides a top 10 tag list with analytics for the top 5 keywords. Built with HTML, CSS, and JavaScript, this project demonstrates AI-style text parsing and visualization for modern web applications.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/auto-tag-generator/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
+    "title": "Mental Resistance Threshold Meter",
+    "description": "Monitor your mental resilience and track the threshold at which mental fatigue or stress becomes overwhelming. Assess cognitive endurance, stress tolerance, and recovery patterns through daily check-ins and threshold testing challenges.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Mental Health",
+      "Psychology",
+      "Stress Management",
+      "Cognitive Endurance",
+      "Mental Fatigue",
+      "Resilience Training",
+      "Focus Tracking",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Mental Performance",
+      "Wellness Monitoring"
+    ],
+    "links": {
+      "live": "./mental-resistance-threshold-meter/mental-resistance-threshold-meter.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+  "title": "Password Entropy Calculator",
+  "description": "An interactive cybersecurity tool that calculates password entropy in real time using the standard entropy formula (Length × log₂(Character Pool Size)). The application detects character sets dynamically, estimates crack time, displays a live strength meter with animated feedback, and provides an intuitive glassmorphism-based UI for enhanced user experience. Designed to demonstrate practical password security analysis.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/password-entropy-calc/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Cognitive Load Buffer Score",
     "description": "Monitor and optimize your cognitive capacity by tracking mental workload, buffer capacity, and cognitive performance. Assess task complexity, mental fatigue, focus quality, and recovery strategies to maintain optimal cognitive function and prevent mental overload.",
     "tags": [
@@ -27,6 +433,44 @@
     }
   },
   {
+    "title": "Thought Processing Speed Monitor",
+    "description": "Measure and track your cognitive processing speed through targeted mental exercises and reaction time tests. Monitor mental clarity, decision-making speed, focus duration, and cognitive fatigue to optimize brain performance and identify areas for improvement.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Mental Health",
+      "Cognitive Training",
+      "Brain Performance",
+      "Reaction Time",
+      "Processing Speed",
+      "Mental Clarity",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking"
+    ],
+    "links": {
+      "live": "./projects/thought-processing-speed-monitor/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+  "title": "Time Block Planner",
+  "description": "A futuristic, cyber-themed Time Block Planner with neon-styled interactive time blocks. Users can add, edit, and delete tasks with different priority levels (high, medium, low) displayed in distinct neon colors. The planner features a responsive layout, real-time interactive timeline, and visually appealing neon hover effects for a modern portfolio-ready experience.",
+  "tags": ["HTML", "CSS", "JavaScript", "Planner", "UI/UX"],
+  "links": {
+    "live": "./projects/time-block-planner/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Reactive Agility Monitor",
     "description": "Track and analyze your reactive agility performance across various movement patterns and response scenarios. Monitor response times, movement quality, direction changes, and fatigue levels to optimize your reactive movement capabilities and improve athletic performance.",
     "tags": [
@@ -47,6 +491,33 @@
     ],
     "links": {
       "live": "./projects/reactive-agility-monitor/reactive-agility-monitor.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Prolonged Load Tolerance Monitor",
+    "description": "Monitor your ability to sustain performance under prolonged physical or mental load. Track endurance capacity, fatigue accumulation, recovery patterns, and overall load tolerance to optimize training and prevent overtraining through comprehensive assessment and trend analysis.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Fitness",
+      "Endurance",
+      "Load Tolerance",
+      "Fatigue",
+      "Recovery",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Performance Monitoring"
+    ],
+    "links": {
+      "live": "./projects/prolonged-load-tolerance-monitor/index.html"
     },
     "author": {
       "name": "Gupta-02",
@@ -688,6 +1159,32 @@
     }
   },
   {
+    "title": "Neuromuscular Coordination Index",
+    "description": "Assess and track your neuromuscular coordination through targeted exercises and tests. Monitor balance, reaction time, precision movements, and overall coordination to improve motor skills and prevent injuries.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Fitness",
+      "Neuromuscular",
+      "Coordination",
+      "Balance",
+      "Reaction Time",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking"
+    ],
+    "links": {
+      "live": "./projects/neuromuscular-coordination-index/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
     "title": "CSS shake Playground",
     "description": "A fun, interactive playground that simulates the Harlem Shake meme using CSS animations. Click the button to trigger a chaotic dance party with shaking elements and lively music, all built with HTML, CSS, and JavaScript for a nostalgic and entertaining experience.",
     "tags": ["HTML", "CSS", "JavaScript"],
@@ -1160,6 +1657,18 @@
       "github": "https://github.com/your-github-username"
     }
   },
+    {
+    "title": "Trials in sprial",
+    "description": "A visually engaging and interactive 404 Not Found page that creatively informs users about the missing content. Features a playful design, animated elements, and a clear call-to-action to guide users back to the homepage or other relevant sections of the website.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "live": "./projects/Trails-in-Spiral/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Goal Decomposer",
     "description": "An interactive goal decomposition tool that helps users break large goals into manageable subtasks. Features priority tagging, progress tracking, local storage auto-save, and a modern glassmorphism interface designed for focus and productivity.",
@@ -1191,6 +1700,18 @@
       "github": "https://github.com/omkarhole"
     }
   },
+      {
+    "title": "Modal Animations project",
+    "description": "A visually engaging and interactive 404 Not Found page that creatively informs users about the missing content. Features a playful design, animated elements, and a clear call-to-action to guide users back to the homepage or other relevant sections of the website.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "live": "./projects/Modal-Animations-project/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Exam Stress Manager",
     "description": "A calming, interactive exam stress management tool that helps students track stress levels, practice guided breathing, run focused study sessions, and receive positive affirmations. Features a soft gradient UI, real-time progress visualization, and local storage support.",
@@ -1201,6 +1722,42 @@
     "author": {
       "name": "Anvesha",
       "github": "https://github.com/your-github-username"
+    }
+  },
+    {
+    "title": "Page-flip",
+    "description": "A visually engaging and interactive 404 Not Found page that creatively informs users about the missing content. Features a playful design, animated elements, and a clear call-to-action to guide users back to the homepage or other relevant sections of the website.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "live": "./projects/Page-flip/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+      {
+    "title": "Animate on Scroll",
+    "description": "An interactive animation library that triggers CSS animations when elements scroll into view. Features customizable trigger points, smooth transitions, and a clean, modern UI for seamless integration into any web project.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "live": "./projects/Animate-on-scroll/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+      {
+    "title": "Responsive Image Carousel",
+    "description": "A visually engaging and interactive 404 Not Found page that creatively informs users about the missing content. Features a playful design, animated elements, and a clear call-to-action to guide users back to the homepage or other relevant sections of the website.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "live": "./projects/Responsive-Image-Carousel/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
     }
   },
   {
@@ -1221,6 +1778,30 @@
     "author": {
       "name": "Anvesha",
       "github": "https://github.com/your-github-username"
+    }
+  },
+     {
+    "title": "Solar System Animation",
+    "description": "An interactive 3D solar system animation that visualizes the orbits and movements of planets. Features realistic planetary sizes, orbital speeds, and a responsive design that works across all devices.",
+    "tags": ["HTML", "CSS", "JavaScript", "Animation", "3D"],
+    "links": {
+      "live": "./projects/Solar-System-animation/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+        {
+    "title": "Login and logout animation",
+    "description": "An interactive animation library that triggers CSS animations when elements scroll into view. Features customizable trigger points, smooth transitions, and a clean, modern UI for seamless integration into any web project.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "live": "./projects/Logout-animation/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
     }
   },
   {
@@ -1267,6 +1848,18 @@
       "github": "https://github.com/your-github-username"
     }
   },
+        {
+    "title": "oklch Planet Lab",
+    "description": "An interactive 3D solar system animation that visualizes the orbits and movements of planets. Features realistic planetary sizes, orbital speeds, and a responsive design that works across all devices.",
+    "tags": ["HTML", "CSS", "JavaScript", "Animation", "3D"],
+    "links": {
+      "live": "./projects/oklch-Planet-Lab/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "ULTRA-INTELLIGENCE v9.4",
     "description": "An AI that answers your questions differently.",
@@ -1277,6 +1870,18 @@
     "author": {
       "name": "Sai Sathvik",
       "github": "https://github.com/Saisathvik94"
+    }
+  },
+       {
+    "title": "Netflix Intro Animation",
+    "description": "An interactive 3D solar system animation that visualizes the orbits and movements of planets. Features realistic planetary sizes, orbital speeds, and a responsive design that works across all devices.",
+    "tags": ["HTML", "CSS", "JavaScript", "Animation", "3D"],
+    "links": {
+      "live": "./projects/Netflix-Intro-Animation/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
     }
   },
   {
@@ -1325,6 +1930,30 @@
     }
   },
   {
+  "title": "ASCII Art Generator",
+  "description": "A cyberpunk-themed ASCII Art Generator that converts uploaded images into detailed ASCII text visuals. Features adjustable density levels, neon terminal UI, scanline overlay effect, and downloadable .txt output. Built using HTML Canvas and JavaScript with a hacker-style aesthetic and responsive design.",
+  "tags": ["HTML", "CSS", "JavaScript", "Canvas API"],
+  "links": {
+    "live": "./projects/ascii-art/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+      {
+    "title": "OKLCH Gradient Mesh",
+    "description": "A collection of visually appealing loading animations created entirely with CSS3 and JavaScript. Features smooth transitions, customizable styles, and responsive design for seamless integration into any web project.",
+    "tags": ["HTML", "CSS", "JavaScript", "Animations", "UI/UX"],
+    "links": {
+      "live": "./projects/OKLCH-Gradient-Mesh/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+  {
     "title": "Risk vs Reward Strategy",
     "description": "A fast-paced strategy game where players choose between safe, balanced, and risky moves to maximize their score. Features progressive rounds, high-score tracking, animated neon UI, and a dynamic risk system that tests decision-making skills under uncertainty.",
     "tags": [
@@ -1365,12 +1994,153 @@
       "github": "https://github.com/PriyanshuSingh00-hub"
     }
   },
+    {
+    "title": "WebGL Liquid Masking",
+    "description": "A WebGL-based liquid masking simulation that demonstrates realistic fluid dynamics and masking effects in a 3D environment. Features interactive controls, real-time rendering, and a visually engaging interface built with WebGL and JavaScript.",
+    "tags": ["HTML", "CSS", "JavaScript", "WebGL", "Simulation"],
+    "links": {
+      "live": "./projects/WebGL-liquid-masking/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+       {
+    "title": "Pure SVG Loader",
+    "description": "A visually captivating loading animation created entirely with SVG and JavaScript. Features smooth, dynamic animations that can be easily customized for different styles and themes, making it a perfect addition to any web project for enhanced user experience during loading times.",
+    "tags": ["HTML", "CSS", "JavaScript", "Interactive Fiction", "Case Study"],
+    "links": {
+      "live": "./projects/Pure-SVG-Loader/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+   {
+    "title": "Oklch Racing car color Explorer",
+    "description": "An interactive tool that explores the visual impact of different oklch color values on a racing car design. Features real-time color adjustments, smooth transitions, and a visually engaging interface built with HTML, CSS, and JavaScript.",
+    "tags": ["HTML", "CSS", "JavaScript", "Color Theory", "Interactive Design"],
+    "links": {
+      "live": "./projects/oklch-Racing-Car-Color-Explorer/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+  {
+  "title": "Mind Manipulator – Psychological Strategy Game",
+  "description": "A narrative-driven psychological strategy game built using modular HTML, CSS, and JavaScript architecture. Players influence NPCs through strategic dialogue choices to gain access, extract information, or build trust. Features a chat-style interface, dynamic trust and suspicion meter systems, multiple NPC personalities with distinct behavioral traits, branching dialogue trees, timer-based decision pressure, immersive sound effects, and multiple endings determined by player choices and relationship states.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Game Development",
+    "Strategy Game",
+    "Dialogue System",
+    "State Management",
+    "Interactive Fiction",
+    "Narrative Design"
+  ],
+  "links": {
+    "live": "./projects/social-engineering-simulator/index.html"
+  },
+  "author": {
+    "name": "Priyanshu",
+    "github": "https://github.com/PriyanshuSingh00-hub"
+  }
+},
+    {
+    "title": "Live-smoothed-line-chart",
+    "description": "A live-smoothed line chart visualization built with HTML, CSS, and JavaScript. Features real-time data updates, smooth line rendering, and responsive design for dynamic charting capabilities.",
+    "tags": ["HTML", "CSS", "JavaScript", "Data Visualization"],
+    "links": {
+      "live": "./projects/Live-smoothed-line-chart/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+        {
+    "title": "Timed Cards Opening",
+    "description": "A collection of visually appealing loading animations created entirely with CSS3 and JavaScript. Features smooth transitions, customizable styles, and responsive design for seamless integration into any web project.",
+    "tags": ["HTML", "CSS", "JavaScript", "Animations", "UI/UX"],
+    "links": {
+      "live": "./projects/Timed Cards Opening/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+      {
+    "title": "Case Master – Interactive Case Study Simulator",
+    "description": "An interactive case study simulator that allows users to explore complex scenarios in a structured, engaging format. Features branching narratives, decision-based progression, and immersive storytelling elements built with HTML, CSS, and JavaScript.",
+    "tags": ["HTML", "CSS", "JavaScript", "Interactive Fiction", "Case Study"],
+    "links": {
+      "live": "./projects/Case-Master/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+  {
+  "title": "Quantum Timeline Hacker",
+  "description": "A reality-shifting cyber puzzle game built using modular HTML, CSS, and JavaScript architecture. Players navigate across three alternate timelines (Reality A / B / C) using a real-time timeline switching mechanic (Press T) to manipulate environment states. Objects exist in specific timelines, requiring strategic dimension shifting to solve puzzles, bypass security systems, and access locked areas. Features adaptive AI security drones, interactive terminal hacking nodes, dynamic state-based rendering, and seamless progression without page reload.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Game Development",
+    "Puzzle Game",
+    "State Management",
+    "AI Logic",
+    "Cyber UI",
+    "Interactive Fiction"
+  ],
+  "links": {
+    "live": "./projects/Quantum-Timeline-Hacker/index.html"
+  },
+  "author": {
+    "name": "Priyanshu",
+    "github": "https://github.com/PriyanshuSingh00-hub"
+  }
+},
   {
     "title": "3D Quantum Neural Network",
     "description": "A 3D visualization of a quantum neural network, showcasing the interactions and computations within a quantum system. Features interactive controls, real-time updates, and a visually engaging interface built with WebGL and JavaScript.",
     "tags": ["HTML", "CSS", "JavaScript", "Game", "Incremental"],
     "links": {
       "live": "./projects/3D-Quantum/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+         {
+    "title": "New Colors Generator",
+    "description": "A visually captivating loading animation created entirely with SVG and JavaScript. Features smooth, dynamic animations that can be easily customized for different styles and themes, making it a perfect addition to any web project for enhanced user experience during loading times.",
+    "tags": ["HTML", "CSS", "JavaScript", "Interactive Fiction", "Case Study"],
+    "links": {
+      "live": "./projects/New-Colors-Generator/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+
+    {
+    "title": "WebGL-Fluid-Simulation",
+    "description": "A WebGL-based fluid simulation that demonstrates realistic fluid dynamics in a 3D environment. Features interactive controls, real-time rendering, and a visually engaging interface built with WebGL and JavaScript.",
+    "tags": ["HTML", "CSS", "JavaScript", "WebGL", "Simulation"],
+    "links": {
+      "live": "./projects/WebGL-Fluid-Simulation/index.html"
     },
     "author": {
       "name": "Omkar",
@@ -1398,12 +2168,72 @@
       "github": "https://github.com/PriyanshuSingh00-hub"
     }
   },
+   {
+    "title": "SCREEN RECORDER PRO",
+    "description": "A utility tool to record and save screen activity with customizable settings. Features include recording in multiple resolutions, audio capture, and exporting to various formats.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/SCREEN-RECORDER-PRO/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+    {
+    "title": "Pigment lab",
+    "description": "An interactive 3D pigment mixing simulation that allows users to experiment with color combinations in a virtual environment. Features real-time color blending, customizable palettes, and a visually engaging interface built with WebGL and JavaScript.",
+    "tags": ["HTML", "CSS", "JavaScript", "WebGL", "Interactive"],
+    "links": {
+      "live": "./projects/Pigment-Lab/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+  {
+  "title": "Mini Maze Game",
+  "description": "A dark-themed, neon-styled Mini Maze Game where players navigate through randomized mazes using arrow keys or on-screen buttons. Features include collision detection with walls, timer tracking, restart functionality, responsive design, and a visually appealing dark/neon interface for an interactive and portfolio-ready experience.",
+  "tags": ["HTML", "CSS", "JavaScript", "Game"],
+  "links": {
+    "live": "./projects/mini-maze/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+    {
+    "title": "Mix and Blend",
+    "description": "A utility tool that adds a motion blur effect to the mouse cursor, creating a visually appealing trail effect as the cursor moves across the screen.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/Mix-and-Blend/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Retro Pixel studio",
     "description": "A retro pixel art editor and animation tool that allows users to create, edit, and animate pixel art. Features a nostalgic 8-bit aesthetic, customizable palettes, and a user-friendly interface built with HTML, CSS, and JavaScript.",
     "tags": ["HTML", "CSS", "JavaScript", "Game", "Incremental"],
     "links": {
       "live": "./projects/Retro-Pixel-Studio/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+    {
+    "title": "DVD Screensaver Simulator",
+    "description": "A simulation of the classic DVD screensaver with bouncing DVD logo. Features realistic physics, collision detection, and a nostalgic visual style.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/DVD-screensaver-simulator/index.html"
     },
     "author": {
       "name": "Omkar",
@@ -1431,12 +2261,48 @@
       "github": "https://github.com/PriyanshuSingh00-hub"
     }
   },
-  {
+    {
     "title": "Code Formattor pro",
     "description": "A utility tool to format and minify HTML code with live preview. Features include beautifying HTML, minifying HTML, copying formatted code, downloading as a file, and a dark mode toggle for comfortable use.",
     "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
     "links": {
       "live": "./projects/React-formattor/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+  {
+    "title": "Mouse Cursor Motion Blur",
+    "description": "A utility tool that adds a motion blur effect to the mouse cursor, creating a visually appealing trail effect as the cursor moves across the screen.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/Mouse-cursor-motion-blur/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+      {
+    "title": "Named Colors",
+    "description": "An interactive tool that allows users to input a color code (hex, RGB, or HSL) and returns the closest CSS color name along with its code. Features a user-friendly interface, real-time color matching, and a comprehensive color database for accurate results.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/Named-Colors/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+    {
+    "title": "Pokemon Simulator",
+    "description": "A web application that simulates catching Pokemon with varying odds of finding shiny variants. Features a user-friendly interface, real-time statistics tracking, and a comprehensive Pokemon database for accurate results.",
+    "tags": ["HTML", "CSS", "JavaScript", "Game"],
+    "links": {
+      "live": "./projects/Pokemon-Simulator/index.html"
     },
     "author": {
       "name": "Omkar",
@@ -1467,12 +2333,24 @@
       "github": "https://github.com/omkarhole"
     }
   },
-  {
+    {
     "title": "Lavender project",
     "description": "A web application that allows users to input a color code (hex, RGB, or HSL) and returns the closest CSS color name along with its code. Features a user-friendly interface, real-time color matching, and a comprehensive color database for accurate results.",
     "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
     "links": {
       "live": "./projects/Lavender-project/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+  {
+    "title": "Lock Screen Simulator",
+    "description": "A web application that simulates a lock screen interface with pattern unlock functionality. Features a customizable background, time and date display, and a responsive pattern lock system built with HTML, CSS, and JavaScript.",
+    "tags": ["HTML", "CSS", "JavaScript", "UI Design"],
+    "links": {
+      "live": "./projects/Lock-Screen/index.html"
     },
     "author": {
       "name": "Omkar",
@@ -1618,6 +2496,18 @@
       "github": "https://github.com/PriyanshuSingh00-hub"
     }
   },
+   {
+    "title": "Windows-10 Simulator",
+    "description": "A web application that simulates the Windows 10 desktop environment with a modern UI, taskbar, and application launcher. Features a responsive design, interactive elements, and a realistic desktop experience built using HTML, CSS, and JavaScript.",
+    "tags": ["HTML", "CSS", "JavaScript", "Web Application"],
+    "links": {
+      "live": "./projects/Windows-10/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Platform Jump Pro",
     "description": "A polished 2D platformer game built using pure HTML, CSS, and JavaScript. Players control a character with smooth left-right movement and realistic jump physics while collecting coins and avoiding falling off platforms. Features gravity simulation, accurate collision detection, animated elements, structured game state management, score tracking, and a proper restart system without page reload.",
@@ -1698,6 +2588,18 @@
       "github": "https://github.com/omkarhole"
     }
   },
+    {
+    "title": "Rain animation playground",
+    "description": "An animated rain effect with realistic physics and visual styling. Features adjustable wind, speed, and drop frequency controls.",
+    "tags": ["HTML", "CSS", "JavaScript", "Animation", "Physics Simulation"],
+    "links": {
+      "live": "./projects/Rain/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Elevator Control Simulator Game",
     "description": "A polished gamified elevator control game where users operate a multi-floor elevator in a neon black & blue building. Features include calling the elevator from any floor, animated doors, queue management, direction indicators, emergency stop, and interactive responsive controls. Designed for an arcade-style immersive experience.",
@@ -1716,6 +2618,18 @@
     "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
     "links": {
       "live": "./projects/HTML-formator/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+   {
+    "title": "Interactive Plaid Pattern Generator",
+    "description": "An animated color palette inspired by the scent of rain on dry earth. Features a responsive grid layout, interactive swatches with copy functionality, and a modern dark-themed UI.",
+    "tags": ["HTML", "CSS", "JavaScript", "Animation", "Optical Illusion"],
+    "links": {
+      "live": "./projects/Interactive-Plaid-Pattern-Generator/index.html"
     },
     "author": {
       "name": "Omkar",
@@ -1805,6 +2719,18 @@
       "github": "https://github.com/Gupta-02"
     }
   },
+    {
+    "title": "Theme Toggle",
+    "description": "An interactive theme toggle that switches between light and dark modes. Features smooth transitions, persistent theme settings using localStorage, and a responsive design for all device sizes.",
+    "tags": ["HTML", "CSS", "JavaScript", "Theme"],
+    "links": {
+      "live": "./projects/theme-toogle/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Fitness Stats Tracker",
     "description": "A fully fledged fitness tracking dashboard that allows users to log daily activity metrics and monitor overall progress over time. Features a modern dark-themed UI, persistent local storage, real-time calorie calculations, and a responsive left–right dashboard layout that presents summaries and historical data in a clean, intuitive manner.",
@@ -1877,12 +2803,36 @@
       "github": "https://github.com/omkarhole"
     }
   },
+    {
+    "title": "Responsive Parallax Drag-slider",
+    "description": "A responsive parallax drag slider with smooth animations and intuitive navigation. Features include touch and mouse drag support, auto-scrolling, and a clean, modern design.",
+    "tags": ["HTML", "CSS", "JavaScript", "Animation"],
+    "links": {
+      "live": "./projects/Responsive-Parallax-Drag-slider/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Stroop Effect Game",
     "description": "A cognitive game that challenges players to identify the color of the text rather than the word itself, testing their attention and reaction time. Features include a timer, score tracking, mistake limits, and a responsive design for an engaging user experience.",
     "tags": ["HTML", "CSS", "JavaScript", "Game"],
     "links": {
       "live": "./projects/stroop-Effect-Game/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+    {
+    "title": "Swipe-to-Delete Notifications",
+    "description": "A web application that demonstrates swipe-to-delete functionality for notifications. Users can swipe left or right on notifications to delete them.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/Swipe-to-Delete-Notifications/index.html"
     },
     "author": {
       "name": "Omkar",
@@ -1978,6 +2928,18 @@
     "author": {
       "name": "Anvesha",
       "github": "https://github.com/your-github-username"
+    }
+  },
+   {
+    "title": "Parametric Surface Visualizer",
+    "description": "A web-based visualization tool for parametric surfaces in 3D space. Features interactive controls, multiple surface types, and a responsive design for exploring mathematical surfaces.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/Parametric-Surface/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
     }
   },
   {
@@ -2108,6 +3070,18 @@
       "github": "https://github.com/your-github-username"
     }
   },
+    {
+    "title": "Solar System project",
+    "description": "An interactive 3D visualization of our solar system with realistic planet sizes and orbital paths. Features include zoom controls, planet information panels, and a responsive design for all devices.",
+    "tags": ["HTML", "CSS", "JavaScript", "3D Visualization"],
+    "links": {
+      "live": "./projects/Solar-css-System/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "3D Periodic Table",
     "description": "An interactive 3D periodic table that allows users to explore elements in a visually engaging way. Features include rotating the table, clicking on elements for detailed information, and a modern design with smooth animations.",
@@ -2169,6 +3143,30 @@
     }
   },
   {
+  "title": "Story Dice – Random Prompt Generator",
+  "description": "An interactive Story Dice generator that creates unique story prompts. Features include clickable dice for Character, Setting, Conflict, and Twist, animated dice rolls, prompt history tracking, copy-to-clipboard functionality, and dark/light mode. Built with HTML, CSS, and JavaScript for a fun, creative, and modern UI experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/story-dice/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+    {
+    "title": "Apple watch like Mickey",
+    "description": "A web application that mimics the look and feel of an Apple Watch interface with a Mickey Mouse theme. Features a sleek design, interactive elements, and responsive layout.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/Apple-Watch-Like-Mickey/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+  {
     "title": "CSS Perspective playground",
     "description": "A web application that allows users to experiment with CSS perspective properties. Users can adjust perspective values and see the effects on 3D elements in real time.",
     "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
@@ -2216,6 +3214,18 @@
       "github": "https://github.com/omkarhole"
     }
   },
+    {
+    "title": "Interactive Neural Network",
+    "description": "An interactive visualization of a neural network with adjustable parameters and real-time updates. Users can manipulate weights, biases, and activation functions to see how they affect the network's behavior.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/Interactive-Neural-Network/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Power Nap Tracker 🛌",
     "description": "A comprehensive web application for tracking power naps and optimizing energy management. Log nap duration, quality, and energy levels to visualize energy impact and get personalized timing tips.",
@@ -2229,6 +3239,18 @@
     }
   },
   {
+    "title": "frantic-run-of-the-valorous-rabbit",
+    "description": "An endless runner game where players control a brave rabbit navigating through a perilous landscape filled with obstacles and enemies. The game features smooth animations, responsive controls, and an engaging gameplay loop that challenges players to survive as long as possible while collecting rewards and power-ups.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/frantic-run-of-the-valorous-rabbit/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+  {
     "title": "Truth & Dare Mini Game",
     "description": "A fun and interactive Truth & Dare mini game with a gamified scoring system, animated cards, and a clean modern UI. Designed to be fully responsive and engaging, making it ideal for casual play and party-style interactions across devices.",
     "tags": ["HTML", "CSS", "JavaScript", "Game", "UI/UX"],
@@ -2238,6 +3260,18 @@
     "author": {
       "name": "Anvesha",
       "github": "https://github.com/your-github-username"
+    }
+  },
+    {
+    "title": "CSS-Animated-Search-Box",
+    "description": "An animated search box with smooth transitions and visual feedback. Features a clean design with interactive elements and responsive behavior.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/CSS-Animated-Search-Box/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
     }
   },
   {
@@ -2270,6 +3304,18 @@
     "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
     "links": {
       "live": "./projects/Flexbox-Playground/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+    {
+    "title": "Traffic Run Game",
+    "description": "A 3D racing game built with Three.js. Players navigate through a track with obstacles and other vehicles, aiming to achieve the highest score possible.",
+    "tags": ["HTML", "CSS", "JavaScript", "Game", "Three.js"],
+    "links": {
+      "live": "./projects/Traffic-Run-Game/index.html"
     },
     "author": {
       "name": "Omkar",
@@ -2386,6 +3432,18 @@
       "github": "https://github.com/Gupta-02"
     }
   },
+  {
+  "title": "URL Encoder/Decoder",
+  "description": "A futuristic dark + blue themed URL Encoder/Decoder with real-time encoding/decoding, character counter, and copy-to-clipboard functionality. Features modern glassmorphic UI panels, smooth hover animations, responsive design, and error handling for invalid input. Built entirely with HTML, CSS, and JavaScript for an interactive and portfolio-worthy experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/url-encoder-decoder/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
   {
     "title": "Catch the Dot",
     "description": "A fast-paced interactive game where users tap a moving dot before time runs out. Features a playful, neon-inspired UI, real-time score tracking, and a fully responsive layout designed for both desktop and mobile interaction.",
@@ -2506,6 +3564,18 @@
       "github": "https://github.com/omkarhole"
     }
   },
+  {
+  "title": "Health Check Dashboard",
+  "description": "A modern front-end Health Check Dashboard that simulates server status with unique glassmorphic UI. Features pulsing heartbeat indicators, animated gradient response bars, dynamic uptime and logs, and a fully responsive minimalist layout. Built entirely with HTML, CSS, and JavaScript, it demonstrates interactive UI design and real-time monitoring simulation.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/health-check-endpoint/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
   {
     "title": "Mood Match",
     "description": "A colorful and emotionally intelligent mood-matching application that lets users select how they feel and receive thoughtful responses with activity suggestions. Designed with a playful yet mature UI, smooth animations, and vibrant gradients to enhance user engagement and self-awareness.",
@@ -3110,6 +4180,18 @@
     }
   },
   {
+  "title": "Skill Tree Visualizer – Interactive Hierarchical Skill Mapper",
+  "description": "An interactive Skill Tree Visualizer where users can dynamically enter skills, set progress percentages, and define parent-child relationships. Features include true hierarchical tree generation, top-down layout, hover tooltips with progress bars, dynamically drawn connectors, and multiple root skill support. Built with HTML, CSS, and JavaScript for a visually engaging and interactive skill mapping experience.",
+  "tags": ["HTML", "CSS", "JavaScript", "Interactive UI"],
+  "links": {
+    "live": "./projects/skill-tree/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Stacking Cards Game",
     "description": "A simple and addictive stacking cards game where players must stack moving cards as high as possible without letting them fall. Features smooth animations, score tracking, and increasing difficulty levels.",
     "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
@@ -3393,6 +4475,18 @@
       "github": "https://github.com/your-github-username"
     }
   },
+    {
+    "title": "CSS loading animations",
+      "description": "A collection of CSS-only loading animations that are visually appealing and easy to implement in web projects.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "live": "./projects/CSS-Loading-Animations/"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Word Scrammble Game",
     "description": "A fun and interactive word scramble game where players unscramble letters to form valid words.",
@@ -3597,6 +4691,18 @@
       "github": "https://github.com/omkarhole"
     }
   },
+    {
+    "title": "CPC Challenge Mix or Blend Colors",
+    "description": "A tool to mix and blend colors in a creative way.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/CPChallenge/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Name Picker Tool",
     "description": "A fun and interactive name picker tool that randomly selects a name from a list of entries. Perfect for giveaways, raffles, or choosing team members.",
@@ -3669,6 +4775,18 @@
       "github": "https://github.com/neeru24"
     }
   },
+   {
+    "title": "Live Earthquake Monitor",
+    "description": "An interactive map showing real-time earthquake data from the USGS. Displays location, magnitude, and depth of recent seismic events.",
+    "tags": ["HTML", "CSS", "JavaScript", "API"],
+    "links": {
+      "live": "./projects/Live-Earthquake-Monitor/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Grammar Fixer",
     "description": "A tool that fixes grammar errors in sentences with explanations of changes made.",
@@ -3694,6 +4812,30 @@
     }
   },
   {
+  "title": "Micro Collage Maker – Interactive Grid & Freeform",
+  "description": "A unique and modern Micro Collage Maker that allows users to create collages with dynamic grid layouts (2x2, 3x3) or freeform panels. Features include draggable and resizable images, text boxes, stickers, hover glow effects, circular/hexagonal/square panels, animated gradient canvas background, glassmorphic floating sidebar controls, and export functionality (PNG & JSON). Built with HTML, CSS, and JavaScript for an interactive creative experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/micro-collage-maker/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+    {
+    "title": "Smart Color Palette Extractor",
+    "description": "An interactive tool that extracts accessible color palettes from images, ensuring compliance with WCAG standards.",
+    "tags": ["HTML", "CSS", "JavaScript", "Color Theory", "Accessibility"],
+    "links": {
+      "live": "./projects/Smart-Color-Palette-Extractor/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+  {
     "title": "Interactive Periodic Table",
     "description": "An interactive periodic table that provides detailed information about each element, including atomic number, symbol, atomic mass, and electron configuration. Features search functionality and responsive design for easy access on all devices.",
     "tags": ["HTML", "CSS", "JavaScript", "PDF", "Document Processing"],
@@ -3711,6 +4853,18 @@
     "tags": ["HTML", "CSS", "JavaScript", "PDF", "Document Processing"],
     "links": {
       "live": "./projects/timeline/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+   {
+    "title": "Code Chef-color mix game",
+    "description": "A fun color mixing game where players combine base colors to create target colors.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "live": "./projects/Color-Chef/index.html"
     },
     "author": {
       "name": "Omkar",
@@ -3741,6 +4895,18 @@
       "github": "https://github.com/omkarhole"
     }
   },
+  {
+  "title": "Interactive SWOT Analyzer",
+  "description": "A modern, interactive SWOT Analyzer with a 4-quadrant UI. Features include drag-and-drop ready cards, color-coded quadrants, editable items, dark/light mode toggle, export to JSON, and responsive design. Built with HTML, CSS, and JavaScript for a visually appealing and highly interactive user experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/swot-analyzer/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
   {
     "title": "Code Snippet Manager",
     "description": "A web application that allows users to save, organize, and manage code snippets in various programming languages. Features include syntax highlighting, categorization, and search functionality for easy retrieval of snippets.",
@@ -4607,6 +5773,18 @@
     }
   },
   {
+  "title": "Live CSS Editor",
+  "description": "A modern and interactive Live CSS Editor that allows users to write CSS and see real-time changes instantly. Features device preview simulation (desktop, tablet, mobile), auto-save with localStorage, theme toggle, CSS error detection, and CSS download option. Designed with a unique neon sidebar UI and responsive layout.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/live-css-editor/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Lunar Lander — Luxury Edition",
     "description": "A premium physics-based Lunar Lander game featuring realistic gravity and thrust mechanics, smooth animations, particle effects, and a rich, glassmorphism-inspired user interface built with pure web technologies.",
     "tags": ["HTML", "CSS", "JavaScript"],
@@ -4847,6 +6025,18 @@
     }
   },
   {
+  "title": "Encoder / Decoder Pro",
+  "description": "A modern full-screen text encoding and decoding web application with a clean glassmorphism UI. Supports multiple encoding methods including Base64, Binary, Hexadecimal, and Caesar Cipher with real-time processing, dark/light mode toggle, file upload support, and clipboard integration for a seamless user experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/encoder-decoder/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Time Leakage Detector",
     "description": "A radar-style interactive tool that tracks daily activities and detects time leaks. Features animated scanning UI, visual activity radar chart, and automatic leak alerts for excessive time usage.",
     "tags": [
@@ -5007,21 +6197,31 @@
   },
   {
     "title": "Cognitive Load Balancer",
-    "description": "An interactive cognitive monitoring tool that simulates mental workload using task complexity, time pressure, and multitasking inputs. Features a cyber-themed UI, dynamic color transitions based on stress levels, and real-time feedback to help users maintain optimal cognitive performance.",
+    "description": "A comprehensive cognitive load monitoring and optimization tool for developers. Features real-time cognitive load assessment, task management with complexity analysis, fatigue tracking, focus timers, performance analytics, and personalized optimization recommendations. Helps maintain optimal mental performance through intelligent workload balancing and break management.",
     "tags": [
       "HTML",
       "CSS",
       "JavaScript",
-      "UI/UX",
       "Cognitive Science",
-      "Simulation"
+      "Productivity",
+      "Mental Health",
+      "Task Management",
+      "Performance Analytics",
+      "Real-time Monitoring",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Focus Management",
+      "Workload Optimization",
+      "Fatigue Tracking",
+      "Break Management"
     ],
     "links": {
-      "live": "./projects/cognitive-load-balancer/"
+      "live": "./cognitive-load-balancer/cognitive-load-balancer.html"
     },
     "author": {
-      "name": "Anvesha",
-      "github": "https://github.com/your-github-username"
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
     }
   },
   {
@@ -5230,6 +6430,18 @@
       "github": "https://github.com/omkarhole"
     }
   },
+  {
+  "title": "Random Story / Mad Libs",
+  "description": "An interactive Random Story and Mad Libs generator with a clean side-by-side dashboard layout. Users can switch between Random Story mode and Custom Mad Libs mode, generate stories with a typewriter animation effect, and save their creations as a text file. Features a warm storybook-inspired UI, responsive design, and smooth user experience built using pure HTML, CSS, and JavaScript.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/random-story/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
   {
     "title": "Study Planer",
     "description": "A web application that helps users create and manage their study schedules effectively. Users can add subjects, set study goals, and track their progress over time.",
@@ -5514,6 +6726,18 @@
       "github": "https://github.com/omkar"
     }
   },
+  {
+  "title": "Personal KPI Tracker",
+  "description": "A modern, interactive Personal KPI Tracker that allows users to add, edit, and delete custom KPIs. Features include dynamic progress bars, live updates, daily/weekly/monthly tracking, streak tracking, dark/light mode, animated interactions, responsive design, and local storage for persistent data. Built with HTML, CSS, and JavaScript for a unique and engaging experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/personal-kpi-tracker/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
   {
     "title": "Number Challenge",
     "description": "A fun and challenging number memory game where players memorize a sequence of numbers and recall them correctly within a limited time. Boosts focus, memory, and concentration.",
@@ -5995,6 +7219,18 @@
     }
   },
   {
+  "title": "Duplicate Line Remover (Smart Cleaner)",
+  "description": "A professional developer utility that detects, highlights, and removes duplicate lines instantly. Features side-by-side input/output panels, case sensitivity toggle, whitespace normalization, live statistics (total, unique, removed lines), and copy/download functionality. Built with a modern dark dashboard UI using pure HTML, CSS, and JavaScript.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/duplicate-line-remover/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "GIF Search App",
     "description": "A web application that allows users to search for and view GIFs using the Giphy API.",
     "tags": ["HTML", "CSS", "JavaScript"],
@@ -6421,6 +7657,18 @@
       "github": "https://github.com/omkarhole"
     }
   },
+  {
+  "title": "Task XP Gamifier – RPG-Style Interactive Task Manager",
+  "description": "A gamified task manager where each task gives XP and contributes to leveling up. Features include multiple task types (Routine, Challenge, Bonus, Timed, Special), priority-based XP multipliers, streak bonuses, animated XP bars, pop-up level-up notifications, badges for milestones, and a game-style interactive UI. Built with HTML, CSS, and JavaScript for a visually engaging and rewarding task experience.",
+  "tags": ["HTML", "CSS", "JavaScript", "Interactive UI", "Gamification"],
+  "links": {
+    "live": "./projects/task-xp-gamifier/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
   {
     "title": "Password Strength Checker",
     "description": "Check the strength of your passwords to ensure they are secure and robust.",
@@ -7756,6 +9004,18 @@
     }
   },
   {
+  "title": "Hashtag Generator (Creator Dashboard)",
+  "description": "A modern content creator tool that generates smart, categorized hashtags for Instagram, LinkedIn, Twitter, and YouTube. Features trending, niche, and broad hashtag categories, character counter, hashtag strength meter, live generation, and copy/download functionality. Built with a stylish, dark creator studio UI using HTML, CSS, and JavaScript.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/hashtag-generator/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Terminal Motherlode Project",
     "description": "A web-based terminal emulator that mimics a command-line interface, allowing users to execute basic commands and navigate through a simulated file system.",
     "tags": ["HTML", "CSS", "JavaScript"],
@@ -8552,6 +9812,18 @@
     }
   },
   {
+  "title": "Comic Strip Creator – Futuristic Interactive Tool",
+  "description": "A modern and interactive Comic Strip Creator that allows users to design comic strips with draggable characters, customizable dialogue bubbles, dynamic panel layouts, and multiple backgrounds. Features include staggered/futuristic panels, neon/glow UI, drag-and-drop characters and dialogues, dark/light mode, and export functionality (JSON). Built with HTML, CSS, and JavaScript for an engaging comic creation experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/comic-strip-creator/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Neural Network Playground",
     "description": "An interactive machine learning visualization built with vanilla JavaScript. Features a custom matrix math engine, real-time training visualization, and architecture configuration to demonstrate neural network internals without external libraries.",
     "tags": [
@@ -8769,6 +10041,18 @@
       "github": "https://github.com/pavanakarthik12"
     }
   },
+  {
+  "title": "Trivia Check",
+  "description": "A modern, interactive Trivia Quiz Game with a unique UI featuring circular option buttons, animated flips on answer selection, progress bar tracking, and live score updates. Includes multiple categories and questions for an engaging quiz experience. Built with HTML, CSS, and JavaScript for a responsive and fun user interface.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/trivia-check/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
   {
     "title": "microfps",
     "description": "A micro FPS game with basic shooting mechanics, enemy AI, and scoring.",
@@ -10050,6 +11334,31 @@
     }
   },
   {
+    "title": "Detox Recovery Stability Score",
+    "description": "Monitor your recovery stability after detoxification. Track key metrics like energy levels, mood stability, craving intensity, sleep quality, and physical symptoms to assess your progress and identify patterns in your recovery journey.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Wellness",
+      "Detox",
+      "Recovery",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Stability Assessment"
+    ],
+    "links": {
+      "live": "./detox-recovery-stability-score.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
     "title": "Overcommitment Risk Analyzer",
     "description": "Evaluate your workload versus capacity to prevent burnout and improve time management. Track task load, assess stress levels, and get personalized recommendations for maintaining work-life balance.",
     "tags": [
@@ -10142,6 +11451,18 @@
       "github": "https://github.com/Gupta-02"
     }
   },
+  {
+  "title": "Interactive Risk Assessment Tool",
+  "description": "A modern and interactive Risk Assessment Tool with a dashboard layout, dynamic color-coded risk cards, live risk scoring, delete/edit functionality, and visual chart summaries. Features include high/medium/low risk classification, responsive design, dark/light mode toggle, and JSON export for reporting. Built with HTML, CSS, JavaScript, and Chart.js for a visually engaging and portfolio-ready experience.",
+  "tags": ["HTML", "CSS", "JavaScript", "Chart.js"],
+  "links": {
+    "live": "./projects/risk-assessment-tool/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
   {
     "title": "Hydration-Electrolyte Balance Index",
     "description": "Track hydration status and electrolyte balance with integrated scoring for athletic performance and health. Monitor water intake, sodium, potassium, and magnesium levels while considering activity intensity and environmental factors for comprehensive balance assessment.",
@@ -11608,6 +12929,32 @@
     }
   },
   {
+    "title": "Hormonal Adaptation Tracking Panel",
+    "description": "Monitor your body's hormonal response and adaptation to stress, exercise, and lifestyle factors. Track key hormonal markers, symptoms, and recovery patterns to optimize hormonal balance and performance through comprehensive assessment and trend analysis.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Hormones",
+      "Endocrine System",
+      "Adaptation",
+      "Recovery",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Hormonal Balance"
+    ],
+    "links": {
+      "live": "./projects/hormonal-adaptation-tracking-panel/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
     "title": "Stabilizer Muscle Activation Index",
     "description": "Monitor and track the activation levels of stabilizer muscles during exercises and daily activities. Assess core stability, joint support, and overall muscular balance to optimize performance and prevent injuries through targeted training.",
     "tags": [
@@ -11685,6 +13032,841 @@
     ],
     "links": {
       "live": "./nitric-oxide-support-tracker/nitric-oxide-support-tracker.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Abstract Thinking Progress Tracker",
+    "description": "Enhance your abstract thinking skills through targeted exercises and track your progress over time. Features various types of abstract thinking exercises including pattern recognition, analogical reasoning, conceptual thinking, and creative problem solving with progress tracking and performance analytics.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Mental Health",
+      "Productivity",
+      "Cognitive Science",
+      "Abstract Thinking",
+      "Problem Solving",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Mental Training",
+      "Cognitive Development"
+    ],
+    "links": {
+      "live": "./abstract-thinking-progress-tracker.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Rotational Power Symmetry Log",
+    "description": "Track rotational power symmetry across different movements like medicine ball throws, cable rotations, and woodchoppers. Monitor power output imbalances between left and right sides, assess symmetry percentages, and track progress over time to prevent injuries and optimize athletic performance.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Fitness",
+      "Sports Performance",
+      "Rotational Power",
+      "Symmetry Analysis",
+      "Biomechanics",
+      "Injury Prevention",
+      "Athletic Training",
+      "Power Assessment",
+      "Movement Analysis",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking"
+    ],
+    "links": {
+      "live": "./rotational-power-symmetry-log/rotational-power-symmetry-log.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Adaptive Stress Capacity Index",
+    "description": "Monitor your adaptive stress capacity and allostatic load through comprehensive assessments. Track baseline stress levels, acute stress responses, recovery rates, and resilience scores. Includes interactive stress tests for breathing control, cognitive challenges, physical responses, and recovery capacity evaluation.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Mental Health",
+      "Stress Management",
+      "Resilience",
+      "Allostatic Load",
+      "Adaptive Capacity",
+      "Stress Testing",
+      "Recovery Assessment",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Biofeedback"
+    ],
+    "links": {
+      "live": "./adaptive-stress-capacity-index/adaptive-stress-capacity-index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Cellular Oxidation Balance Meter",
+    "description": "Monitor oxidative stress levels, antioxidant capacity, and cellular health markers to optimize your body's redox balance. Track inflammation markers, cellular energy production, and overall oxidation-reduction balance with personalized recommendations for maintaining cellular health.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Cellular Health",
+      "Oxidative Stress",
+      "Antioxidants",
+      "Redox Balance",
+      "Inflammation",
+      "Mitochondrial Health",
+      "Biomarkers",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Personalized Recommendations"
+    ],
+    "links": {
+      "live": "./cellular-oxidation-balance-meter/cellular-oxidation-balance-meter.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Joint Loading Pattern Tracker",
+    "description": "Monitor how your joints are loaded during exercises and track loading patterns over time. Assess balance between left and right sides for shoulders, elbows, hips, knees, and ankles. Identify imbalances that could lead to injury and optimize your training for joint health and longevity.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Fitness",
+      "Joint Health",
+      "Biomechanics",
+      "Injury Prevention",
+      "Loading Patterns",
+      "Balance Assessment",
+      "Physical Therapy",
+      "Sports Medicine",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking"
+    ],
+    "links": {
+      "live": "./joint-loading-pattern-tracker/joint-loading-pattern-tracker.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Mental Downtime Optimization Tool",
+    "description": "Optimize your mental recovery through strategic downtime activities and cognitive restoration tracking. Monitor mental fatigue levels, cognitive recovery rates, attention quality, and emotional clarity while selecting optimal downtime activities for maximum mental restoration.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Mental Health",
+      "Cognitive Recovery",
+      "Mental Fatigue",
+      "Attention Restoration",
+      "Downtime Activities",
+      "Stress Management",
+      "Cognitive Performance",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Personalized Recommendations"
+    ],
+    "links": {
+      "live": "./mental-downtime-optimization-tool/mental-downtime-optimization-tool.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Differential Privacy Safeguard Module",
+    "description": "Demonstrate differential privacy concepts with interactive examples. Learn how to protect individual data privacy while allowing statistical analysis through controlled noise addition using Laplace and Gaussian mechanisms for various query types including sum, count, mean, and histogram.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Privacy",
+      "Data Protection",
+      "Differential Privacy",
+      "Laplace Mechanism",
+      "Gaussian Mechanism",
+      "Statistical Analysis",
+      "Noise Addition",
+      "Privacy-Preserving",
+      "Data Science",
+      "Cryptography",
+      "Mathematics"
+    ],
+    "links": {
+      "live": "./differential-privacy-safeguard/differential-privacy-safeguard.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Intent Prediction Module",
+    "description": "Predict user intent from text input using a simple rule-based classifier. Enter a message and get predictions for greetings, questions, commands, or statements. Useful for understanding user behavior and improving interactions.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "AI",
+      "Machine Learning",
+      "Intent Prediction",
+      "Natural Language Processing",
+      "User Behavior",
+      "Text Analysis",
+      "Rule-Based Classification"
+    ],
+    "links": {
+      "live": "./intent-prediction-module/intent-prediction-module.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Secure Plugin Marketplace",
+    "description": "A comprehensive marketplace for secure plugins with real-time security scanning, community reviews, and developer tools. Features include plugin discovery, security badges, detailed reviews, and submission system for developers.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Security",
+      "Marketplace",
+      "Plugin System",
+      "Web Development",
+      "User Authentication",
+      "Security Scanning",
+      "Community Reviews",
+      "Developer Tools",
+      "Responsive Design",
+      "LocalStorage",
+      "Dynamic Filtering",
+      "Modal System"
+    ],
+    "links": {
+      "live": "./secure-plugin-marketplace/secure-plugin-marketplace.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Adaptive Learning Rate Scheduler",
+    "description": "Interactive learning rate scheduler with multiple algorithms including step decay, exponential decay, polynomial decay, cosine annealing, cyclic, and OneCycle. Features real-time visualization, scheduler comparison, training simulation, and code export for PyTorch and TensorFlow. Perfect for understanding and implementing adaptive learning rate techniques in deep learning.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Machine Learning",
+      "Deep Learning",
+      "Learning Rate Scheduling",
+      "TensorFlow.js",
+      "Chart.js",
+      "Data Visualization",
+      "Interactive",
+      "Educational",
+      "PyTorch",
+      "TensorFlow",
+      "Optimization",
+      "Training",
+      "Neural Networks",
+      "AI",
+      "Algorithm Visualization"
+    ],
+    "links": {
+      "live": "./adaptive-learning-rate-scheduler/adaptive-learning-rate-scheduler.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Context Drift Detector",
+    "description": "Advanced tool for detecting context drift in text using semantic analysis. Analyze conversations, documents, and text streams to identify topic shifts, coherence changes, and semantic transitions. Features include real-time analysis, similarity visualization, topic extraction, drift point detection, and comprehensive reporting.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "NLP",
+      "Text Analysis",
+      "Semantic Analysis",
+      "Context Drift",
+      "Topic Modeling",
+      "Similarity Analysis",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Export Functionality",
+      "Real-time Analysis",
+      "Coherence Scoring"
+    ],
+    "links": {
+      "live": "./context-drift-detector/context-drift-detector.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Automated Documentation Synthesizer",
+    "description": "AI-powered documentation generator that analyzes codebases and automatically creates comprehensive documentation. Features include multi-language support, code analysis, API documentation generation, usage examples, installation guides, and multiple export formats (HTML, Markdown, JSON, PDF). Supports drag-and-drop file uploads, syntax highlighting, and customizable documentation templates.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "AI/ML",
+      "Documentation Generation",
+      "Code Analysis",
+      "API Documentation",
+      "Multi-language Support",
+      "Syntax Highlighting",
+      "Prism.js",
+      "File Upload",
+      "Drag & Drop",
+      "Export/Import",
+      "Markdown",
+      "JSON",
+      "PDF Generation",
+      "Template System",
+      "Code Parsing",
+      "Function Analysis",
+      "Class Analysis",
+      "Dependency Tracking",
+      "LocalStorage",
+      "Responsive Design",
+      "Font Awesome"
+    ],
+    "links": {
+      "live": "./automated-documentation-synthesizer/automated-documentation-synthesizer.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Dynamic Token Allocation Manager",
+    "description": "Advanced token allocation system with multiple AI-driven strategies including reinforcement learning, adaptive learning, and priority-based allocation. Features real-time analytics, simulation capabilities, customizable settings, and comprehensive dashboards for monitoring token distribution across agents.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Token Allocation",
+      "AI/ML",
+      "Reinforcement Learning",
+      "Adaptive Algorithms",
+      "Data Visualization",
+      "Chart.js",
+      "Real-time Analytics",
+      "Simulation",
+      "Resource Management",
+      "Algorithm Optimization",
+      "LocalStorage",
+      "Responsive Design"
+    ],
+    "links": {
+      "live": "./dynamic-token-allocation-manager/dynamic-token-allocation-manager.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Cross-Platform Rendering Engine",
+    "description": "A powerful cross-platform graphics rendering engine supporting 2D and WebGL rendering with real-time preview across multiple platforms. Create, manipulate, and animate shapes with platform-specific optimizations, export capabilities, and comprehensive rendering controls for web, mobile, tablet, and desktop environments.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Canvas API",
+      "WebGL",
+      "Graphics Rendering",
+      "Cross-Platform",
+      "Animation",
+      "Shape Manipulation",
+      "Real-time Preview",
+      "Export Functionality",
+      "Platform Optimization",
+      "2D Graphics",
+      "3D Graphics",
+      "Interactive Design",
+      "Visual Effects",
+      "Performance Monitoring",
+      "Responsive Design",
+      "LocalStorage",
+      "Modern Web APIs"
+    ],
+    "links": {
+      "live": "./projects/cross-platform-rendering-engine/cross-platform-rendering-engine.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Secure Federated Identity Connector",
+    "description": "A comprehensive federated identity management system that enables secure authentication across multiple identity providers including OAuth 2.0, SAML, OpenID Connect, and social login. Features include provider management, federation trusts, security policies, threat detection, token rotation, analytics dashboard, and real-time monitoring.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Identity Management",
+      "Federated Authentication",
+      "OAuth 2.0",
+      "SAML",
+      "OpenID Connect",
+      "Security",
+      "Token Management",
+      "Threat Detection",
+      "Analytics",
+      "Chart.js",
+      "CryptoJS",
+      "LocalStorage",
+      "Real-time Monitoring",
+      "Multi-provider Support",
+      "Enterprise Security"
+    ],
+    "links": {
+      "live": "./projects/secure-federated-identity-connector/secure-federated-identity-connector.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Conversation Replay Simulator",
+    "description": "Advanced conversation analysis and simulation system for recording, replaying, and analyzing conversations. Features real-time sentiment analysis, topic detection, conversation flow visualization, scenario management, and comprehensive analytics. Perfect for communication training, customer service analysis, and conversation pattern recognition.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "AI/ML",
+      "Conversation Analysis",
+      "Sentiment Analysis",
+      "Topic Detection",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Real-time Processing",
+      "Communication Training",
+      "Analytics",
+      "Scenario Management",
+      "Natural Language Processing",
+      "Conversation Flow",
+      "Interactive Replay",
+      "Performance Metrics"
+    ],
+    "links": {
+      "live": "./projects/conversation-replay-simulator/conversation-replay-simulator.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Auto-Scaling Inference Cluster",
+    "description": "A comprehensive auto-scaling ML inference cluster management system with intelligent resource allocation, real-time monitoring, model registry, and automated scaling policies. Features include cluster node management, performance monitoring, security scanning, model deployment, and predictive scaling based on workload patterns.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Machine Learning",
+      "Auto-Scaling",
+      "Cluster Management",
+      "Inference Engine",
+      "Performance Monitoring",
+      "Model Registry",
+      "Resource Management",
+      "Load Balancing",
+      "Security Scanning",
+      "Real-time Analytics",
+      "Chart.js",
+      "CryptoJS",
+      "LocalStorage",
+      "Predictive Scaling",
+      "Container Orchestration",
+      "Cloud Infrastructure"
+    ],
+    "links": {
+      "live": "./auto-scaling-inference-cluster/auto-scaling-inference-cluster.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Multilingual Sentiment Calibration",
+    "description": "Advanced multilingual sentiment analysis system with real-time calibration capabilities. Supports 24+ languages with machine learning models that automatically adapt and improve accuracy through continuous training. Features include language detection, confidence scoring, training data management, performance analytics, and automated model calibration.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Machine Learning",
+      "Natural Language Processing",
+      "Sentiment Analysis",
+      "Multilingual Support",
+      "Real-time Processing",
+      "Data Visualization",
+      "Chart.js",
+      "Model Training",
+      "Language Detection",
+      "Performance Analytics",
+      "Auto Calibration",
+      "Training Data Management",
+      "Confidence Scoring",
+      "Cross-language Analysis",
+      "Adaptive Learning",
+      "LocalStorage",
+      "Interactive Dashboard"
+    ],
+    "links": {
+      "live": "./projects/multilingual-sentiment-calibration/multilingual-sentiment-calibration.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Predictive Maintenance Dashboard #5003",
+    "description": "AI-powered predictive maintenance system for industrial equipment monitoring and failure prevention. Features real-time equipment health monitoring, predictive failure analysis using machine learning algorithms, maintenance scheduling, sensor data visualization, alert management, comprehensive analytics, and automated reporting. Includes interactive dashboards with Chart.js visualizations, equipment lifecycle management, risk assessment, and cost-benefit analysis.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Predictive Maintenance",
+      "IoT",
+      "Machine Learning",
+      "Industrial IoT",
+      "Equipment Monitoring",
+      "Failure Prediction",
+      "Sensor Data",
+      "Real-time Analytics",
+      "Maintenance Scheduling",
+      "Risk Assessment",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Alert Management",
+      "Cost Analysis",
+      "Equipment Health",
+      "Predictive Analytics",
+      "Industrial Automation"
+    ],
+    "links": {
+      "live": "./projects/predictive-maintenance-dashboard/predictive-maintenance-dashboard.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Zero-Knowledge Verification Layer #5004",
+    "description": "A comprehensive zero-knowledge proof verification system that enables privacy-preserving cryptographic verification without revealing underlying data. Features include proof generation, verification, circuit management, cryptographic operations, real-time monitoring, and security auditing for advanced ZK protocol implementations.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Zero-Knowledge Proofs",
+      "Cryptography",
+      "ZK-SNARKs",
+      "Privacy-Preserving",
+      "Blockchain",
+      "Web3",
+      "Cryptographic Verification",
+      "Circuit Compiler",
+      "Proof Generation",
+      "Security Auditing",
+      "Real-time Monitoring",
+      "Chart.js",
+      "CryptoJS",
+      "LocalStorage",
+      "ZK Protocols",
+      "Groth16",
+      "PLONK",
+      "Elliptic Curves"
+    ],
+    "links": {
+      "live": "./projects/zero-knowledge-verification-layer/zero-knowledge-verification-layer.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Dynamic Intent Resolution Matrix",
+    "description": "An intelligent system for resolving user intents through dynamic matrix-based decision making. This tool employs various AI techniques including Bayesian inference, fuzzy logic, neural networks, decision trees, and reinforcement learning to accurately identify and classify user intentions from natural language input.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "AI",
+      "Natural Language Processing",
+      "Intent Recognition",
+      "Bayesian Inference",
+      "Fuzzy Logic",
+      "Neural Networks",
+      "Decision Trees",
+      "Reinforcement Learning",
+      "Data Visualization",
+      "Canvas API",
+      "Interactive Matrix",
+      "Real-time Processing"
+    ],
+    "links": {
+      "live": "./dynamic-intent-resolution-matrix/dynamic-intent-resolution-matrix.html"
+    }
+  },
+  {
+    "title": "Cryptographic Identity Abstraction Gateway",
+    "description": "A comprehensive cryptographic identity management system that provides secure abstraction layers for digital identity operations. Features include identity creation with public/private key pairs, multi-level abstraction (low, medium, high, maximum), verification protocols, attribute updates, and revocation mechanisms with real-time visualization of identity flows and security metrics.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Cryptography",
+      "Identity Management",
+      "Security",
+      "Public Key Infrastructure",
+      "Zero-Knowledge Proofs",
+      "Homomorphic Encryption",
+      "Secure Multi-party Computation",
+      "Digital Certificates",
+      "Blockchain",
+      "Privacy",
+      "Authentication",
+      "Data Visualization",
+      "Canvas API",
+      "Real-time Processing",
+      "JSON",
+      "LocalStorage"
+    ],
+    "links": {
+      "live": "./cryptographic-identity-abstraction-gateway/cryptographic-identity-abstraction-gateway.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Federated Insight Aggregation Network #5220",
+    "description": "Monitor, analyze, and aggregate insights from multiple federated data sources in real-time. Features distributed data collection, correlation analysis, automated insight generation, network health monitoring, and comprehensive visualization of federated intelligence operations.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Data Aggregation",
+      "Federated Learning",
+      "Real-time Analytics",
+      "Correlation Analysis",
+      "Network Monitoring",
+      "Data Visualization",
+      "Chart.js",
+      "Distributed Systems",
+      "Insight Generation",
+      "Data Sources",
+      "System Health",
+      "Intelligence Operations",
+      "API Integration",
+      "WebSockets",
+      "Data Pipeline",
+      "Machine Learning",
+      "Predictive Analytics"
+    ],
+    "links": {
+      "live": "./federated-insight-aggregation-network/index.html"
+    },
+  },
+  {
+    "title": "Intelligent Query Acceleration Framework #5332",
+    "description": "Advanced database query performance monitoring and optimization platform. Features real-time query analysis, performance metrics dashboard, execution time histograms, query type distribution charts, optimization suggestions, automated query optimization, and comprehensive performance insights for database administrators and developers.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Database Performance",
+      "Query Optimization",
+      "Real-time Monitoring",
+      "Data Visualization",
+      "Chart.js",
+      "Performance Analytics",
+      "Query Analysis",
+      "Database Administration",
+      "SQL Optimization",
+      "Performance Metrics",
+      "Execution Time Analysis",
+      "Query Caching",
+      "Index Optimization",
+      "Database Tuning",
+      "Performance Dashboard",
+      "Query Profiling",
+      "Database Monitoring"
+    ],
+    "links": {
+      "live": "./projects/intelligent-query-acceleration-framework/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Zero-Trust Access Governance Portal #5330",
+    "description": "Frontend implementation of the Zero-Trust Access Governance Portal for issue #5330. This portal provides a secure interface for managing user access policies, monitoring authentication events, and enforcing zero-trust security principles. Features include a dashboard with real-time access policy status, interactive user access management tables, dynamic filtering and sorting of access events, and visual indicators for policy compliance and risk levels.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Zero-Trust Security",
+      "Access Governance",
+      "Dashboard",
+      "User Management",
+      "Real-time Monitoring",
+      "Data Visualization",
+      "Interactive Tables",
+      "Chart.js",
+      "Responsive Design",
+      "Security Portal"
+    ],
+    "links": {
+      "live": "./projects/zero-trust-access-governance-portal/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Distributed Knowledge Synchronization Node #5333",
+    "description": "Monitor and manage distributed knowledge synchronization across multiple nodes in real-time. Features include node status tracking, sync operation monitoring, conflict resolution, data flow visualization, performance metrics, and comprehensive dashboard for distributed system management.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Distributed Systems",
+      "Knowledge Synchronization",
+      "Real-time Monitoring",
+      "Node Management",
+      "Conflict Resolution",
+      "Data Visualization",
+      "Chart.js",
+      "Canvas API",
+      "Network Topology",
+      "Sync Operations",
+      "Performance Metrics",
+      "Dashboard",
+      "Data Flow",
+      "System Health"
+    ],
+    "links": {
+      "live": "./projects/distributed-knowledge-synchronization-node/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "High-Availability Redundancy Mesh #5331",
+    "description": "Frontend implementation of the High-Availability Redundancy Mesh for issue #5331. This project provides a dashboard interface to monitor system redundancy, node health, and failover status across distributed networks. Features include an interactive dashboard showing node health and redundancy status, dynamic visualization of failover events and alerts, color-coded indicators for system availability and performance, and real-time updates for critical network events.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "High Availability",
+      "System Monitoring",
+      "Network Topology",
+      "Node Health",
+      "Failover Management",
+      "Real-time Dashboard",
+      "Data Visualization",
+      "Chart.js",
+      "Canvas API",
+      "Responsive Design",
+      "Infrastructure Monitoring"
+    ],
+    "links": {
+      "live": "./projects/high-availability-redundancy-mesh/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Conversation Flow Optimizer #5909",
+    "description": "Advanced AI-powered conversation flow optimization system that analyzes historical dialogue patterns to suggest adaptive branching and response prioritization for efficiency and clarity in multi-turn interactions. Features include interactive flow visualization, real-time optimization algorithms, conversation simulation, pattern analysis, automated suggestions, and comprehensive analytics dashboard.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "AI",
+      "Conversation Optimization",
+      "Flow Visualization",
+      "Pattern Analysis",
+      "Interactive Dashboard",
+      "Real-time Analytics",
+      "Canvas API",
+      "Optimization Algorithms",
+      "Dialogue Management",
+      "User Experience",
+      "Adaptive Branching",
+      "Response Prioritization",
+      "Conversation Simulation",
+      "Data Visualization",
+      "Performance Metrics",
+      "Flow Editor",
+      "Drag and Drop"
+    ],
+    "links": {
+      "live": "./projects/conversation-flow-optimizer/index.html"
     },
     "author": {
       "name": "Gupta-02",

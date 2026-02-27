@@ -57,6 +57,28 @@
     --navbar-gradient-bottom: rgba(37, 62, 104, 0.65);
     --navbar-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
+
+
+/* =========================================
+   SKIP LINK FOR ACCESSIBILITY
+   ========================================= */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--bg-primary);
+    padding: 8px 16px;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0 0 4px 0;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
 /* =========================================
    IMAGE UPLOADER STYLES
    ========================================= */
@@ -265,8 +287,15 @@ body.light-mode {
 /* =========================================
    BODY & BASE STYLES
    ========================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 16px;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     margin: 0;
@@ -276,7 +305,34 @@ body {
     overflow-x: hidden;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* cursor */
+/* Hide default cursor */
+body {
+  cursor: none;
+}
 
+/* Container */
+.circle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Individual circles */
+.circle {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00cfff, #0077ff);
+  box-shadow: 0 0 10px #00cfff,
+              0 0 20px #0077ff,
+              0 0 30px rgba(0, 119, 255, 0.6);
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+}
 /* Animated Background */
 body::before {
     content: '';
@@ -429,7 +485,17 @@ body.light-mode .nav-logo {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    width: 30px;
+    width: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .hamburger span {
@@ -904,6 +970,7 @@ h1::after {
     width: 100px !important;
     height: 100px !important;
     flex-shrink: 0 !important;
+    z-index: 999 !important;
 }
 
 .card-container.list-view .card-content-wrapper {
@@ -1411,11 +1478,16 @@ body.light-mode .card.random-highlight::after {
     padding: 2px;
     /* Reduced padding for smaller border effect */
     margin: 0 auto 25px auto;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease, opacity 0.3s ease;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     display: block;
     position: relative;
     z-index: 1;
+    opacity: 1;
+}
+
+.card-img.loaded {
+    opacity: 1;
 }
 
 .card:hover .card-img {
@@ -2093,6 +2165,7 @@ html {
 @media (max-width: 768px) {
     body {
         padding: 10px;
+        font-size: 16px;
     }
 
     h1 {
@@ -2157,6 +2230,8 @@ html {
     .hamburger {
         display: flex;
         z-index: 1100;
+        min-width: 44px;
+        min-height: 44px;
     }
 
     .hamburger.active span:nth-child(1) {
@@ -2183,6 +2258,38 @@ html {
 
     .stat-card span {
         font-size: 2.2rem;
+    }
+
+    .search-filter-container {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .filter-buttons {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .filter-btn {
+        flex: 1 1 auto;
+        min-width: 44px;
+        min-height: 44px;
+        text-align: center;
+    }
+
+    .sort-select {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    .view-toggle-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .reset-btn {
+        min-width: 44px;
+        min-height: 44px;
     }
 
     .card-container {
@@ -2222,6 +2329,7 @@ html {
         width: 100%;
         padding: 12px 24px;
         font-size: 0.9rem;
+        min-height: 44px;
     }
 
     .share-dropup {
@@ -2259,8 +2367,8 @@ html {
     }
 
     #searchInput {
-        width: 92%;
-        font-size: 15px;
+        width: 100%;
+        font-size: 16px;
         padding: 12px 16px;
     }
 
@@ -3741,8 +3849,15 @@ body[data-theme="minimal"] {
 /* =========================================
    BODY & BASE STYLES
    ========================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 16px;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     margin: 0;
@@ -3880,7 +3995,17 @@ body::before {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    width: 30px;
+    width: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .hamburger span {
@@ -6862,11 +6987,16 @@ body.light-mode .welcome-message {
     padding: 2px;
     /* Reduced padding for smaller border effect */
     margin: 0 auto 25px auto;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease, opacity 0.3s ease;
     box-shadow: 0 8px 25px rgba(0, 255, 4, 0.2);
     display: block;
     position: relative;
     z-index: 1;
+    opacity: 0;
+}
+
+.scard-img.loaded {
+    opacity: 1;
 }
 
 .card:hover .scard-img {
