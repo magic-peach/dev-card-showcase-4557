@@ -37,7 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const themeToggle = document.getElementById('themeToggle');
 
     document.body.setAttribute('data-theme', savedTheme);
-    if (themeToggle) themeToggle.textContent = savedTheme === 'light' ? '☀️' : '🌙';
+    if (themeToggle) {
+        let icon = themeToggle.querySelector('i');
+        if (!icon) {
+            icon = document.createElement('i');
+            themeToggle.appendChild(icon);
+        }
+        icon.className = savedTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+        themeToggle.setAttribute('aria-label', savedTheme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+    }
 });
 
 // Navbar toggle
@@ -62,13 +70,29 @@ if (hamburger) {
 // Theme toggle - SIMPLIFIED AND WORKING
 const themeToggle = document.getElementById('themeToggle');
 
+function updateThemeToggleIcon(themeToggle, theme) {
+    if (!themeToggle) return;
+    let icon = themeToggle.querySelector('i');
+    if (!icon) {
+        icon = document.createElement('i');
+        themeToggle.appendChild(icon);
+    }
+    if (theme === 'light') {
+        icon.className = 'fas fa-sun';
+        themeToggle.setAttribute('aria-label', 'Switch to dark theme');
+    } else {
+        icon.className = 'fas fa-moon';
+        themeToggle.setAttribute('aria-label', 'Switch to light theme');
+    }
+}
+
 if (themeToggle) {
     themeToggle.addEventListener('click', function () {
         const currentTheme = document.body.getAttribute('data-theme') || 'dark';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
         document.body.setAttribute('data-theme', newTheme);
-        this.textContent = newTheme === 'light' ? '☀️' : '🌙';
+        updateThemeToggleIcon(this, newTheme);
         localStorage.setItem('theme', newTheme);
     });
 }

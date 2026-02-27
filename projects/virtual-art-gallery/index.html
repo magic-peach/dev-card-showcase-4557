@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Art Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Virtual Art Gallery</h1>
+        <nav>
+            <button id="navUpload" class="active">Upload Art</button>
+            <button id="navGallery">Gallery</button>
+            <button id="navExhibitions">Exhibitions</button>
+        </nav>
+        <section id="uploadSection" class="active">
+            <h2>Upload Artwork</h2>
+            <form id="uploadForm" class="card">
+                <label>Artist Name</label>
+                <input type="text" id="artistName" maxlength="32" required>
+                <label>Artwork Title</label>
+                <input type="text" id="artTitle" maxlength="64" required>
+                <label>Description</label>
+                <textarea id="artDesc" rows="2" maxlength="200" required></textarea>
+                <label>Theme</label>
+                <input type="text" id="artTheme" maxlength="32" required placeholder="e.g. Nature, Abstract">
+                <label>Upload Image</label>
+                <input type="file" id="artImage" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+            <div id="uploadStatus"></div>
+        </section>
+        <section id="gallerySection">
+            <h2>Art Gallery</h2>
+            <ul id="galleryList" class="gallery-list"></ul>
+        </section>
+        <section id="exhibitionsSection">
+            <h2>Exhibitions</h2>
+            <form id="exhibitionForm" class="card">
+                <label>Exhibition Title</label>
+                <input type="text" id="exhibitionTitle" maxlength="64" required>
+                <label>Theme</label>
+                <input type="text" id="exhibitionTheme" maxlength="32" required>
+                <button type="submit">Create Exhibition</button>
+            </form>
+            <div id="exhibitionStatus"></div>
+            <h3>All Exhibitions</h3>
+            <ul id="exhibitionList" class="exhibition-list"></ul>
+        </section>
+    </div>
+    <script>
+        // Navigation
+        const navUpload = document.getElementById('navUpload');
+        const navGallery = document.getElementById('navGallery');
+        const navExhibitions = document.getElementById('navExhibitions');
+        const uploadSection = document.getElementById('uploadSection');
+        const gallerySection = document.getElementById('gallerySection');
+        const exhibitionsSection = document.getElementById('exhibitionsSection');
+        function showSection(section) {
+            [uploadSection, gallerySection, exhibitionsSection].forEach(s => s.classList.remove('active'));
+            section.classList.add('active');
+            [navUpload, navGallery, navExhibitions].forEach(b => b.classList.remove('active'));
+            if(section===uploadSection) navUpload.classList.add('active');
+            if(section===gallerySection) navGallery.classList.add('active');
+            if(section===exhibitionsSection) navExhibitions.classList.add('active');
+        }
+        navUpload.onclick = () => showSection(uploadSection);
+        navGallery.onclick = () => showSection(gallerySection);
+        navExhibitions.onclick = () => showSection(exhibitionsSection);
+        // Art upload logic
+        const uploadForm = document.getElementById('uploadForm');
+        const artistName = document.getElementById('artistName');
+        const artTitle = document.getElementById('artTitle');
+        const artDesc = document.getElementById('artDesc');
+        const artTheme = document.getElementById('artTheme');
+        const artImage = document.getElementById('artImage');
+        const uploadStatus = document.getElementById('uploadStatus');
+        let artworks = JSON.parse(localStorage.getItem('virtualArtGalleryArtworks')||'[]');
+        function renderGallery() {
+            const galleryList = document.getElementById('galleryList');
+            galleryList.innerHTML = '';
+            artworks.slice().reverse().forEach((a,i) => {
+                if(a.likes===undefined) a.likes=0;
+                if(!a.comments) a.comments=[];
+                const li = document.createElement('li');
+                li.innerHTML = `<img src="${a.image}" class="art-img"><b>${a.title}</b><br><span class="tag">${a.artist}</span><br><span class="tag">${a.theme}</span><br>${a.desc}<br><button class="like-btn" onclick="likeArt(${i})">👍 Like <span>${a.likes}</span></button>`;
+                // Comments
+                li.innerHTML += `<form onsubmit="event.preventDefault();addComment(${i});" style="margin-top:8px;">
+                    <input type="text" id="commentInput${i}" maxlength="80" placeholder="Add a comment..." style="width:90%;">
+                    <button type="submit">Comment</button>
+                </form>`;
+                li.innerHTML += `<ul class="comment-list">${a.comments.map(c=>`<li>${c}</li>`).join('')}</ul>`;
+                galleryList.appendChild(li);
+            });
+            localStorage.setItem('virtualArtGalleryArtworks',JSON.stringify(artworks));
+        }
+        uploadForm.onsubmit = e => {
+            e.preventDefault();
+            const artist = artistName.value.trim();
+            const title = artTitle.value.trim();
+            const desc = artDesc.value.trim();
+            const theme = artTheme.value.trim();
+            if(!artImage.files.length) { uploadStatus.innerHTML = '<div class="error">Image required.</div>'; return; }
+            const file = artImage.files[0];
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                const image = ev.target.result;
+                artworks.push({artist, title, desc, theme, image, likes:0, comments:[]});
+                localStorage.setItem('virtualArtGalleryArtworks',JSON.stringify(artworks));
+                uploadStatus.innerHTML = '<div class="success">Artwork uploaded!</div>';
+                uploadForm.reset();
+                renderGallery();
+                renderExhibitions();
+            };
+            reader.readAsDataURL(file);
+        };
+        renderGallery();
+        // Like logic
+        window.likeArt = function(idx) {
+            artworks[idx].likes = (artworks[idx].likes||0)+1;
+            localStorage.setItem('virtualArtGalleryArtworks',JSON.stringify(artworks));
+            renderGallery();
+            renderExhibitions();
+        }
+        // Comment logic
+        window.addComment = function(idx) {
+            const input = document.getElementById('commentInput'+idx);
+            const val = input.value.trim();
+            if(val) {
+                artworks[idx].comments.push(val);
+                localStorage.setItem('virtualArtGalleryArtworks',JSON.stringify(artworks));
+                renderGallery();
+                renderExhibitions();
+                input.value = '';
+            }
+        }
+        // Exhibition logic
+        const exhibitionForm = document.getElementById('exhibitionForm');
+        const exhibitionTitle = document.getElementById('exhibitionTitle');
+        const exhibitionTheme = document.getElementById('exhibitionTheme');
+        const exhibitionStatus = document.getElementById('exhibitionStatus');
+        let exhibitions = JSON.parse(localStorage.getItem('virtualArtGalleryExhibitions')||'[]');
+        function renderExhibitions() {
+            const exhibitionList = document.getElementById('exhibitionList');
+            exhibitionList.innerHTML = '';
+            exhibitions.slice().reverse().forEach((ex,i) => {
+                const arts = artworks.filter(a=>a.theme.toLowerCase()===ex.theme.toLowerCase());
+                const li = document.createElement('li');
+                li.innerHTML = `<b>${ex.title}</b> <span class="tag">${ex.theme}</span><br><span class="tag">${arts.length} artworks</span>`;
+                li.innerHTML += arts.map((a,j)=>`<div style="margin-top:8px;"><img src="${a.image}" class="art-img"><b>${a.title}</b><br><span class="tag">${a.artist}</span><br><span class="tag">${a.theme}</span><br>${a.desc}<br><button class="like-btn" onclick="likeArt(${artworks.indexOf(a)})">👍 Like <span>${a.likes}</span></button><ul class="comment-list">${a.comments.map(c=>`<li>${c}</li>`).join('')}</ul></div>`).join('');
+                exhibitionList.appendChild(li);
+            });
+            localStorage.setItem('virtualArtGalleryExhibitions',JSON.stringify(exhibitions));
+        }
+        exhibitionForm.onsubmit = e => {
+            e.preventDefault();
+            const title = exhibitionTitle.value.trim();
+            const theme = exhibitionTheme.value.trim();
+            exhibitions.push({title, theme});
+            localStorage.setItem('virtualArtGalleryExhibitions',JSON.stringify(exhibitions));
+            exhibitionStatus.innerHTML = '<div class="success">Exhibition created!</div>';
+            exhibitionForm.reset();
+            renderExhibitions();
+        };
+        renderExhibitions();
+    </script>
+</body>
+</html>

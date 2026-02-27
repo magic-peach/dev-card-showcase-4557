@@ -4,47 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Journal & Map Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f7f9fb; margin: 0; }
+        .container { max-width: 800px; margin: 40px auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(126,87,194,0.12); padding: 36px 28px; }
+        h1, h2 { color: #7e57c2; text-align: center; }
+        nav { display: flex; justify-content: center; gap: 16px; margin-bottom: 24px; }
+        nav button { background: linear-gradient(90deg, #7e57c2 60%, #5bc0be 100%); color: #fff; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.05rem; cursor: pointer; font-weight: 500; box-shadow: 0 2px 8px rgba(126,87,194,0.08); transition: background 0.2s; }
+        nav button.active, nav button:hover { background: #3a506b; }
+        section { display: none; margin-top: 22px; background: #f3e5f5; border-radius: 12px; padding: 18px 16px; box-shadow: 0 2px 8px rgba(126,87,194,0.07); }
+        section.active { display: block; }
+        .card { background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(126,87,194,0.08); padding: 14px 12px; margin-bottom: 14px; }
+        label { display: block; margin: 8px 0 4px; }
+        input, select, textarea { width: 100%; padding: 8px; border: 1px solid #cfd8dc; border-radius: 6px; font-size: 1rem; margin-bottom: 10px; }
+        button[type="submit"] { background: #7e57c2; color: #fff; border: none; border-radius: 6px; padding: 10px 24px; font-size: 1.1rem; cursor: pointer; transition: background 0.2s; }
+        button[type="submit"]:hover { background: #5e35b1; }
+        .journal-list { list-style: none; padding: 0; }
+        .journal-list li { background: #ede7f6; border-radius: 8px; margin-bottom: 10px; padding: 10px 12px; }
+        .tag { display: inline-block; background: #7e57c2; color: #fff; border-radius: 4px; padding: 2px 8px; font-size: 0.9em; margin-right: 6px; }
+        .success { color: #388e3c; text-align: center; margin: 10px 0; }
+        .error { color: #d32f2f; text-align: center; margin: 10px 0; }
+        .photo-preview { max-width: 120px; max-height: 120px; border-radius: 8px; margin: 8px 0; }
+        #map { width: 100%; height: 350px; border-radius: 12px; margin-bottom: 18px; background: #cfd8dc; }
+        .pin { color: #7e57c2; font-size: 1.3em; }
+        .share-btn { background: #5bc0be; color: #fff; border: none; border-radius: 6px; padding: 6px 16px; cursor: pointer; float: right; }
+        .share-btn:hover { background: #3a506b; }
+    </style>
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>Travel Journal & Map Tracker</h1>
-        <p>Log your trips, mark locations, and visualize your journeys!</p>
-    </header>
-    <main>
-        <section class="add-trip">
-            <h2>Add Trip</h2>
-            <input type="text" id="trip-title" placeholder="Trip Title">
-            <input type="date" id="trip-date">
-            <input type="text" id="trip-location" placeholder="Location">
-            <input type="file" id="trip-photo" accept="image/*">
-            <textarea id="trip-story" placeholder="Write your travel story..."></textarea>
-            <button id="add-trip-btn">Add Trip</button>
+        <nav>
+            <button id="navJournal" class="active">Journal</button>
+            <button id="navMap">Map</button>
+            <button id="navGallery">Gallery</button>
+        </nav>
+        <section id="journalSection" class="active">
+            <h2>Log Your Journey</h2>
+            <form id="journalForm" class="card">
+                <label>Location Name</label>
+                <input type="text" id="locationName" maxlength="64" required>
+                <label>Date</label>
+                <input type="date" id="journeyDate" required>
+                <label>Notes</label>
+                <textarea id="journeyNotes" rows="3" maxlength="300" required></textarea>
+                <label>Photo</label>
+                <input type="file" id="journeyPhoto" accept="image/*">
+                <label>Latitude</label>
+                <input type="number" id="journeyLat" step="any" required>
+                <label>Longitude</label>
+                <input type="number" id="journeyLng" step="any" required>
+                <button type="submit">Add Entry</button>
+            </form>
+            <div id="journalStatus"></div>
+            <h3>Travel Entries</h3>
+            <div class="card" style="margin-bottom:10px;">
+                <label>Search by Location:</label>
+                <input type="text" id="searchLocation" placeholder="Enter location name">
+                <label>Filter by Date:</label>
+                <input type="date" id="filterDate">
+                <button id="clearFiltersBtn" type="button">Clear Filters</button>
+            </div>
+            <ul id="journalList" class="journal-list"></ul>
         </section>
-        <section class="trip-list">
-            <h2>Your Trips</h2>
-            <div id="trips"></div>
+        <section id="mapSection">
+            <h2>Map of Your Travels</h2>
+            <div id="map"></div>
         </section>
-        <section class="map-visualization">
-            <h2>Map Visualization</h2>
-            <div id="map-view" style="height:400px;width:100%;background:#e0eafc;border-radius:16px;"></div>
+        <section id="gallerySection">
+            <h2>Photo Gallery</h2>
+            <div id="gallery"></div>
         </section>
-        <section class="route-visualization">
-            <h2>Route Visualization</h2>
-            <canvas id="route-canvas" width="800" height="300"></canvas>
-        </section>
-        <section class="trip-stats">
-            <h2>Trip Stats</h2>
-            <div id="trip-stats"></div>
-        </section>
-        <div class="actions">
-            <button id="export-csv-btn">Export CSV</button>
-            <button id="export-pdf-btn">Export PDF</button>
-        </div>
-    </main>
-    <footer>
-        <p>Travel Journal & Map Tracker &copy; 2026</p>
-    </footer>
-    <script src="app.js"></script>
+    </div>
+    <script>
+        // Navigation
+        const navJournal = document.getElementById('navJournal');
+        const navMap = document.getElementById('navMap');
+        const navGallery = document.getElementById('navGallery');
+        const journalSection = document.getElementById('journalSection');
+        const mapSection = document.getElementById('mapSection');
+        const gallerySection = document.getElementById('gallerySection');
+        function showSection(section) {
+            [journalSection, mapSection, gallerySection].forEach(s => s.classList.remove('active'));
+            section.classList.add('active');
+            [navJournal, navMap, navGallery].forEach(b => b.classList.remove('active'));
+            if(section===journalSection) navJournal.classList.add('active');
+            if(section===mapSection) navMap.classList.add('active');
+            if(section===gallerySection) navGallery.classList.add('active');
+        }
+        navJournal.onclick = () => showSection(journalSection);
+        navMap.onclick = () => showSection(mapSection);
+        navGallery.onclick = () => showSection(gallerySection);
+        // Journal logic
+        const journalForm = document.getElementById('journalForm');
+        const locationName = document.getElementById('locationName');
+        const journeyDate = document.getElementById('journeyDate');
+        const journeyNotes = document.getElementById('journeyNotes');
+        const journeyPhoto = document.getElementById('journeyPhoto');
+        const journeyLat = document.getElementById('journeyLat');
+        const journeyLng = document.getElementById('journeyLng');
+        const journalStatus = document.getElementById('journalStatus');
+        const journalList = document.getElementById('journalList');
+        let entries = JSON.parse(localStorage.getItem('travelJournalEntries')||'[]');
+        function renderEntries() {
+            journalList.innerHTML = '';
+            let filtered = entries.slice().reverse();
+            const searchVal = (document.getElementById('searchLocation')?.value||'').toLowerCase();
+            const filterDateVal = document.getElementById('filterDate')?.value||'';
+            if(searchVal) filtered = filtered.filter(e=>e.location.toLowerCase().includes(searchVal));
+            if(filterDateVal) filtered = filtered.filter(e=>e.date===filterDateVal);
+            filtered.forEach((e,i) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<b>${e.location}</b> <span class="tag">${e.date}</span><br>${e.notes}<br>`;
+                if(e.photo) li.innerHTML += `<img src="${e.photo}" class="photo-preview">`;
+                li.innerHTML += `<span class="tag">Lat: ${e.lat}, Lng: ${e.lng}</span> <button class="share-btn" onclick="navigator.clipboard.writeText('Travel Entry: '+${JSON.stringify(e.location)})">Share</button>`;
+                journalList.appendChild(li);
+            });
+        }
+        journalForm.onsubmit = e => {
+            e.preventDefault();
+            const location = locationName.value.trim();
+            const date = journeyDate.value;
+            const notes = journeyNotes.value.trim();
+            const lat = parseFloat(journeyLat.value);
+            const lng = parseFloat(journeyLng.value);
+            let photo = '';
+            if(journeyPhoto.files.length) {
+                const file = journeyPhoto.files[0];
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    photo = ev.target.result;
+                    entries.push({location, date, notes, photo, lat, lng});
+                    localStorage.setItem('travelJournalEntries',JSON.stringify(entries));
+                    journalStatus.innerHTML = '<div class="success">Entry added!</div>';
+                    journalForm.reset();
+                    renderEntries();
+                            // Search/filter events
+                            document.getElementById('searchLocation').oninput = renderEntries;
+                            document.getElementById('filterDate').onchange = renderEntries;
+                            document.getElementById('clearFiltersBtn').onclick = function() {
+                                document.getElementById('searchLocation').value = '';
+                                document.getElementById('filterDate').value = '';
+                                renderEntries();
+                            };
+                    renderMap();
+                    renderGallery();
+                };
+                reader.readAsDataURL(file);
+                return;
+            }
+            entries.push({location, date, notes, photo, lat, lng});
+            localStorage.setItem('travelJournalEntries',JSON.stringify(entries));
+            journalStatus.innerHTML = '<div class="success">Entry added!</div>';
+            journalForm.reset();
+            renderEntries();
+            renderMap();
+            renderGallery();
+        };
+        renderEntries();
+        // Map logic
+        const map = document.getElementById('map');
+        function renderMap() {
+            map.innerHTML = '';
+            entries.forEach((e,i) => {
+                const pin = document.createElement('div');
+                pin.className = 'pin';
+                pin.style.position = 'absolute';
+                pin.style.left = `${Math.max(0,Math.min(100,(e.lng+180)/360*100))}%`;
+                pin.style.top = `${Math.max(0,Math.min(100,(90-e.lat)/180*100))}%`;
+                pin.innerHTML = '📍';
+                pin.title = `${e.location} (${e.lat},${e.lng})`;
+                map.appendChild(pin);
+            });
+            map.style.position = 'relative';
+        }
+        renderMap();
+        // Gallery logic
+        const gallery = document.getElementById('gallery');
+        function renderGallery() {
+            gallery.innerHTML = '';
+            entries.filter(e=>e.photo).forEach((e,i) => {
+                const div = document.createElement('div');
+                div.className = 'card';
+                div.innerHTML = `<b>${e.location}</b> <span class="tag">${e.date}</span><br><img src="${e.photo}" class="photo-preview"><br>${e.notes}`;
+                gallery.appendChild(div);
+            });
+        }
+        renderGallery();
+    </script>
 </body>
 </html>
