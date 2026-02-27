@@ -14,8 +14,69 @@
         <a href="https://x.com/JayantaG2004" target="_blank" rel="noopener"><i class="fa-brands fa-twitter"></i></a>
         <a href="https://www.instagram.com/jayantaghosh2004" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/jayantaghosh2004" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
-    </div>
+  </div> 
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.getElementById('newsletterForm');
+      const newsletterEmail = document.getElementById('newsletterEmail');
+      const newsletterSuccess = document.getElementById('newsletterSuccess');
+      
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const email = newsletterEmail.value.trim();
+          
+          if (!email) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+          
+          // Email validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+          
+          // Store subscription in localStorage
+          const subscriptions = JSON.parse(localStorage.getItem('newsletterSubscriptions') || '[]');
+          
+          // Check if already subscribed
+          if (subscriptions.includes(email)) {
+            alert('You are already subscribed to our newsletter!');
+            return;
+          }
+          
+          // Add new subscription
+          subscriptions.push(email);
+          localStorage.setItem('newsletterSubscriptions', JSON.stringify(subscriptions));
+          
+          // Show success message
+          if (newsletterSuccess) {
+            newsletterSuccess.style.display = 'block';
+            newsletterForm.style.display = 'none';
+          }
+          
+          // Clear form
+          newsletterEmail.value = '';
+          
+          // Optional: Log subscription (in production, this would send to a server)
+          console.log('New newsletter subscription:', email);
+          
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            if (newsletterSuccess) {
+              newsletterSuccess.style.display = 'none';
+              newsletterForm.style.display = 'flex';
+            }
+          }, 5000);
+        });
+      }
+    });
+  </script>
 
     <div class="footer-links">
       <h4>Quick Links</h4>
@@ -53,7 +114,24 @@
         <li><a href="mailto:contact@devcardshowcase.dev"><i class="fa-solid fa-envelope"></i> contact@devcardshowcase.dev</a></li>
       </ul>
     </div>
-
+ 
+    <div class="footer-newsletter">
+      <h4>Newsletter</h4>
+      <p>Stay updated with new contributors and projects!</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Enter your email" required aria-label="Email for newsletter subscription">
+        <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+      <p class="newsletter-success" id="newsletterSuccess" style="display: none;">
+        <i class="fa-solid fa-check-circle"></i> Thanks for subscribing!
+      </p>
+      <p class="newsletter-privacy">
+        <i class="fa-solid fa-shield-alt"></i> We respect your privacy. Unsubscribe anytime.
+      </p>
+    </div>
+ 
   </div>
 
   <div class="footer-bottom">
@@ -158,9 +236,97 @@
   .footer {
     padding: 40px 15px 15px;
   }
-
+ 
   .footer-container {
     gap: 30px;
   }
+}
+
+/* Newsletter Section */
+.footer-newsletter {
+  margin-top: 10px;
+}
+
+.footer-newsletter h4 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-newsletter p {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter-form input:focus {
+  border-color: #667eea;
+}
+
+.newsletter-btn {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.newsletter-btn:active {
+  transform: translateY(0);
+}
+
+.newsletter-success {
+  display: none;
+  color: #10b981;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.newsletter-privacy {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+.newsletter-privacy i {
+  margin-right: 4px;
 }
  </style>
