@@ -773,6 +773,70 @@ h1::after {
     box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-wrapper::before {
+    content: "\f002";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 16px;
+    color: var(--text-secondary);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.search-wrapper #searchInput {
+    width: 100%;
+    padding-left: 45px;
+    padding-right: 40px;
+}
+
+.clear-search-btn {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.clear-search-btn:hover {
+    background: var(--border-secondary);
+    color: var(--text-primary);
+}
+
+.search-result-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    margin-left: 4px;
+}
+
+.no-results .search-suggestion {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+.no-results kbd {
+    background: var(--bg-secondary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
 .filter-group {
     display: flex;
     flex-direction: column;

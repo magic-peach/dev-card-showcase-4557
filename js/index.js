@@ -129,10 +129,45 @@ document.addEventListener("DOMContentLoaded", () => {
         let currentFilter = 'all';
         let currentSearch = '';
         let selectedSkills = new Set();
+        let debounceTimer;
 
         function filterCards() {
-            currentSearch = document.getElementById("searchInput").value.toLowerCase();
-            applyFilters();
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                currentSearch = document.getElementById("searchInput").value.toLowerCase();
+                applyFilters();
+                updateSearchUI();
+            }, 300);
+        }
+
+        function updateSearchUI() {
+            const clearBtn = document.getElementById('clearSearch');
+            const resultCount = document.getElementById('searchResultCount');
+            const searchInput = document.getElementById('searchInput');
+            
+            if (clearBtn) {
+                clearBtn.style.display = searchInput && searchInput.value.length > 0 ? 'flex' : 'none';
+            }
+            
+            if (resultCount && currentSearch) {
+                const visibleCards = Array.from(document.querySelectorAll('.card')).filter(card => card.style.display !== 'none');
+                const visibleCount = visibleCards.length;
+                const totalCards = document.querySelectorAll('.card').length;
+                resultCount.textContent = `Showing ${visibleCount} of ${totalCards} contributors`;
+            } else if (resultCount) {
+                resultCount.textContent = '';
+            }
+        }
+
+        function clearSearch() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.value = '';
+                currentSearch = '';
+                applyFilters();
+                updateSearchUI();
+                searchInput.focus();
+            }
         }
 
         function filterByRole(role) {
@@ -160,6 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cards.forEach(card => {
                 const nameElement = card.querySelector("h2");
                 const roleElement = card.querySelector(".role");
+                const bioElement = card.querySelector("p");
                 
                 // Skip if elements don't exist
                 if (!nameElement || !roleElement) {
@@ -169,9 +205,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 const name = nameElement.innerText.toLowerCase();
                 const role = roleElement.innerText.toLowerCase();
+                const bio = bioElement ? bioElement.innerText.toLowerCase() : '';
                 const cardSkills = card.dataset.skills ? card.dataset.skills.split(',') : [];
 
-                const matchesSearch = name.includes(currentSearch);
+                const matchesSearch = currentSearch === '' || 
+                    name.includes(currentSearch) ||
+                    role.includes(currentSearch) ||
+                    bio.includes(currentSearch);
                 const matchesFilter = currentFilter === 'all' ||
                     role.includes(currentFilter);
                 
@@ -244,6 +284,24 @@ document.addEventListener("DOMContentLoaded", () => {
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
             initSkillFilters();
+            
+            // Clear search button event listener
+            const clearBtn = document.getElementById('clearSearch');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', clearSearch);
+            }
+            
+            // Keyboard shortcut: Ctrl+K to focus search
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchInput) {
+                        searchInput.focus();
+                        searchInput.select();
+                    }
+                }
+            });
         });
 
         // Scroll to Top Functionality
