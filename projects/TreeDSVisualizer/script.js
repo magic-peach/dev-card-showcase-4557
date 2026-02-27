@@ -1,73 +1,110 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+class TrieNode {
+  constructor(char = "") {
+    this.char = char;
+    this.children = {};
+    this.end = false;
+  }
 }
 
-body {
-  background: #0f172a;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
+class Trie {
+  constructor() {
+    this.root = new TrieNode();
+  }
+
+  insert(word) {
+    let node = this.root;
+    for (let ch of word) {
+      if (!node.children[ch]) {
+        node.children[ch] = new TrieNode(ch);
+      }
+      node = node.children[ch];
+    }
+    node.end = true;
+  }
+
+  search(word) {
+    let node = this.root;
+    for (let ch of word) {
+      if (!node.children[ch]) return false;
+      node = node.children[ch];
+    }
+    return node.end;
+  }
+
+  delete(word) {
+    const remove = (node, depth) => {
+      if (!node) return false;
+
+      if (depth === word.length) {
+        if (!node.end) return false;
+        node.end = false;
+        return Object.keys(node.children).length === 0;
+      }
+
+      const ch = word[depth];
+      if (remove(node.children[ch], depth + 1)) {
+        delete node.children[ch];
+        return !node.end && Object.keys(node.children).length === 0;
+      }
+      return false;
+    };
+
+    remove(this.root, 0);
+  }
 }
 
-h1 {
-  margin-bottom: 20px;
+const trie = new Trie();
+const container = document.getElementById("trieContainer");
+const result = document.getElementById("result");
+
+function renderTrie() {
+  container.innerHTML = "";
+
+  function traverse(node, prefix = "") {
+    for (let key in node.children) {
+      const child = node.children[key];
+      const div = document.createElement("div");
+      div.className = "node";
+      if (child.end) div.classList.add("end");
+      div.textContent = prefix + key;
+      container.appendChild(div);
+      traverse(child, prefix + key);
+    }
+  }
+
+  traverse(trie.root);
 }
 
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 15px;
-}
+document.getElementById("insertBtn").addEventListener("click", () => {
+  const word = document.getElementById("wordInput").value.trim();
+  if (!word) return;
 
-input {
-  padding: 8px;
-  border: none;
-  border-radius: 6px;
-  width: 180px;
-}
+  trie.insert(word);
+  renderTrie();
+  result.textContent = `Result: Inserted "${word}"`;
+});
 
-button {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 6px;
-  background: #3b82f6;
-  color: white;
-  cursor: pointer;
-}
+document.getElementById("searchBtn").addEventListener("click", () => {
+  const word = document.getElementById("wordInput").value.trim();
+  if (!word) return;
 
-button:hover {
-  background: #2563eb;
-}
+  const found = trie.search(word);
+  result.textContent = found
+    ? `Result: "${word}" found`
+    : `Result: "${word}" not found`;
+});
 
-#result {
-  margin: 12px 0;
-  color: #22c55e;
-}
+document.getElementById("deleteBtn").addEventListener("click", () => {
+  const word = document.getElementById("wordInput").value.trim();
+  if (!word) return;
 
-#trieContainer {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+  trie.delete(word);
+  renderTrie();
+  result.textContent = `Result: Deleted "${word}"`;
+});
 
-.node {
-  background: #1e293b;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 2px solid transparent;
-}
+document.getElementById("resetBtn").addEventListener("click", () => {
+  location.reload();
+});
 
-.end {
-  border-color: #22c55e;
-}
-
-.active {
-  border-color: #ef4444;
-}
+renderTrie();
