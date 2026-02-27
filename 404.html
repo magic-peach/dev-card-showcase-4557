@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Community Card Showcase</title>
+    <meta name="description" content="The page you are looking for could not be found. Return to the Community Card Showcase homepage.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Hall of Fame (1).png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="circle-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-left">
+            <div class="nav-logo">🚀 Community</div>
+        </div>
+
+        <ul class="nav-links" role="menubar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contribute.html">Contribute</a></li>
+            <li><a href="statistics.html">Stats</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark and light theme" title="Toggle theme">🌙</button>
+        </div>
+    </nav>
+
+    <main class="error-container">
+        <div class="error-content">
+            <div class="error-illustration">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <h1 class="error-title">404</h1>
+            <h2 class="error-subtitle">Page Not Found</h2>
+            <p class="error-message">
+                Oops! The page you're looking for seems to have wandered off into the digital void. 
+                Don't worry, it happens to the best of us.
+            </p>
+
+            <div class="error-actions">
+                <a href="index.html" class="error-btn primary">
+                    <i class="fas fa-home"></i>
+                    Go Home
+                </a>
+
+                <a href="projects.html" class="error-btn secondary">
+                    <i class="fas fa-folder-open"></i>
+                    Explore Projects
+                </a>
+
+                <a href="contribute.html" class="error-btn secondary">
+                    <i class="fas fa-plus"></i>
+                    Contribute
+                </a>
+            </div>
+
+            <div class="helpful-links">
+                <h3>Helpful Links</h3>
+                <ul>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="guidelines.html"><i class="fas fa-book"></i> Guidelines</a></li>
+                    <li><a href="support.html"><i class="fas fa-life-ring"></i> Support</a></li>
+                </ul>
+            </div>
+
+            <div class="search-section">
+                <h3>Search for something else</h3>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search projects or contributors..." aria-label="Search">
+                    <button id="searchBtn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+
+            <div class="report-issue">
+                <p>Think this is a mistake? <a href="bug-report.html">Report broken link</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Community Card Showcase. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="theme-persistence/theme.js"></script>
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchResults = document.getElementById('searchResults');
+
+        function performSearch() {
+            const query = searchInput.value.trim().toLowerCase();
+            if (query.length < 2) {
+                searchResults.innerHTML = '';
+                return;
+            }
+
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(projects => {
+                    const filtered = projects.filter(p => 
+                        p.title.toLowerCase().includes(query) ||
+                        p.description.toLowerCase().includes(query) ||
+                        (p.tags && p.tags.some(tag => tag.toLowerCase().includes(query)))
+                    );
+
+                    if (filtered.length === 0) {
+                        searchResults.innerHTML = '<p class="no-results">No projects found. Try a different search term.</p>';
+                    } else {
+                        searchResults.innerHTML = filtered.slice(0, 5).map(p => `
+                            <a href="${p.links.live}" class="search-result-item">
+                                <strong>${p.title}</strong>
+                                <span>by ${p.author.name}</span>
+                            </a>
+                        `).join('');
+                    }
+                })
+                .catch(error => {
+                    console.error('Search error:', error);
+                    searchResults.innerHTML = '<p class="error">An error occurred while searching.</p>';
+                });
+        }
+
+        searchInput.addEventListener('input', performSearch);
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') performSearch();
+        });
+    </script>
+
+    <style>
+        .error-container {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .error-content {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .error-illustration {
+            font-size: 120px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .error-title {
+            font-size: 120px;
+            font-weight: bold;
+            margin: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .error-subtitle {
+            font-size: 32px;
+            margin: 20px 0;
+            color: var(--text-primary);
+        }
+
+        .error-message {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .error-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .error-btn.primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            border: none;
+        }
+
+        .error-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+        }
+
+        .error-btn.secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 2px solid var(--border-primary);
+        }
+
+        .error-btn.secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .helpful-links {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-primary);
+        }
+
+        .helpful-links h3 {
+            margin: 0 0 16px;
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+
+        .helpful-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .helpful-links li {
+            margin-bottom: 12px;
+        }
+
+        .helpful-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .helpful-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-section {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-primary);
+        }
+
+        .search-section h3 {
+            margin: 0 0 16px;
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-primary);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .search-box button {
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            background: var(--primary-color);
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-box button:hover {
+            background: var(--secondary-color);
+        }
+
+        .search-results {
+            text-align: left;
+        }
+
+        .search-result-item {
+            display: block;
+            padding: 12px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .search-result-item:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateX(4px);
+        }
+
+        .search-result-item strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .search-result-item span {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .search-result-item:hover span {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .no-results,
+        .error {
+            padding: 12px;
+            color: var(--text-secondary);
+        }
+
+        .report-issue {
+            color: var(--text-secondary);
+        }
+
+        .report-issue a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .report-issue a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .error-title {
+                font-size: 80px;
+            }
+
+            .error-subtitle {
+                font-size: 24px;
+            }
+
+            .error-message {
+                font-size: 16px;
+            }
+
+            .error-actions {
+                flex-direction: column;
+            }
+
+            .error-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</body>
+
+</html>
