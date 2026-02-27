@@ -13963,5 +13963,29 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Autonomous Rover Pathfinding & Sensor Sim",
+    "description": "A 2D web-based simulation of a robot autonomously navigating a generated maze using virtual ultrasonic sensors. Built from scratch using the HTML5 Canvas API, it features mathematical raycasting for obstacle detection and a custom steering algorithm to dynamically adjust velocity and rotation.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "HTML5 Canvas",
+        "Simulation",
+        "Robotics",
+        "Autonomous Navigation",
+        "Raycasting",
+        "Physics Engine"
+    ],
+    "links": {
+        "live": "./projects/rover-pathfinder/index.html"
+    },
+    "author": {
+        "name": "Tanmayi",
+        "github": "https://github.com/Tanmayi30"
+    }
   }
 ]
+
+
