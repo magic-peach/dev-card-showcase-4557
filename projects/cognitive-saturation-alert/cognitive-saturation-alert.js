@@ -1,4 +1,4 @@
-// Cognitive Saturation Alert JavaScript with Multi-Profile Support
+// Cognitive Saturation Alert JavaScript with Multi-Profile Support and Enhanced Visualizations
 
 class CognitiveSaturationTracker {
     constructor() {
@@ -37,7 +37,10 @@ class CognitiveSaturationTracker {
         this.lastSoundTime = 0;
         this.soundCooldown = 5 * 60 * 1000; 
         this.audioContext = null;
-        this.chart = null;
+        this.lineChart = null;
+        this.pieChart = null;
+        this.heatMapChart = null;
+        this.currentChartType = 'line';
 
         this.init();
     }
@@ -60,12 +63,593 @@ class CognitiveSaturationTracker {
 
     init() {
         this.createProfileSelector();
+        this.createChartControls();
         this.updateSaturationLevel();
         this.updateStats();
-        this.renderChart();
+        this.renderAllCharts();
         this.renderHistory();
         this.checkAlerts();
         this.initSoundSettings();
+    }
+
+    createChartControls() {
+        const chartSection = document.querySelector('.chart-section');
+        if (!chartSection) return;
+
+        if (document.getElementById('chartControls')) return;
+
+        const controlsHTML = `
+            <div class="chart-controls" id="chartControls" style="
+                display: flex;
+                gap: 10px;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            ">
+                <button class="chart-type-btn active" data-chart="line" onclick="window.tracker.switchChartType('line')">
+                    <i class="fas fa-chart-line"></i> Trend Line
+                </button>
+                <button class="chart-type-btn" data-chart="pie" onclick="window.tracker.switchChartType('pie')">
+                    <i class="fas fa-chart-pie"></i> Activity Distribution
+                </button>
+                <button class="chart-type-btn" data-chart="heatmap" onclick="window.tracker.switchChartType('heatmap')">
+                    <i class="fas fa-th"></i> Heat Map
+                </button>
+            </div>
+            <div class="chart-container" style="position: relative; height: 300px; width: 100%;">
+                <canvas id="mainChart"></canvas>
+            </div>
+        `;
+
+        const existingCanvas = document.getElementById('saturationChart');
+        if (existingCanvas) {
+            existingCanvas.style.display = 'none';
+        }
+
+        chartSection.insertAdjacentHTML('afterbegin', controlsHTML);
+    }
+
+    switchChartType(type) {
+        this.currentChartType = type;
+        
+        document.querySelectorAll('.chart-type-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.chart === type) {
+                btn.classList.add('active');
+            }
+        });
+
+        this.renderAllCharts();
+    }
+
+    renderAllCharts() {
+        switch(this.currentChartType) {
+            case 'line':
+                this.renderLineChart();
+                break;
+            case 'pie':
+                this.renderPieChart();
+                break;
+            case 'heatmap':
+                this.renderHeatMap();
+                break;
+        }
+    }
+
+    renderLineChart() {
+        const ctx = document.getElementById('mainChart').getContext('2d');
+
+        const dates = [];
+        const loads = [];
+        const breaks = [];
+
+        for (let i = 6; i >= 0; i--) {
+            const date = new Date();
+            date.setDate(date.getDate() - i);
+            const dateStr = date.toDateString();
+
+            dates.push(date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+
+            const dayActivities = this.activities.filter(activity =>
+                new Date(activity.timestamp).toDateString() === dateStr
+            );
+            const dayLoad = dayActivities.reduce((sum, activity) => sum + activity.cognitiveLoad, 0);
+            loads.push(dayLoad);
+
+            const dayBreaks = this.breaks.filter(breakItem =>
+                new Date(breakItem.timestamp).toDateString() === dateStr
+            );
+            breaks.push(dayBreaks.length);
+        }
+
+        if (this.lineChart) {
+            this.lineChart.destroy();
+        }
+
+        this.lineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dates,
+                datasets: [{
+                    label: 'Cognitive Load',
+                    data: loads,
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    tension: 0.4,
+                    yAxisID: 'y',
+                    fill: true
+                }, {
+                    label: 'Breaks Taken',
+                    data: breaks,
+                    borderColor: '#4CAF50',
+                    backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                    type: 'bar',
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Cognitive Load Trends (Last 7 Days)',
+                        font: { size: 16, weight: 'bold' }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.dataset.label === 'Cognitive Load') {
+                                    label += Math.round(context.raw);
+                                } else {
+                                    label += context.raw;
+                                }
+                                return label;
+                            }
+                        }
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        onClick: (e, legendItem, legend) => {
+                            const index = legendItem.datasetIndex;
+                            const ci = legend.chart;
+                            const meta = ci.getDatasetMeta(index);
+                            meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
+                            ci.update();
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Cognitive Load'
+                        },
+                        beginAtZero: true
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'Breaks'
+                        },
+                        grid: {
+                            drawOnChartArea: false,
+                        },
+                        beginAtZero: true,
+                        max: Math.max(...breaks, 5)
+                    }
+                }
+            }
+        });
+    }
+
+    renderPieChart() {
+        const ctx = document.getElementById('mainChart').getContext('2d');
+
+        const thirtyDaysAgo = new Date();
+        thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+        const recentActivities = this.activities.filter(activity =>
+            new Date(activity.timestamp) >= thirtyDaysAgo
+        );
+
+        const activityTypes = {};
+        const activityColors = {
+            'reading': '#4285F4',
+            'writing': '#EA4335',
+            'problem-solving': '#FBBC05',
+            'decision-making': '#34A853',
+            'learning': '#FF6D00',
+            'multitasking': '#AA00FF',
+            'meetings': '#00BCD4',
+            'other': '#9E9E9E'
+        };
+
+        recentActivities.forEach(activity => {
+            const type = activity.type;
+            if (!activityTypes[type]) {
+                activityTypes[type] = {
+                    count: 0,
+                    totalLoad: 0,
+                    totalDuration: 0
+                };
+            }
+            activityTypes[type].count++;
+            activityTypes[type].totalLoad += activity.cognitiveLoad;
+            activityTypes[type].totalDuration += activity.duration;
+        });
+
+        const labels = [];
+        const data = [];
+        const backgroundColors = [];
+        const tooltipData = [];
+
+        Object.keys(activityTypes).forEach(type => {
+            labels.push(this.formatActivityType(type));
+            data.push(activityTypes[type].totalLoad);
+            backgroundColors.push(activityColors[type] || '#667eea');
+            
+            tooltipData.push({
+                count: activityTypes[type].count,
+                duration: activityTypes[type].totalDuration,
+                avgLoad: Math.round(activityTypes[type].totalLoad / activityTypes[type].count)
+            });
+        });
+
+        if (this.pieChart) {
+            this.pieChart.destroy();
+        }
+
+        this.pieChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: backgroundColors,
+                    borderColor: 'white',
+                    borderWidth: 2,
+                    hoverOffset: 15
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Activity Distribution by Cognitive Load (Last 30 Days)',
+                        font: { size: 16, weight: 'bold' }
+                    },
+                    legend: {
+                        display: true,
+                        position: 'right',
+                        labels: {
+                            generateLabels: (chart) => {
+                                const datasets = chart.data.datasets;
+                                return chart.data.labels.map((label, i) => ({
+                                    text: `${label} (${Math.round(datasets[0].data[i])} load)`,
+                                    fillStyle: datasets[0].backgroundColor[i],
+                                    strokeStyle: datasets[0].borderColor,
+                                    lineWidth: 2,
+                                    hidden: false,
+                                    index: i
+                                }));
+                            }
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        mode: 'index',
+                        intersect: true,
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = ((value / total) * 100).toFixed(1);
+                                const extra = tooltipData[context.dataIndex] || {};
+                                return [
+                                    `${label}: ${Math.round(value)} total load (${percentage}%)`,
+                                    `📊 Activities: ${extra.count}`,
+                                    `⏱️ Total Duration: ${extra.duration} min`,
+                                    `📈 Avg Load: ${extra.avgLoad}`
+                                ];
+                            }
+                        }
+                    }
+                },
+                cutout: '60%',
+                animation: {
+                    animateRotate: true,
+                    animateScale: true
+                }
+            }
+        });
+
+        this.pieChart.canvas.onclick = (event) => {
+            const activePoints = this.pieChart.getElementsAtEvent(event);
+            if (activePoints[0]) {
+                const chartData = activePoints[0]._chart.data;
+                const idx = activePoints[0].index;
+                const activityType = chartData.labels[idx];
+                this.filterHistoryByActivity(activityType);
+            }
+        };
+    }
+
+    renderHeatMap() {
+        const ctx = document.getElementById('mainChart').getContext('2d');
+
+        const weeks = 4;
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const hours = Array.from({ length: 12 }, (_, i) => `${i+8}:00`); // 8 AM to 7 PM
+
+        const heatData = [];
+        const backgrounds = [];
+        
+        for (let week = 0; week < weeks; week++) {
+            for (let day = 0; day < 7; day++) {
+                for (let hour = 0; hour < 12; hour++) {
+                    const date = new Date();
+                    date.setDate(date.getDate() - (weeks - week - 1) * 7 - (6 - day));
+                    date.setHours(hour + 8, 0, 0, 0);
+
+                    const hourActivities = this.activities.filter(activity => {
+                        const activityDate = new Date(activity.timestamp);
+                        return activityDate.toDateString() === date.toDateString() &&
+                               activityDate.getHours() === (hour + 8);
+                    });
+
+                    const totalLoad = hourActivities.reduce((sum, a) => sum + a.cognitiveLoad, 0);
+                    heatData.push(totalLoad);
+
+                    if (totalLoad === 0) {
+                        backgrounds.push('#f5f5f5');
+                    } else if (totalLoad < 100) {
+                        backgrounds.push('#c6e0ff');
+                    } else if (totalLoad < 250) {
+                        backgrounds.push('#90c2ff');
+                    } else if (totalLoad < 500) {
+                        backgrounds.push('#5a9eff');
+                    } else {
+                        backgrounds.push('#ff6b6b');
+                    }
+                }
+            }
+        }
+
+        if (this.heatMapChart) {
+            this.heatMapChart.destroy();
+        }
+
+        this.heatMapChart = new Chart(ctx, {
+            type: 'matrix',
+            data: {
+                datasets: [{
+                    label: 'Cognitive Load Heat Map',
+                    data: heatData.map((value, index) => {
+                        const week = Math.floor(index / (7 * 12));
+                        const day = Math.floor((index % (7 * 12)) / 12);
+                        const hour = index % 12;
+                        return {
+                            x: day,
+                            y: week * 12 + hour,
+                            v: value
+                        };
+                    }),
+                    backgroundColor: (ctx) => {
+                        const value = ctx.dataset.data[ctx.dataIndex].v;
+                        if (value === 0) return '#f5f5f5';
+                        if (value < 100) return '#c6e0ff';
+                        if (value < 250) return '#90c2ff';
+                        if (value < 500) return '#5a9eff';
+                        return '#ff6b6b';
+                    },
+                    borderColor: 'white',
+                    borderWidth: 1,
+                    width: ({ chart }) => (chart.chartArea || {}).width / 7 - 1,
+                    height: ({ chart }) => (chart.chartArea || {}).height / 48 - 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Peak Cognitive Hours Heat Map (Last 4 Weeks)',
+                        font: { size: 16, weight: 'bold' }
+                    },
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: (context) => {
+                                const point = context[0].raw;
+                                const week = Math.floor(point.y / 12);
+                                const hour = point.y % 12;
+                                const day = point.x;
+                                
+                                const date = new Date();
+                                date.setDate(date.getDate() - (4 - week - 1) * 7 - (6 - day));
+                                
+                                return `${date.toLocaleDateString()} - ${hours[hour]}`;
+                            },
+                            label: (context) => {
+                                const value = context.raw.v;
+                                return value > 0 ? `Cognitive Load: ${Math.round(value)}` : 'No activity';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        type: 'category',
+                        labels: days,
+                        position: 'top',
+                        offset: true,
+                        grid: { display: false },
+                        ticks: { display: true }
+                    },
+                    y: {
+                        type: 'category',
+                        labels: [...hours, ...hours, ...hours, ...hours],
+                        position: 'left',
+                        offset: true,
+                        grid: { display: false },
+                        ticks: { 
+                            display: true,
+                            callback: (value, index) => {
+                                if (index < 12) return hours[index];
+                                if (index >= 12 && index < 24) return hours[index - 12];
+                                if (index >= 24 && index < 36) return hours[index - 24];
+                                if (index >= 36) return hours[index - 36];
+                                return '';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        this.addHeatMapLegend();
+    }
+
+    addHeatMapLegend() {
+        const chartContainer = document.querySelector('.chart-container');
+        
+        const existingLegend = document.getElementById('heatMapLegend');
+        if (existingLegend) {
+            existingLegend.remove();
+        }
+
+        const legendHTML = `
+            <div id="heatMapLegend" style="
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 10px;
+                padding: 10px;
+                background: #f8f9fa;
+                border-radius: 8px;
+                flex-wrap: wrap;
+            ">
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <div style="width: 20px; height: 20px; background: #f5f5f5; border-radius: 4px;"></div>
+                    <span>No Activity</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <div style="width: 20px; height: 20px; background: #c6e0ff; border-radius: 4px;"></div>
+                    <span>Low (&lt;100)</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <div style="width: 20px; height: 20px; background: #90c2ff; border-radius: 4px;"></div>
+                    <span>Moderate (100-250)</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <div style="width: 20px; height: 20px; background: #5a9eff; border-radius: 4px;"></div>
+                    <span>High (250-500)</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <div style="width: 20px; height: 20px; background: #ff6b6b; border-radius: 4px;"></div>
+                    <span>Very High (&gt;500)</span>
+                </div>
+            </div>
+        `;
+
+        chartContainer.insertAdjacentHTML('afterend', legendHTML);
+    }
+
+    filterHistoryByActivity(activityType) {
+        const historyContainer = document.getElementById('activityHistory');
+        const filteredActivities = this.activities
+            .filter(activity => this.formatActivityType(activity.type) === activityType)
+            .slice(-10)
+            .reverse();
+
+        if (filteredActivities.length === 0) {
+            historyContainer.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-filter"></i>
+                    <h3>No ${activityType} Activities Found</h3>
+                    <p>There are no activities of type "${activityType}" in your history.</p>
+                    <button class="log-btn" onclick="window.tracker.clearFilter()">
+                        <i class="fas fa-times"></i> Clear Filter
+                    </button>
+                </div>
+            `;
+        } else {
+            historyContainer.innerHTML = filteredActivities.map(activity => {
+                const activityColor = this.getActivityColor(activity.type);
+                const formattedType = this.formatActivityType(activity.type);
+                const activityClass = activity.type.replace(/_/g, '-').toLowerCase();
+                
+                return `
+                <div class="activity-item ${activityClass}" style="border-left-color: ${activityColor}">
+                    <div class="activity-header">
+                        <div class="activity-type-wrapper">
+                            <span class="activity-type-icon ${activityClass}" style="background-color: ${activityColor}"></span>
+                            <span class="activity-type" style="color: ${activityColor}">${formattedType}</span>
+                        </div>
+                        <span class="activity-time">${new Date(activity.timestamp).toLocaleString()}</span>
+                    </div>
+                    <div class="activity-details">
+                        <i class="fas fa-clock" style="color: #667eea; width: 16px;"></i> Duration: ${activity.duration} min | 
+                        <i class="fas fa-bolt" style="color: #FF9800;"></i> Intensity: ${activity.intensity}/10<br>
+                        <i class="fas fa-weight" style="color: #764ba2;"></i> Cognitive Load: ${Math.round(activity.cognitiveLoad)}<br>
+                        ${activity.notes ? `<i class="fas fa-sticky-note" style="color: #4CAF50;"></i> Notes: ${activity.notes}` : ''}
+                    </div>
+                </div>
+            `}).join('');
+
+            historyContainer.insertAdjacentHTML('beforebegin', `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <span style="color: #667eea; font-weight: 600;">
+                        <i class="fas fa-filter"></i> Filtered by: ${activityType}
+                    </span>
+                    <button class="clear-filter-btn" onclick="window.tracker.clearFilter()" style="
+                        background: none;
+                        border: 1px solid #667eea;
+                        color: #667eea;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 0.9em;
+                    ">
+                        <i class="fas fa-times"></i> Clear Filter
+                    </button>
+                </div>
+            `);
+        }
+    }
+
+    clearFilter() {
+        this.renderHistory();
+        
+        const filterUI = document.querySelector('.history-section > div:first-child');
+        if (filterUI && filterUI.querySelector('.clear-filter-btn')) {
+            filterUI.remove();
+        }
     }
 
     createProfileSelector() {
@@ -190,7 +774,7 @@ class CognitiveSaturationTracker {
         this.updateProfileSelector();
         this.updateSaturationLevel();
         this.updateStats();
-        this.renderChart();
+        this.renderAllCharts();
         this.renderHistory();
         this.checkAlerts();
 
@@ -465,7 +1049,7 @@ class CognitiveSaturationTracker {
         this.saveData();
         this.updateSaturationLevel();
         this.updateStats();
-        this.renderChart();
+        this.renderAllCharts();
         this.renderHistory();
         this.checkAlerts();
 
@@ -658,96 +1242,6 @@ class CognitiveSaturationTracker {
         const breakEfficiency = highSaturationPeriods > 0 ?
             Math.min(todayBreaks.length / highSaturationPeriods * 100, 100) : 100;
         document.getElementById('breakEfficiency').textContent = Math.round(breakEfficiency) + '%';
-    }
-
-    renderChart() {
-        const ctx = document.getElementById('saturationChart').getContext('2d');
-
-        // Get last 7 days of data
-        const dates = [];
-        const loads = [];
-        const breaks = [];
-
-        for (let i = 6; i >= 0; i--) {
-            const date = new Date();
-            date.setDate(date.getDate() - i);
-            const dateStr = date.toDateString();
-
-            dates.push(date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
-
-            const dayActivities = this.activities.filter(activity =>
-                new Date(activity.timestamp).toDateString() === dateStr
-            );
-            const dayLoad = dayActivities.reduce((sum, activity) => sum + activity.cognitiveLoad, 0);
-            loads.push(dayLoad);
-
-            const dayBreaks = this.breaks.filter(breakItem =>
-                new Date(breakItem.timestamp).toDateString() === dateStr
-            );
-            breaks.push(dayBreaks.length);
-        }
-
-        if (this.chart) {
-            this.chart.destroy();
-        }
-
-        this.chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: dates,
-                datasets: [{
-                    label: 'Cognitive Load',
-                    data: loads,
-                    borderColor: '#667eea',
-                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                    tension: 0.4,
-                    yAxisID: 'y'
-                }, {
-                    label: 'Breaks Taken',
-                    data: breaks,
-                    borderColor: '#4CAF50',
-                    backgroundColor: 'rgba(76, 175, 80, 0.1)',
-                    type: 'bar',
-                    yAxisID: 'y1'
-                }]
-            },
-            options: {
-                responsive: true,
-                interaction: {
-                    mode: 'index',
-                    intersect: false,
-                },
-                scales: {
-                    y: {
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
-                        title: {
-                            display: true,
-                            text: 'Cognitive Load'
-                        }
-                    },
-                    y1: {
-                        type: 'linear',
-                        display: true,
-                        position: 'right',
-                        title: {
-                            display: true,
-                            text: 'Breaks'
-                        },
-                        grid: {
-                            drawOnChartArea: false,
-                        },
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'top',
-                    }
-                }
-            }
-        });
     }
 
     getActivityColor(activityType) {
